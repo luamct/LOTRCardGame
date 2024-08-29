@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_ihsrb"]
+
+[resource]
+script = ExtResource("1_ihsrb")
+name = "Dol Guldur Orcs"
+set_ = "Revised Core Set"
+id = 89
+type = "Enemy"
+encounter_set = "Dol Guldur Orcs Campaign"
+sphere = ""
+cost = 0
+threat = 2
+threat_cost = 10
+quest_points = 0
+willpower = 0
+attack = 2
+defense = 0
+health = 0
+text = "When Revealed: The first player chooses 1 character currently committed to a quest. Deal 2 damage to that character."
+shadow = "Shadow: Attacking enemy gets +1  (+3  instead if this attack is undefended.)"

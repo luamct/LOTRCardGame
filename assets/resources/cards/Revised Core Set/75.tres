@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_dbnnr"]
+
+[resource]
+script = ExtResource("1_dbnnr")
+name = "Hummerhorns"
+set_ = "Revised Core Set"
+id = 75
+type = "Enemy"
+encounter_set = "Spiders of Mirkwood Campaign"
+sphere = ""
+cost = 0
+threat = 1
+threat_cost = 40
+quest_points = 0
+willpower = 0
+attack = 2
+defense = 0
+health = 0
+text = "Forced: After Hummerhorns engages you, deal 5 damage to a single hero you control."
+shadow = "Shadow: Deal 1 damage to each character the defending player controls. (2 damage instead if this attack is undefended.)"

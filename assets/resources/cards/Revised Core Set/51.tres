@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_6yr2y"]
+
+[resource]
+script = ExtResource("1_6yr2y")
+name = "Stand and Fight"
+set_ = "Revised Core Set"
+id = 51
+type = "Event"
+encounter_set = ""
+sphere = "Spirit"
+cost = -1
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "<b>Action:</b> Choose an ally with a printed cost of X in any player's discard pile. Put that ally into play under your control. (The chosen ally can belong to any sphere of influence.)"
+shadow = ""

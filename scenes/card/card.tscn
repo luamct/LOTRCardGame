@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqn0ri5nv31g4"]
+
+[ext_resource type="Script" path="res://scenes/card/card.gd" id="1_yegit"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_17e8c"]
+resource_local_to_scene = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_m4qyx"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_17e8c")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6gky3"]
+size = Vector3(5, 7, 0.1)
+
+[node name="Card" type="Node3D"]
+script = ExtResource("1_yegit")
+highlight_height_boost = 0.4
+highlight_scale_boost = 0.8
+dragging_surface_layer = 16
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 7, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("QuadMesh_m4qyx")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_6gky3")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_entered_drop_to_play"]
+[connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]
+[connection signal="mouse_entered" from="Area3D" to="." method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="Area3D" to="." method="_on_area_3d_mouse_exited"]

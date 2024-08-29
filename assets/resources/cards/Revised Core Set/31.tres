@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_nmlw2"]
+
+[resource]
+script = ExtResource("1_nmlw2")
+name = "Beorn"
+set_ = "Revised Core Set"
+id = 31
+type = "Ally"
+encounter_set = ""
+sphere = "Tactics"
+cost = 6
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 1
+attack = 3
+defense = 3
+health = 6
+text = "<b>Action:</b> Beorn gains +5 [attack] until the end of the phase. At the end of the phase in which you trigger this effect, shuffle Beorn back into your deck. (Limit once per round.)"
+shadow = ""

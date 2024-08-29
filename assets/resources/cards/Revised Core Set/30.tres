@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_jvinb"]
+
+[resource]
+script = ExtResource("1_jvinb")
+name = "Horseback Archer"
+set_ = "Revised Core Set"
+id = 30
+type = "Ally"
+encounter_set = ""
+sphere = "Tactics"
+cost = 3
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 2
+defense = 1
+health = 2
+text = "Ranged."
+shadow = ""

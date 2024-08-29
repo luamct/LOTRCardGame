@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_ue3qg"]
+
+[resource]
+script = ExtResource("1_ue3qg")
+name = "Gimli"
+set_ = "Revised Core Set"
+id = 4
+type = "Hero"
+encounter_set = ""
+sphere = "Tactics"
+cost = 0
+threat = 11
+threat_cost = 0
+quest_points = 0
+willpower = 2
+attack = 2
+defense = 2
+health = 5
+text = "Gimli gets +1 [attack] for each damage token on him."
+shadow = ""

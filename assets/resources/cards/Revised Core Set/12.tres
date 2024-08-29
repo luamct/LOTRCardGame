@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://bo76l3mj4n4xo"]
+
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_4f2lm"]
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_xrr1j"]
+
+[resource]
+script = ExtResource("1_xrr1j")
+name = "Beravor"
+set_ = "Revised Core Set"
+id = 12
+type = "Hero"
+encounter_set = ""
+sphere = "Lore"
+cost = 0
+threat = 10
+threat_cost = 0
+quest_points = 0
+willpower = 2
+attack = 2
+defense = 2
+health = 4
+text = "<b>Action:</b> Exhaust Beravor to choose a player. That player draws 2 cards. Limit once per round."
+shadow = ""
+abilities = Array[ExtResource("1_4f2lm")]([])

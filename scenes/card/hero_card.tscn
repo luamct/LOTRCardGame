@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://4fwe5yuf7v6s"]
+
+[ext_resource type="PackedScene" uid="uid://cqn0ri5nv31g4" path="res://scenes/card/card.tscn" id="1_s1rsm"]
+[ext_resource type="Script" path="res://scenes/card/resource_component.gd" id="2_bg4cg"]
+[ext_resource type="PackedScene" uid="uid://dc4twny26a7sa" path="res://scenes/tokens/resource.tscn" id="3_h84ia"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ay60i"]
+resource_local_to_scene = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_tim8g"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_ay60i")
+
+[node name="HeroCard" instance=ExtResource("1_s1rsm")]
+
+[node name="Mesh" parent="." index="0"]
+mesh = SubResource("QuadMesh_tim8g")
+
+[node name="ResourceComponent" type="Node3D" parent="." index="3"]
+script = ExtResource("2_bg4cg")
+resource_token_scene = ExtResource("3_h84ia")

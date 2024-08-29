@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_5f0pu"]
+
+[resource]
+script = ExtResource("1_5f0pu")
+name = "Wolf Rider"
+set_ = "Revised Core Set"
+id = 81
+type = "Enemy"
+encounter_set = "Wilderlands Campaign"
+sphere = ""
+cost = 0
+threat = 1
+threat_cost = 10
+quest_points = 0
+willpower = 0
+attack = 2
+defense = 0
+health = 0
+text = "Surge."
+shadow = "Shadow: Wolf Rider attacks the defending player. That player may declare 1 character as a defender. Deal Wolf Rider its own Shadow card. After combat, return Wolf Rider to the top of the encounter deck."

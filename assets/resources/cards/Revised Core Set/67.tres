@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_knvab"]
+
+[resource]
+script = ExtResource("1_knvab")
+name = "Gandalf's Search"
+set_ = "Revised Core Set"
+id = 67
+type = "Event"
+encounter_set = ""
+sphere = "Lore"
+cost = -1
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "<b>Action:</b> Look at the top X cards of any player's deck, add 1 of those cards to its owner's hand, and return the rest to the top of the deck in any order."
+shadow = ""

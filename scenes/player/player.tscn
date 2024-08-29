@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://dtvaxpirkdhud"]
+
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_6bwgh"]
+[ext_resource type="PackedScene" uid="uid://d4eskw50x4sn2" path="res://scenes/hand/hand.tscn" id="1_bldp4"]
+[ext_resource type="PackedScene" uid="uid://cmdoownwjkp03" path="res://scenes/deck/deck.tscn" id="2_hnw1f"]
+[ext_resource type="Resource" uid="uid://olro2fbnu8mk" path="res://assets/resources/decks/decklist_1.tres" id="2_k17n6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yq7d1"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_df65w"]
+font_size = 32
+
+[node name="Player" type="Node3D"]
+script = ExtResource("1_6bwgh")
+starting_hand_size = 6
+decklist = ExtResource("2_k17n6")
+
+[node name="Hand" parent="." instance=ExtResource("1_bldp4")]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 7.37947, 26.0485)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 21.8456, 25.2652)
+current = true
+
+[node name="Deck" parent="." instance=ExtResource("2_hnw1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.6617, 0, 23.4294)
+
+[node name="HeroesArea" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -21.2398, 0, 13.9852)
+
+[node name="AlliesArea" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.288583, 0, 13.9852)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="PlayerInfoContainer" type="PanelContainer" parent="UI"]
+offset_left = 28.0
+offset_top = 28.0
+offset_right = 160.0
+offset_bottom = 69.0
+size_flags_horizontal = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/PlayerInfoContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/PlayerInfoContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="ThreatText" type="Label" parent="UI/PlayerInfoContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Threat:"
+label_settings = SubResource("LabelSettings_yq7d1")
+
+[node name="ThreatValue" type="Label" parent="UI/PlayerInfoContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "0"
+label_settings = SubResource("LabelSettings_df65w")

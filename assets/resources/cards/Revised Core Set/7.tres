@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_hfn36"]
+
+[resource]
+script = ExtResource("1_hfn36")
+name = "Éowyn"
+set_ = "Revised Core Set"
+id = 7
+type = "Hero"
+encounter_set = ""
+sphere = "Spirit"
+cost = 0
+threat = 9
+threat_cost = 0
+quest_points = 0
+willpower = 4
+attack = 1
+defense = 1
+health = 3
+text = "<b>Action:</b> Discard 1 card from your hand to give Éowyn +1 [willpower] until the end of the phase. This effect may be triggered by each player once each round."
+shadow = ""

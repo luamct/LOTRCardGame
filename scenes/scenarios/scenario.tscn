@@ -1,0 +1,108 @@
+[gd_scene load_steps=8 format=3 uid="uid://budk3y16g43xm"]
+
+[ext_resource type="PackedScene" uid="uid://djl5p6eb3jgiu" path="res://scenes/board/board.tscn" id="1_2d116"]
+[ext_resource type="Script" path="res://scenes/scenarios/scenario.gd" id="1_27os8"]
+[ext_resource type="Resource" uid="uid://bicpc5c4myrfi" path="res://assets/resources/scenarios/Passage Through Mirkwood.tres" id="2_gnjxe"]
+[ext_resource type="PackedScene" uid="uid://dtvaxpirkdhud" path="res://scenes/player/player.tscn" id="2_lrnvk"]
+[ext_resource type="PackedScene" uid="uid://bjd1x7ff1jj6n" path="res://scenes/deck/encounter_deck.tscn" id="5_bj5na"]
+[ext_resource type="Script" path="res://scenes/scenarios/ui.gd" id="6_ij16v"]
+[ext_resource type="Script" path="res://scenes/abilities/ability_controller.gd" id="7_ryi1g"]
+
+[node name="Scenario" type="Node3D" groups=["scenario"]]
+script = ExtResource("1_27os8")
+scenario = ExtResource("2_gnjxe")
+
+[node name="Board" parent="." instance=ExtResource("1_2d116")]
+
+[node name="Player" parent="." instance=ExtResource("2_lrnvk")]
+
+[node name="EncounterDeck" parent="." instance=ExtResource("5_bj5na")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 26.1426, 0, -12.7977)
+
+[node name="QuestsArea" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 11.408, 0, -10)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="TurnPhases" type="Panel" parent="UI"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -152.0
+offset_right = -7.0
+offset_bottom = 198.0
+grow_horizontal = 0
+grow_vertical = 2
+script = ExtResource("6_ij16v")
+
+[node name="TurnHighlight" type="Panel" parent="UI/TurnPhases"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -165.0
+offset_bottom = -125.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/TurnPhases"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -173.0
+offset_bottom = 173.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/TurnPhases/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Resource" type="Label" parent="UI/TurnPhases/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Resource"
+
+[node name="Planning" type="Label" parent="UI/TurnPhases/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Planning"
+
+[node name="Quest" type="Label" parent="UI/TurnPhases/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quest"
+
+[node name="Travel" type="Label" parent="UI/TurnPhases/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Travel"
+
+[node name="Encounter" type="Label" parent="UI/TurnPhases/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Encounter"
+
+[node name="Combat" type="Label" parent="UI/TurnPhases/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Combat"
+
+[node name="Refresh" type="Label" parent="UI/TurnPhases/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Refresh"
+
+[node name="PassButton" type="Button" parent="UI/TurnPhases/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "PASS"
+
+[node name="AbilityController" type="Node" parent="." groups=["ability_controller"]]
+script = ExtResource("7_ryi1g")
+
+[connection signal="button_down" from="UI/TurnPhases/MarginContainer/VBoxContainer/PassButton" to="." method="_on_pass_button_button_down"]

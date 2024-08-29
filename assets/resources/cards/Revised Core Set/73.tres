@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_ettnw"]
+
+[resource]
+script = ExtResource("1_ettnw")
+name = "Gandalf"
+set_ = "Revised Core Set"
+id = 73
+type = "Ally"
+encounter_set = ""
+sphere = "Neutral"
+cost = 5
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 4
+attack = 4
+defense = 4
+health = 4
+text = "At the end of the round, discard Gandalf from play.
+<b>Response:</b> After Gandalf enters play, (choose 1): draw 3 cards, deal 4 damage to 1 enemy in play, or reduce your threat by 5."
+shadow = ""

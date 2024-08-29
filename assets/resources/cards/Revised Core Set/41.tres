@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_oviyy"]
+
+[resource]
+script = ExtResource("1_oviyy")
+name = "Dwarven Axe"
+set_ = "Revised Core Set"
+id = 41
+type = "Attachment"
+encounter_set = ""
+sphere = "Tactics"
+cost = 2
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "Attach to a hero. Restricted.
+Attached hero gains +1 [attack] (+2 [attack] instead if attached hero is a <b><i>Dwarf.</i></b>)"
+shadow = ""

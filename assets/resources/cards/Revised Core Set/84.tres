@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_ogoer"]
+
+[resource]
+script = ExtResource("1_ogoer")
+name = "Marsh Adder"
+set_ = "Revised Core Set"
+id = 84
+type = "Enemy"
+encounter_set = "Wilderlands Campaign"
+sphere = ""
+cost = 0
+threat = 3
+threat_cost = 40
+quest_points = 0
+willpower = 0
+attack = 4
+defense = 1
+health = 0
+text = "Forced: Each time Marsh Adder attacks you, raise your threat by 1."
+shadow = ""

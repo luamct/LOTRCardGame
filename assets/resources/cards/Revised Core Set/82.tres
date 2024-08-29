@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_kl8av"]
+
+[resource]
+script = ExtResource("1_kl8av")
+name = "Hill Troll"
+set_ = "Revised Core Set"
+id = 82
+type = "Enemy"
+encounter_set = "Wilderlands Campaign"
+sphere = ""
+cost = 0
+threat = 1
+threat_cost = 30
+quest_points = 0
+willpower = 0
+attack = 6
+defense = 3
+health = 0
+text = "Excess combat damage dealt by Hill Troll (damage that is dealt beyond the remaining hit points of the character damaged by its attack) must be assigned as an increase to your threat."
+shadow = ""

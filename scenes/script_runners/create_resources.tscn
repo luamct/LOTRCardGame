@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2thk12vbyh43"]
+
+[ext_resource type="Script" path="res://scenes/script_runners/create_resources.gd" id="1_s6gym"]
+[ext_resource type="Resource" uid="uid://2t8mqx7w41cv" path="res://assets/resources/sets/Core Set.tres" id="2_mdp2u"]
+
+[node name="CreateResources" type="Node"]
+script = ExtResource("1_s6gym")
+card_sets = {
+"core": ExtResource("2_mdp2u")
+}

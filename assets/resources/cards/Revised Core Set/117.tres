@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_8er5k"]
+
+[resource]
+script = ExtResource("1_8er5k")
+name = "Pursued by Shadow"
+set_ = "Revised Core Set"
+id = 117
+type = "Treachery"
+encounter_set = "Sauron's Reach Campaign"
+sphere = ""
+cost = 0
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "When Revealed: Each player raises his threat by 1 for each character he controls that is not currently committed to a quest."
+shadow = "Shadow: Defending player chooses and returns 1 exhausted ally he controls to its owner's hand. If he controls no exhausted allies, raise his threat by 3."

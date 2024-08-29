@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_kj6et"]
+
+[resource]
+script = ExtResource("1_kj6et")
+name = "Rain of Arrows"
+set_ = "Revised Core Set"
+id = 33
+type = "Event"
+encounter_set = ""
+sphere = "Tactics"
+cost = 1
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "<b>Action:</b> Exhaust a character you control with the ranged keyword to choose a player. Deal 1 damage to each enemy engaged with that player."
+shadow = ""

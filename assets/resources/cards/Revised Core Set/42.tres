@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_8gqwp"]
+
+[resource]
+script = ExtResource("1_8gqwp")
+name = "Horn of Gondor"
+set_ = "Revised Core Set"
+id = 42
+type = "Attachment"
+encounter_set = ""
+sphere = "Tactics"
+cost = 1
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "Attach to a hero. Restricted.
+<b>Response:</b> After a character is destroyed, add 1 resource to attached hero's pool."
+shadow = ""

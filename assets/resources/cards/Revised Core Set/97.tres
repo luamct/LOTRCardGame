@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_ojmk2"]
+
+[resource]
+script = ExtResource("1_ojmk2")
+name = "East Bight Patrol"
+set_ = "Revised Core Set"
+id = 97
+type = "Enemy"
+encounter_set = "Passage Through Mirkwood Campaign"
+sphere = ""
+cost = 0
+threat = 3
+threat_cost = 5
+quest_points = 0
+willpower = 0
+attack = 3
+defense = 1
+health = 0
+text = ""
+shadow = "Shadow: attacking enemy gets +1  (If this attack is undefended, also raise your threat by 3.)"

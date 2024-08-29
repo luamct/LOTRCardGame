@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="CardSetData" load_steps=2 format=3 uid="uid://2t8mqx7w41cv"]
+
+[ext_resource type="Script" path="res://scripts/resources/card_set_data.gd" id="1_7go1a"]
+
+[resource]
+script = ExtResource("1_7go1a")
+name = "Core Set"
+code = "core"

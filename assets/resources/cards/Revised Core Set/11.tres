@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_d2tnt"]
+
+[resource]
+script = ExtResource("1_d2tnt")
+name = "Glorfindel"
+set_ = "Revised Core Set"
+id = 11
+type = "Hero"
+encounter_set = ""
+sphere = "Lore"
+cost = 0
+threat = 12
+threat_cost = 0
+quest_points = 0
+willpower = 3
+attack = 3
+defense = 1
+health = 5
+text = "<b>Action:</b> Pay 1 resource from Glorfindel's pool to heal 1 damage on any character. (Limit once per round.)"
+shadow = ""

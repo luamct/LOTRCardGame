@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dc4twny26a7sa"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_hyr7x"]
+height = 0.1
+radius = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0au5m"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_58ite"]
+material = SubResource("StandardMaterial3D_0au5m")
+top_radius = 0.3
+bottom_radius = 0.3
+height = 0.1
+
+[node name="ResourceToken" type="RigidBody3D"]
+transform = Transform3D(0.999743, 0.0226699, 0, -0.0226699, 0.999743, 0, 0, 0, 1, 0, 0, 0)
+collision_layer = 4
+gravity_scale = 2.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_hyr7x")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_58ite")

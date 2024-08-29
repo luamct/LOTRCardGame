@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_1vlhs"]
+
+[resource]
+script = ExtResource("1_1vlhs")
+name = "Théodred"
+set_ = "Revised Core Set"
+id = 2
+type = "Hero"
+encounter_set = ""
+sphere = "Leadership"
+cost = 0
+threat = 8
+threat_cost = 0
+quest_points = 0
+willpower = 1
+attack = 2
+defense = 1
+health = 4
+text = "<b>Response:</b> After Théodred commits to a quest, choose a hero committed to that quest. Add 1 resource to that hero's resource pool."
+shadow = ""

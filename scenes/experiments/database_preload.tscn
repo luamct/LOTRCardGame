@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://50urt4dcf7v"]
+
+[ext_resource type="Script" path="res://scenes/experiments/database_preload.gd" id="1_7e23g"]
+[ext_resource type="Script" path="res://scenes/experiments/my_resource.gd" id="2_ywtk0"]
+
+[sub_resource type="Resource" id="Resource_iak1y"]
+script = ExtResource("2_ywtk0")
+
+[node name="DatabasePreload" type="Node3D"]
+script = ExtResource("1_7e23g")
+my_resource = SubResource("Resource_iak1y")

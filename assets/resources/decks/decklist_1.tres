@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="DeckList" load_steps=3 format=3 uid="uid://olro2fbnu8mk"]
+
+[ext_resource type="Script" path="res://scripts/resources/decklist.gd" id="1_1pn5d"]
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_w1jlp"]
+
+[resource]
+script = ExtResource("1_1pn5d")
+cards = Array[ExtResource("1_w1jlp")]([])
+decklist = "My Best Revised Core Deck (MD - CSO Solo)
+
+Beravor (Core Set)
+Éowyn (Core Set)
+Théodred (Core Set)
+
+1x  Beorn (Core Set)
+2x  Daughter of the Nimrodel (Core Set)
+3x  Erebor Hammersmith (Core Set)
+2x  Faramir (Core Set)
+3x  Gandalf (Core Set)
+2x  Gléowine (Core Set)
+2x  Henamarth Riversong (Core Set)
+3x  Northern Tracker (Core Set)
+2x  Snowbourn Scout (Core Set)
+2x  Wandering Took (Core Set)
+2x  Celebrían's Stone (Core Set)
+2x  Forest Snare (Core Set)
+2x  Protector of Lórien (Core Set)
+3x  Steward of Gondor (Core Set)
+3x  Unexpected Courage (Core Set)
+3x  A Test of Will (Core Set)
+2x  Dwarven Tomb (Core Set)
+2x  Hasty Stroke (Core Set)
+3x  Sneak Attack (Core Set)
+3x  Stand and Fight (Core Set)
+2x  The Galadhrim's Greeting (Core Set)
+1x  Will of the West (Core Set)"

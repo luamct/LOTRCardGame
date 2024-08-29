@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://bl21lfk52q01t"]
+
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_5h2y1"]
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_pqh4w"]
+
+[resource]
+script = ExtResource("1_pqh4w")
+name = "Guard of the Citadel"
+set_ = "Revised Core Set"
+id = 13
+type = "Ally"
+encounter_set = ""
+sphere = "Leadership"
+cost = 2
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 1
+attack = 1
+defense = 0
+health = 2
+text = ""
+shadow = ""
+abilities = Array[ExtResource("1_5h2y1")]([])

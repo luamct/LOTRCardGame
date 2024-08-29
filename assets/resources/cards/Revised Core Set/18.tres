@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_qgh2o"]
+
+[resource]
+script = ExtResource("1_qgh2o")
+name = "Longbeard Orc Slayer"
+set_ = "Revised Core Set"
+id = 18
+type = "Ally"
+encounter_set = ""
+sphere = "Leadership"
+cost = 4
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 2
+defense = 1
+health = 3
+text = "<b>Response:</b> After Longbeard Orc Slayer enters play, deal 1 damage to each Orc enemy in play."
+shadow = ""

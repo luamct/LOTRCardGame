@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_wcmdx"]
+
+[resource]
+script = ExtResource("1_wcmdx")
+name = "Forest Spider"
+set_ = "Revised Core Set"
+id = 96
+type = "Enemy"
+encounter_set = "Passage Through Mirkwood Campaign"
+sphere = ""
+cost = 0
+threat = 2
+threat_cost = 25
+quest_points = 0
+willpower = 0
+attack = 2
+defense = 1
+health = 0
+text = "Forced: After Forest Spider engages a player, it gets +1  until the end of the round."
+shadow = "Shadow: Defending player must choose and discard 1 attachment he controls."

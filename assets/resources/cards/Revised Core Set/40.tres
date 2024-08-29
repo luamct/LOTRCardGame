@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_kie0u"]
+
+[resource]
+script = ExtResource("1_kie0u")
+name = "Citadel Plate"
+set_ = "Revised Core Set"
+id = 40
+type = "Attachment"
+encounter_set = ""
+sphere = "Tactics"
+cost = 4
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "Attach to a hero. Restricted.
+Attached hero gets +4 Hit Points."
+shadow = ""

@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://bjd1x7ff1jj6n"]
+
+[ext_resource type="Script" path="res://scenes/deck/deck.gd" id="1_bsvbp"]
+[ext_resource type="Texture2D" uid="uid://c5ju36uy62755" path="res://assets/database/scans/raw/encounter_back.png" id="2_an2g1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_e3oir"]
+size = Vector3(5, 1, 7)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tn2l6"]
+albedo_texture = ExtResource("2_an2g1")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_a502k"]
+material = SubResource("StandardMaterial3D_tn2l6")
+size = Vector2(5, 7)
+
+[node name="Deck" type="Node3D"]
+script = ExtResource("1_bsvbp")
+
+[node name="DeckBody" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_e3oir")
+
+[node name="DeckTop" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.001, 0)
+mesh = SubResource("PlaneMesh_a502k")

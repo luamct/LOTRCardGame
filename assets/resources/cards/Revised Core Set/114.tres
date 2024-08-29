@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_jrvke"]
+
+[resource]
+script = ExtResource("1_jrvke")
+name = "Gladden Fields"
+set_ = "Revised Core Set"
+id = 114
+type = "Location"
+encounter_set = "Journey Along the Anduin Campaign"
+sphere = ""
+cost = 0
+threat = 3
+threat_cost = 0
+quest_points = 3
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "Forced: While Gladden Fields is the active location, each player must raise his threat by an additional point during the refresh phase."
+shadow = ""

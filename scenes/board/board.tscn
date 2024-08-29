@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://djl5p6eb3jgiu"]
+
+[ext_resource type="Script" path="res://scenes/board/board.gd" id="1_pv6fs"]
+[ext_resource type="Texture2D" uid="uid://i3pk0rfrpo2m" path="res://assets/textures/Middle Earth Map.jpeg" id="2_ljjhv"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_te0cj"]
+load_path = "res://.godot/imported/floor_tiles_06_nor_gl_4k.png-94822cf9abab93f6aeebcd8aaf935606.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qy3mc"]
+load_path = "res://.godot/imported/floor_tiles_06_rough_4k.png-4e2b10d387344ef658c3a39b3edc30d7.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c5tdh"]
+albedo_color = Color(0.61, 0.61, 0.61, 0)
+albedo_texture = ExtResource("2_ljjhv")
+roughness_texture = SubResource("CompressedTexture2D_qy3mc")
+normal_texture = SubResource("CompressedTexture2D_te0cj")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7kjra"]
+material = SubResource("StandardMaterial3D_c5tdh")
+size = Vector2(128, 72)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vxifx"]
+size = Vector3(100, 1, 100)
+
+[node name="Board" type="StaticBody3D"]
+collision_mask = 4
+script = ExtResource("1_pv6fs")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.473233, 0.76012, -0.445273, -0.160757, 0.422452, 0.892015, 0.866145, 0.493712, -0.0777237, 0, 17.766, 15.7404)
+light_energy = 1.5
+shadow_enabled = true
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
+mesh = SubResource("PlaneMesh_7kjra")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_vxifx")

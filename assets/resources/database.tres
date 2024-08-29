@@ -1,0 +1,2594 @@
+[gd_resource type="Resource" script_class="Database" load_steps=126 format=3 uid="uid://cg2isr7k1isdi"]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_3s7ho"]
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_7h0g7"]
+[ext_resource type="Script" path="res://scripts/resources/database.gd" id="2_vtvfn"]
+
+[sub_resource type="Resource" id="Resource_3yelx"]
+script = ExtResource("1_3s7ho")
+name = "A Light in the Dark"
+set_ = "Revised Core Set"
+id = 52
+type = "Event"
+encounter_set = ""
+sphere = "Spirit"
+cost = 2
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "<b>Action:</b> Choose an enemy engaged with a player. Return that enemy to the staging area."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_vg5ro"]
+script = ExtResource("1_3s7ho")
+name = "A Test of Will"
+set_ = "Revised Core Set"
+id = 50
+type = "Event"
+encounter_set = ""
+sphere = "Spirit"
+cost = 1
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "<b>Response:</b> Cancel the \"when revealed\" effects of a card that was just revealed from the encounter deck."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_wk0pt"]
+script = ExtResource("1_3s7ho")
+name = "Aragorn"
+set_ = "Revised Core Set"
+id = 1
+type = "Hero"
+encounter_set = ""
+sphere = "Leadership"
+cost = 0
+threat = 12
+threat_cost = 0
+quest_points = 0
+willpower = 2
+attack = 3
+defense = 2
+health = 5
+text = "Sentinel.
+<b>Response:</b> After Aragorn commits to a quest, spend 1 resource from his resource pool to ready him."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_lmrom"]
+script = ExtResource("1_3s7ho")
+name = "Banks of the Anduin"
+set_ = "Revised Core Set"
+id = 113
+type = "Location"
+encounter_set = "Journey Along the Anduin Campaign"
+sphere = ""
+cost = 0
+threat = 1
+threat_cost = 0
+quest_points = 3
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "Forced: If Banks of the Anduin leaves play, return it to the top of the encounter deck instead of placing it in the discard pile."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_0icrw"]
+script = ExtResource("1_3s7ho")
+name = "Beorn"
+set_ = "Revised Core Set"
+id = 31
+type = "Ally"
+encounter_set = ""
+sphere = "Tactics"
+cost = 6
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 1
+attack = 3
+defense = 3
+health = 6
+text = "<b>Action:</b> Beorn gains +5 [attack] until the end of the phase. At the end of the phase in which you trigger this effect, shuffle Beorn back into your deck. (Limit once per round.)"
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_qad7h"]
+script = ExtResource("1_3s7ho")
+name = "Beorn's Hospitality"
+set_ = "Revised Core Set"
+id = 68
+type = "Event"
+encounter_set = ""
+sphere = "Lore"
+cost = 5
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "<b>Action:</b> Choose a player. Heal all damage on each hero controlled by that player."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_q7sfa"]
+script = ExtResource("1_3s7ho")
+name = "Beravor"
+set_ = "Revised Core Set"
+id = 12
+type = "Hero"
+encounter_set = ""
+sphere = "Lore"
+cost = 0
+threat = 10
+threat_cost = 0
+quest_points = 0
+willpower = 2
+attack = 2
+defense = 2
+health = 4
+text = "<b>Action:</b> Exhaust Beravor to choose a player. That player draws 2 cards. Limit once per round."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_yqe00"]
+script = ExtResource("1_3s7ho")
+name = "Black Forest Bats"
+set_ = "Revised Core Set"
+id = 98
+type = "Enemy"
+encounter_set = "Passage Through Mirkwood Campaign"
+sphere = ""
+cost = 0
+threat = 1
+threat_cost = 15
+quest_points = 0
+willpower = 0
+attack = 1
+defense = 0
+health = 0
+text = "When Revealed: Each player must choose 1 character currently committed to a quest, and remove that character from the quest. (The chosen character does not ready.)"
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_cklwb"]
+script = ExtResource("1_3s7ho")
+name = "Blade Mastery"
+set_ = "Revised Core Set"
+id = 32
+type = "Event"
+encounter_set = ""
+sphere = "Tactics"
+cost = 1
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "<b>Action:</b> Choose a character. Until the end of the phase, that character gains +1 [attack] and +1 [defense]."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_l5k6b"]
+script = ExtResource("1_3s7ho")
+name = "Blade of Gondolin"
+set_ = "Revised Core Set"
+id = 39
+type = "Attachment"
+encounter_set = ""
+sphere = "Tactics"
+cost = 1
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "Attach to a hero. Restricted.
+Attached hero gets +1 [attack] when attacking an Orc.
+<b>Response:</b> After attached hero attacks and destroys an enemy, place 1 progress token on the current quest."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_37ywy"]
+script = ExtResource("1_3s7ho")
+name = "Brok Ironfist"
+set_ = "Revised Core Set"
+id = 19
+type = "Ally"
+encounter_set = ""
+sphere = "Leadership"
+cost = 6
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 2
+attack = 2
+defense = 1
+health = 4
+text = "<b>Response:</b> After a <b><i>Dwarf</i></b> hero you control leaves play, put Brok Ironfist into play from your hand."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_rxrvl"]
+script = ExtResource("1_3s7ho")
+name = "Caught in a Web"
+set_ = "Revised Core Set"
+id = 80
+type = "Treachery"
+encounter_set = "Spiders of Mirkwood Campaign"
+sphere = ""
+cost = 0
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "When Revealed: The player with the highest threat level attaches this card to one of his heroes. (Counts as a Condition attachment with the text: 'Attached hero does not ready during the refresh phase unless you pay 2 resources from that hero's pool.')"
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_hcop5"]
+script = ExtResource("1_3s7ho")
+name = "Cavern Guardian"
+set_ = "Revised Core Set"
+id = 103
+type = "Enemy"
+encounter_set = "Escape from Dol Guldur Campaign"
+sphere = ""
+cost = 0
+threat = 2
+threat_cost = 8
+quest_points = 0
+willpower = 0
+attack = 2
+defense = 1
+health = 0
+text = "Doomed 1."
+shadow = "Shadow: Choose and discard 1 attachment you control. Discarded objective cards are returned to the staging area. (If this attack is undefended, discard all attachments you control.)"
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_6b0ke"]
+script = ExtResource("1_3s7ho")
+name = "Celebrían's Stone"
+set_ = "Revised Core Set"
+id = 27
+type = "Attachment"
+encounter_set = ""
+sphere = "Leadership"
+cost = 2
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "Attach to a hero. Restricted.
+Attached hero gains +2 [willpower]
+If attached hero is Aragorn, he also gains a [spirit] resource icon."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_i0fjb"]
+script = ExtResource("1_3s7ho")
+name = "Chieftan Ufthak"
+set_ = "Revised Core Set"
+id = 90
+type = "Enemy"
+encounter_set = "Dol Guldur Orcs Campaign"
+sphere = ""
+cost = 0
+threat = 2
+threat_cost = 35
+quest_points = 0
+willpower = 0
+attack = 3
+defense = 3
+health = 0
+text = "Chieftain Ufthak get +2  for each resource token on him."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_qpok5"]
+script = ExtResource("1_3s7ho")
+name = "Citadel Plate"
+set_ = "Revised Core Set"
+id = 40
+type = "Attachment"
+encounter_set = ""
+sphere = "Tactics"
+cost = 4
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "Attach to a hero. Restricted.
+Attached hero gets +4 Hit Points."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_2njtq"]
+script = ExtResource("1_3s7ho")
+name = "Common Cause"
+set_ = "Revised Core Set"
+id = 21
+type = "Event"
+encounter_set = ""
+sphere = "Leadership"
+cost = 0
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "<b>Action:</b> Exhaust 1 hero you control to choose and ready a different hero."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_da7yt"]
+script = ExtResource("1_3s7ho")
+name = "Dark Knowledge"
+set_ = "Revised Core Set"
+id = 71
+type = "Attachment"
+encounter_set = ""
+sphere = "Lore"
+cost = 1
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "Attach to a hero. Attached hero gets -1 [willpower]
+<b>Response:</b> Exhaust Dark Knowledge to look at 1 shadow card that was just dealt to an enemy attacking you."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_jprvf"]
+script = ExtResource("1_3s7ho")
+name = "Daughter of the Nimrodel"
+set_ = "Revised Core Set"
+id = 58
+type = "Ally"
+encounter_set = ""
+sphere = "Lore"
+cost = 3
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 1
+attack = 0
+defense = 0
+health = 1
+text = "<b>Action:</b> Exhaust Daughter of the Nimrodel to heal up to 2 damage on any 1 hero."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_7x3nj"]
+script = ExtResource("1_3s7ho")
+name = "Denethor"
+set_ = "Revised Core Set"
+id = 10
+type = "Hero"
+encounter_set = ""
+sphere = "Lore"
+cost = 0
+threat = 8
+threat_cost = 0
+quest_points = 0
+willpower = 1
+attack = 1
+defense = 3
+health = 3
+text = "<b>Action:</b> Exhaust Denethor to look at the top card of the encounter deck. You may move that card to the bottom of the deck."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_wbprw"]
+script = ExtResource("1_3s7ho")
+name = "Despair"
+set_ = "Revised Core Set"
+id = 86
+type = "Treachery"
+encounter_set = "Wilderlands Campaign"
+sphere = ""
+cost = 0
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "When Revealed: Remove 4 progress tokens from the current quest card. (If there are fewer than 4 progress tokens on the quest, remove all progress tokens from that quest.)"
+shadow = "Shadow: Defending character does not count its"
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_ajb4d"]
+script = ExtResource("1_3s7ho")
+name = "Dol Guldur Beastmaster"
+set_ = "Revised Core Set"
+id = 91
+type = "Enemy"
+encounter_set = "Dol Guldur Orcs Campaign"
+sphere = ""
+cost = 0
+threat = 2
+threat_cost = 35
+quest_points = 0
+willpower = 0
+attack = 3
+defense = 1
+health = 0
+text = "Forced: When Dol Guldur Beastmaster attacks, deal it 1 additional shadow card."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_m5q41"]
+script = ExtResource("1_3s7ho")
+name = "Dol Guldur Orcs"
+set_ = "Revised Core Set"
+id = 89
+type = "Enemy"
+encounter_set = "Dol Guldur Orcs Campaign"
+sphere = ""
+cost = 0
+threat = 2
+threat_cost = 10
+quest_points = 0
+willpower = 0
+attack = 2
+defense = 0
+health = 0
+text = "When Revealed: The first player chooses 1 character currently committed to a quest. Deal 2 damage to that character."
+shadow = "Shadow: Attacking enemy gets +1  (+3  instead if this attack is undefended.)"
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_5ie4r"]
+script = ExtResource("1_3s7ho")
+name = "Driven by Shadow"
+set_ = "Revised Core Set"
+id = 92
+type = "Treachery"
+encounter_set = "Dol Guldur Orcs Campaign"
+sphere = ""
+cost = 0
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "When Revealed: Each enemy and each location currently in the staging area gets +1  until the end of the phase. If there are no cards in the staging area, Driven by Shadow gains Surge."
+shadow = "Shadow: Choose and discard 1 attachment from the defending character. (If this attack is undefended, discard all attachments you control.)"
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_djenp"]
+script = ExtResource("1_3s7ho")
+name = "Dungeon Jailor"
+set_ = "Revised Core Set"
+id = 101
+type = "Enemy"
+encounter_set = "Escape from Dol Guldur Campaign"
+sphere = ""
+cost = 0
+threat = 1
+threat_cost = 38
+quest_points = 0
+willpower = 0
+attack = 2
+defense = 3
+health = 0
+text = "Forced: If Dungeon Jailor is in the staging area after the players have just quested unsuccessfully, shuffle 1 unclaimed objective card from the staging area back into the encounter deck."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_l72sj"]
+script = ExtResource("1_3s7ho")
+name = "Dungeon Torch"
+set_ = "Revised Core Set"
+id = 109
+type = "Objective"
+encounter_set = "Escape from Dol Guldur Campaign"
+sphere = ""
+cost = 0
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "Guarded. Restricted."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_ofbp3"]
+script = ExtResource("1_3s7ho")
+name = "Dwarven Axe"
+set_ = "Revised Core Set"
+id = 41
+type = "Attachment"
+encounter_set = ""
+sphere = "Tactics"
+cost = 2
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "Attach to a hero. Restricted.
+Attached hero gains +1 [attack] (+2 [attack] instead if attached hero is a <b><i>Dwarf.</i></b>)"
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_lkkvx"]
+script = ExtResource("1_3s7ho")
+name = "Dwarven Tomb"
+set_ = "Revised Core Set"
+id = 53
+type = "Event"
+encounter_set = ""
+sphere = "Spirit"
+cost = 1
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "<b>Action:</b> Return 1 [spirit] card from your discard pile to your hand."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_ihrcf"]
+script = ExtResource("1_3s7ho")
+name = "Dúnhere"
+set_ = "Revised Core Set"
+id = 9
+type = "Hero"
+encounter_set = ""
+sphere = "Spirit"
+cost = 0
+threat = 8
+threat_cost = 0
+quest_points = 0
+willpower = 1
+attack = 2
+defense = 1
+health = 4
+text = "Dúnhere can target enemies in the staging area when he attacks alone. When doing so, he gets +1 [attack]."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_mqqv3"]
+script = ExtResource("1_3s7ho")
+name = "East Bight Patrol"
+set_ = "Revised Core Set"
+id = 97
+type = "Enemy"
+encounter_set = "Passage Through Mirkwood Campaign"
+sphere = ""
+cost = 0
+threat = 3
+threat_cost = 5
+quest_points = 0
+willpower = 0
+attack = 3
+defense = 1
+health = 0
+text = ""
+shadow = "Shadow: attacking enemy gets +1  (If this attack is undefended, also raise your threat by 3.)"
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_dnu0m"]
+script = ExtResource("1_3s7ho")
+name = "Eastern Crows"
+set_ = "Revised Core Set"
+id = 115
+type = "Enemy"
+encounter_set = "Sauron's Reach Campaign"
+sphere = ""
+cost = 0
+threat = 1
+threat_cost = 30
+quest_points = 0
+willpower = 0
+attack = 1
+defense = 0
+health = 0
+text = "Surge."
+shadow = "Shadow: attacking enemy gets +1  (+2  instead if defending player's threat is 35 or higher.)"
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_uirt8"]
+script = ExtResource("1_3s7ho")
+name = "Eleanor"
+set_ = "Revised Core Set"
+id = 8
+type = "Hero"
+encounter_set = ""
+sphere = "Spirit"
+cost = 0
+threat = 7
+threat_cost = 0
+quest_points = 0
+willpower = 1
+attack = 1
+defense = 2
+health = 3
+text = "<b>Response:</b> Exhaust Eleanor to cancel the \"when revealed\" effects of a treachery card just revealed by the encounter deck. Then, discard that card, and replace it with the next card from the encounter deck."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_ln2n3"]
+script = ExtResource("1_3s7ho")
+name = "Enchanted Stream"
+set_ = "Revised Core Set"
+id = 95
+type = "Location"
+encounter_set = "Dol Guldur Orcs Campaign"
+sphere = ""
+cost = 0
+threat = 2
+threat_cost = 0
+quest_points = 2
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "While Enchanted Stream is the active location, players cannot draw cards."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_hsv2t"]
+script = ExtResource("1_3s7ho")
+name = "Endless Caverns"
+set_ = "Revised Core Set"
+id = 106
+type = "Location"
+encounter_set = "Escape from Dol Guldur Campaign"
+sphere = ""
+cost = 0
+threat = 1
+threat_cost = 0
+quest_points = 3
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "Doomed 1. Surge."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_hs4lf"]
+script = ExtResource("1_3s7ho")
+name = "Erebor Hammersmith"
+set_ = "Revised Core Set"
+id = 59
+type = "Ally"
+encounter_set = ""
+sphere = "Lore"
+cost = 2
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 1
+attack = 1
+defense = 1
+health = 3
+text = "<b>Response:</b> After you play Erebor Hammersmith, return the topmost attachment in any player's discard pile to his hand."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_n7eco"]
+script = ExtResource("1_3s7ho")
+name = "Ever Vigilant"
+set_ = "Revised Core Set"
+id = 20
+type = "Event"
+encounter_set = ""
+sphere = "Leadership"
+cost = 1
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "<b>Action:</b> Choose and ready 1 ally card."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_ihsc5"]
+script = ExtResource("1_3s7ho")
+name = "Evil Storm"
+set_ = "Revised Core Set"
+id = 116
+type = "Treachery"
+encounter_set = "Sauron's Reach Campaign"
+sphere = ""
+cost = 0
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "When Revealed: Deal 1 damage to each character controlled by each player with a threat of 35 or higher."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_81gid"]
+script = ExtResource("1_3s7ho")
+name = "Eyes of the Forest"
+set_ = "Revised Core Set"
+id = 79
+type = "Treachery"
+encounter_set = "Spiders of Mirkwood Campaign"
+sphere = ""
+cost = 0
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "When Revealed: Each player discards all event cards in his hand."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_brp2q"]
+script = ExtResource("1_3s7ho")
+name = "Faramir"
+set_ = "Revised Core Set"
+id = 14
+type = "Ally"
+encounter_set = ""
+sphere = "Leadership"
+cost = 4
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 2
+attack = 1
+defense = 2
+health = 3
+text = "<b>Action:</b> Exhaust Faramir to choose a player. Each character controlled by that player gets +1 [willpower] until the end of the phase."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_3k5jo"]
+script = ExtResource("1_3s7ho")
+name = "Feint"
+set_ = "Revised Core Set"
+id = 34
+type = "Event"
+encounter_set = ""
+sphere = "Tactics"
+cost = 1
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "<b>Combat Action:</b> Choose an enemy engaged with a player. That enemy cannot attack that player this phase."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_6nlje"]
+script = ExtResource("1_3s7ho")
+name = "For Gondor!"
+set_ = "Revised Core Set"
+id = 22
+type = "Event"
+encounter_set = ""
+sphere = "Leadership"
+cost = 2
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "<b>Action:</b> Until the end of the phase, all characters get +1 [attack]. All <b><i>Gondor</i></b> characters also get +1 [defense] until the end of the phase."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_qftbe"]
+script = ExtResource("1_3s7ho")
+name = "Forest Gate"
+set_ = "Revised Core Set"
+id = 100
+type = "Location"
+encounter_set = "Passage Through Mirkwood Campaign"
+sphere = ""
+cost = 0
+threat = 2
+threat_cost = 0
+quest_points = 4
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "Response: After you travel to Forest Gate the first player may draw 2 cards."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_yocgs"]
+script = ExtResource("1_3s7ho")
+name = "Forest Snare"
+set_ = "Revised Core Set"
+id = 69
+type = "Attachment"
+encounter_set = ""
+sphere = "Lore"
+cost = 3
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "Attach to an enemy engaged with a player.
+Attached enemy cannot attack."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_eeh5q"]
+script = ExtResource("1_3s7ho")
+name = "Forest Spider"
+set_ = "Revised Core Set"
+id = 96
+type = "Enemy"
+encounter_set = "Passage Through Mirkwood Campaign"
+sphere = ""
+cost = 0
+threat = 2
+threat_cost = 25
+quest_points = 0
+willpower = 0
+attack = 2
+defense = 1
+health = 0
+text = "Forced: After Forest Spider engages a player, it gets +1  until the end of the round."
+shadow = "Shadow: Defending player must choose and discard 1 attachment he controls."
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_fdm3h"]
+script = ExtResource("1_3s7ho")
+name = "Fortune or Fate"
+set_ = "Revised Core Set"
+id = 54
+type = "Event"
+encounter_set = ""
+sphere = "Spirit"
+cost = 5
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "<b>Action:</b> Choose a hero in any player's discard pile. Put that card into play, under its owner's control."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_8mbfs"]
+script = ExtResource("1_3s7ho")
+name = "Gandalf"
+set_ = "Revised Core Set"
+id = 73
+type = "Ally"
+encounter_set = ""
+sphere = "Neutral"
+cost = 5
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 4
+attack = 4
+defense = 4
+health = 4
+text = "At the end of the round, discard Gandalf from play.
+<b>Response:</b> After Gandalf enters play, (choose 1): draw 3 cards, deal 4 damage to 1 enemy in play, or reduce your threat by 5."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_eg3fq"]
+script = ExtResource("1_3s7ho")
+name = "Gandalf's Map"
+set_ = "Revised Core Set"
+id = 108
+type = "Objective"
+encounter_set = "Escape from Dol Guldur Campaign"
+sphere = ""
+cost = 0
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "Guarded. Restricted."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_kchst"]
+script = ExtResource("1_3s7ho")
+name = "Gandalf's Search"
+set_ = "Revised Core Set"
+id = 67
+type = "Event"
+encounter_set = ""
+sphere = "Lore"
+cost = -1
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "<b>Action:</b> Look at the top X cards of any player's deck, add 1 of those cards to its owner's hand, and return the rest to the top of the deck in any order."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_f1xxh"]
+script = ExtResource("1_3s7ho")
+name = "Gimli"
+set_ = "Revised Core Set"
+id = 4
+type = "Hero"
+encounter_set = ""
+sphere = "Tactics"
+cost = 0
+threat = 11
+threat_cost = 0
+quest_points = 0
+willpower = 2
+attack = 2
+defense = 2
+health = 5
+text = "Gimli gets +1 [attack] for each damage token on him."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_5yfn4"]
+script = ExtResource("1_3s7ho")
+name = "Gladden Fields"
+set_ = "Revised Core Set"
+id = 114
+type = "Location"
+encounter_set = "Journey Along the Anduin Campaign"
+sphere = ""
+cost = 0
+threat = 3
+threat_cost = 0
+quest_points = 3
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "Forced: While Gladden Fields is the active location, each player must raise his threat by an additional point during the refresh phase."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_6ydqk"]
+script = ExtResource("1_3s7ho")
+name = "Glorfindel"
+set_ = "Revised Core Set"
+id = 11
+type = "Hero"
+encounter_set = ""
+sphere = "Lore"
+cost = 0
+threat = 12
+threat_cost = 0
+quest_points = 0
+willpower = 3
+attack = 3
+defense = 1
+health = 5
+text = "<b>Action:</b> Pay 1 resource from Glorfindel's pool to heal 1 damage on any character. (Limit once per round.)"
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_sgveb"]
+script = ExtResource("1_3s7ho")
+name = "Gléowine"
+set_ = "Revised Core Set"
+id = 62
+type = "Ally"
+encounter_set = ""
+sphere = "Lore"
+cost = 2
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 1
+attack = 0
+defense = 0
+health = 2
+text = "<b>Action:</b> Exhaust Gléowine to choose a player. That player draws 1 card."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_d57st"]
+script = ExtResource("1_3s7ho")
+name = "Glóin"
+set_ = "Revised Core Set"
+id = 3
+type = "Hero"
+encounter_set = ""
+sphere = "Leadership"
+cost = 0
+threat = 9
+threat_cost = 0
+quest_points = 0
+willpower = 2
+attack = 2
+defense = 1
+health = 4
+text = "<b>Response:</b> After Glóin suffers damage, add 1 resource to his resource pool for each point of damage he just suffered."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_q5rua"]
+script = ExtResource("1_3s7ho")
+name = "Goblin Sniper"
+set_ = "Revised Core Set"
+id = 83
+type = "Enemy"
+encounter_set = "Wilderlands Campaign"
+sphere = ""
+cost = 0
+threat = 2
+threat_cost = 48
+quest_points = 0
+willpower = 0
+attack = 2
+defense = 0
+health = 0
+text = "During the encounter phase, players cannot optionally engage Goblin Sniper if there are other enemies in the staging area."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_lswfg"]
+script = ExtResource("1_3s7ho")
+name = "Gondorian Spearman"
+set_ = "Revised Core Set"
+id = 29
+type = "Ally"
+encounter_set = ""
+sphere = "Tactics"
+cost = 2
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 1
+defense = 1
+health = 1
+text = "Sentinel.
+<b>Response:</b> After Gondorian Spearman is declared as a defender, deal 1 damage to the attacking enemy."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_0jr5o"]
+script = ExtResource("1_3s7ho")
+name = "Great Forest Web"
+set_ = "Revised Core Set"
+id = 77
+type = "Location"
+encounter_set = "Spiders of Mirkwood Campaign"
+sphere = ""
+cost = 0
+threat = 2
+threat_cost = 0
+quest_points = 2
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "Travel: Each player must exhaust 1 hero he controls to travel here."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_gx7l6"]
+script = ExtResource("1_3s7ho")
+name = "Grim Resolve"
+set_ = "Revised Core Set"
+id = 25
+type = "Event"
+encounter_set = ""
+sphere = "Leadership"
+cost = 5
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "<b>Action:</b> Ready all character cards in play."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_5rlcv"]
+script = ExtResource("1_3s7ho")
+name = "Guard of the Citadel"
+set_ = "Revised Core Set"
+id = 13
+type = "Ally"
+encounter_set = ""
+sphere = "Leadership"
+cost = 2
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 1
+attack = 1
+defense = 0
+health = 2
+text = ""
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_xv3ks"]
+script = ExtResource("1_3s7ho")
+name = "Hasty Stroke"
+set_ = "Revised Core Set"
+id = 48
+type = "Event"
+encounter_set = ""
+sphere = "Spirit"
+cost = 1
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "<b>Response:</b> Cancel a shadow effect just triggered during combat."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_nh70l"]
+script = ExtResource("1_3s7ho")
+name = "Henamarth Riversong"
+set_ = "Revised Core Set"
+id = 60
+type = "Ally"
+encounter_set = ""
+sphere = "Lore"
+cost = 1
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 1
+attack = 1
+defense = 0
+health = 1
+text = "<b>Action:</b> Exhaust Henamarth Riversong to look at the top card of the encounter deck."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_xm85h"]
+script = ExtResource("1_3s7ho")
+name = "Hill Troll"
+set_ = "Revised Core Set"
+id = 82
+type = "Enemy"
+encounter_set = "Wilderlands Campaign"
+sphere = ""
+cost = 0
+threat = 1
+threat_cost = 30
+quest_points = 0
+willpower = 0
+attack = 6
+defense = 3
+health = 0
+text = "Excess combat damage dealt by Hill Troll (damage that is dealt beyond the remaining hit points of the character damaged by its attack) must be assigned as an increase to your threat."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_2ooof"]
+script = ExtResource("1_3s7ho")
+name = "Horn of Gondor"
+set_ = "Revised Core Set"
+id = 42
+type = "Attachment"
+encounter_set = ""
+sphere = "Tactics"
+cost = 1
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "Attach to a hero. Restricted.
+<b>Response:</b> After a character is destroyed, add 1 resource to attached hero's pool."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_1iw6e"]
+script = ExtResource("1_3s7ho")
+name = "Horseback Archer"
+set_ = "Revised Core Set"
+id = 30
+type = "Ally"
+encounter_set = ""
+sphere = "Tactics"
+cost = 3
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 2
+defense = 1
+health = 2
+text = "Ranged."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_ptfvm"]
+script = ExtResource("1_3s7ho")
+name = "Hummerhorns"
+set_ = "Revised Core Set"
+id = 75
+type = "Enemy"
+encounter_set = "Spiders of Mirkwood Campaign"
+sphere = ""
+cost = 0
+threat = 1
+threat_cost = 40
+quest_points = 0
+willpower = 0
+attack = 2
+defense = 0
+health = 0
+text = "Forced: After Hummerhorns engages you, deal 5 damage to a single hero you control."
+shadow = "Shadow: Deal 1 damage to each character the defending player controls. (2 damage instead if this attack is undefended.)"
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_1w65o"]
+script = ExtResource("1_3s7ho")
+name = "Iron Shackles"
+set_ = "Revised Core Set"
+id = 105
+type = "Treachery"
+encounter_set = "Escape from Dol Guldur Campaign"
+sphere = ""
+cost = 0
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "When Revealed: Attach Iron Shackles to the top of the first player's deck. Counts as a Condition attachment with the text:"
+shadow = "Shadow: Resolve the 'When Revealed' effect of Iron Shackles."
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_71lp1"]
+script = ExtResource("1_3s7ho")
+name = "King Spider"
+set_ = "Revised Core Set"
+id = 74
+type = "Enemy"
+encounter_set = "Spiders of Mirkwood Campaign"
+sphere = ""
+cost = 0
+threat = 2
+threat_cost = 20
+quest_points = 0
+willpower = 0
+attack = 3
+defense = 1
+health = 0
+text = "When Revealed: Each player must choose and exhaust 1 character he controls."
+shadow = "Shadow: Defending player must choose and exhaust 1 character he controls. (2 characters instead if this attack is undefended.)"
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_imd5q"]
+script = ExtResource("1_3s7ho")
+name = "Legolas"
+set_ = "Revised Core Set"
+id = 5
+type = "Hero"
+encounter_set = ""
+sphere = "Tactics"
+cost = 0
+threat = 9
+threat_cost = 0
+quest_points = 0
+willpower = 1
+attack = 3
+defense = 1
+health = 4
+text = "Ranged.
+<b>Response:</b> After Legolas participates in an attack that destroys an enemy, place 2 progress tokens on the current quest."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_atpwa"]
+script = ExtResource("1_3s7ho")
+name = "Lingering Venom"
+set_ = "Revised Core Set"
+id = 121
+type = "Treachery"
+encounter_set = "Passage Through Mirkwood Campaign"
+sphere = ""
+cost = 0
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "Surge."
+shadow = "Shadow: Exhaust each damaged character you control."
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_uj3mt"]
+script = ExtResource("1_3s7ho")
+name = "Longbeard Orc Slayer"
+set_ = "Revised Core Set"
+id = 18
+type = "Ally"
+encounter_set = ""
+sphere = "Leadership"
+cost = 4
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 2
+defense = 1
+health = 3
+text = "<b>Response:</b> After Longbeard Orc Slayer enters play, deal 1 damage to each Orc enemy in play."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_5v2c2"]
+script = ExtResource("1_3s7ho")
+name = "Lore of Imladris"
+set_ = "Revised Core Set"
+id = 63
+type = "Event"
+encounter_set = ""
+sphere = "Lore"
+cost = 2
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "<b>Action:</b> Choose a character. Heal all damage from that character."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_4qadd"]
+script = ExtResource("1_3s7ho")
+name = "Lórien Guide"
+set_ = "Revised Core Set"
+id = 44
+type = "Ally"
+encounter_set = ""
+sphere = "Spirit"
+cost = 3
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 1
+attack = 1
+defense = 0
+health = 2
+text = "<b>Response:</b> After Lórien Guide commits to a quest, place 1 progress token on the active location."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_hlgik"]
+script = ExtResource("1_3s7ho")
+name = "Lórien's Wealth"
+set_ = "Revised Core Set"
+id = 64
+type = "Event"
+encounter_set = ""
+sphere = "Lore"
+cost = 3
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "<b>Action:</b> Choose a player. That player draws 3 cards."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_nrehi"]
+script = ExtResource("1_3s7ho")
+name = "Marsh Adder"
+set_ = "Revised Core Set"
+id = 84
+type = "Enemy"
+encounter_set = "Wilderlands Campaign"
+sphere = ""
+cost = 0
+threat = 3
+threat_cost = 40
+quest_points = 0
+willpower = 0
+attack = 4
+defense = 1
+health = 0
+text = "Forced: Each time Marsh Adder attacks you, raise your threat by 1."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_v3ey3"]
+script = ExtResource("1_3s7ho")
+name = "Massing at Night"
+set_ = "Revised Core Set"
+id = 112
+type = "Treachery"
+encounter_set = "Journey Along the Anduin Campaign"
+sphere = ""
+cost = 0
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "When Revealed: Reveal X additional cards from the encounter deck. X is the number of players in the game."
+shadow = "Shadow: Deal X shadow cards to this attacker. X is the number of players in the game."
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_idy2h"]
+script = ExtResource("1_3s7ho")
+name = "Mendor"
+set_ = "Revised Core Set"
+id = 119
+type = "Enemy"
+encounter_set = ""
+sphere = ""
+cost = 0
+threat = 1
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 1
+defense = 1
+health = 0
+text = "Ranged."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_o3e66"]
+script = ExtResource("1_3s7ho")
+name = "Miner of the Iron Hills"
+set_ = "Revised Core Set"
+id = 61
+type = "Ally"
+encounter_set = ""
+sphere = "Lore"
+cost = 2
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 1
+defense = 1
+health = 2
+text = "<b>Response:</b> After Miner of the Iron Hills enters play, choose and discard 1 Condition attachment from play."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_51wou"]
+script = ExtResource("1_3s7ho")
+name = "Misty Mountain Goblins"
+set_ = "Revised Core Set"
+id = 111
+type = "Enemy"
+encounter_set = "Journey Along the Anduin Campaign"
+sphere = ""
+cost = 0
+threat = 2
+threat_cost = 15
+quest_points = 0
+willpower = 0
+attack = 2
+defense = 1
+health = 0
+text = "Forced: After Misty Mountain Goblins attacks, remove 1 progress token from the current quest."
+shadow = "Shadow: Remove 1 progress token from the current quest. (3 progress tokens instead if this attack is undefended.)"
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_n5v1m"]
+script = ExtResource("1_3s7ho")
+name = "Mountains of Mirkwood"
+set_ = "Revised Core Set"
+id = 78
+type = "Location"
+encounter_set = "Spiders of Mirkwood Campaign"
+sphere = ""
+cost = 0
+threat = 2
+threat_cost = 0
+quest_points = 3
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "Travel: Reveal the top card of the encounter deck and add it to the staging area to travel here."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_hq27q"]
+script = ExtResource("1_3s7ho")
+name = "Nazgûl of Dol Guldur"
+set_ = "Revised Core Set"
+id = 102
+type = "Enemy"
+encounter_set = "Escape from Dol Guldur Campaign"
+sphere = ""
+cost = 0
+threat = 5
+threat_cost = 40
+quest_points = 0
+willpower = 0
+attack = 4
+defense = 3
+health = 0
+text = "No attachments can be played on Nazgûl of Dol Guldur."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_hwaju"]
+script = ExtResource("1_3s7ho")
+name = "Necromancer's Pass"
+set_ = "Revised Core Set"
+id = 94
+type = "Location"
+encounter_set = "Dol Guldur Orcs Campaign"
+sphere = ""
+cost = 0
+threat = 3
+threat_cost = 0
+quest_points = 2
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "Travel: The first player must discard 2 cards from his hand at random to travel here."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_aaytb"]
+script = ExtResource("1_3s7ho")
+name = "Northern Tracker"
+set_ = "Revised Core Set"
+id = 45
+type = "Ally"
+encounter_set = ""
+sphere = "Spirit"
+cost = 4
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 1
+attack = 2
+defense = 2
+health = 3
+text = "<b>Response:</b> After Northern Tracker commits to a quest, place 1 progress token on each location in the staging area."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_xdrfm"]
+script = ExtResource("1_3s7ho")
+name = "Old Forest Road"
+set_ = "Revised Core Set"
+id = 99
+type = "Location"
+encounter_set = "Passage Through Mirkwood Campaign"
+sphere = ""
+cost = 0
+threat = 1
+threat_cost = 0
+quest_points = 3
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "Response: After you travel to Old Forest Road the first player may choose and ready 1 character he controls."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_xrwnn"]
+script = ExtResource("1_3s7ho")
+name = "Power in the Earth"
+set_ = "Revised Core Set"
+id = 56
+type = "Attachment"
+encounter_set = ""
+sphere = "Spirit"
+cost = 1
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "Attach to a location.
+Attached location gets -1 [threat]."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_4ar5p"]
+script = ExtResource("1_3s7ho")
+name = "Protector of Lórien"
+set_ = "Revised Core Set"
+id = 70
+type = "Attachment"
+encounter_set = ""
+sphere = "Lore"
+cost = 1
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "Attach to a hero.
+<b>Action:</b> Discard a card from your hand to give attached hero +1 [defense] or +1 [willpower] until the end of the phase. Limit 3 times per phase."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_obk1q"]
+script = ExtResource("1_3s7ho")
+name = "Pursued by Shadow"
+set_ = "Revised Core Set"
+id = 117
+type = "Treachery"
+encounter_set = "Sauron's Reach Campaign"
+sphere = ""
+cost = 0
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "When Revealed: Each player raises his threat by 1 for each character he controls that is not currently committed to a quest."
+shadow = "Shadow: Defending player chooses and returns 1 exhausted ally he controls to its owner's hand. If he controls no exhausted allies, raise his threat by 3."
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_8o3h7"]
+script = ExtResource("1_3s7ho")
+name = "Quick Strike"
+set_ = "Revised Core Set"
+id = 35
+type = "Event"
+encounter_set = ""
+sphere = "Tactics"
+cost = 1
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "<b>Action:</b> Exhaust a character you control to immediately declare it as an attacker (and resolve its attack) against any eligible enemy target."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_gumdb"]
+script = ExtResource("1_3s7ho")
+name = "Radagast's Cunning"
+set_ = "Revised Core Set"
+id = 65
+type = "Event"
+encounter_set = ""
+sphere = "Lore"
+cost = 1
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "<b>Quest Action:</b> Choose an enemy in the staging area. Until the end of the phase, that enemy does not contribute its [threat]"
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_xw2f0"]
+script = ExtResource("1_3s7ho")
+name = "Rain of Arrows"
+set_ = "Revised Core Set"
+id = 33
+type = "Event"
+encounter_set = ""
+sphere = "Tactics"
+cost = 1
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "<b>Action:</b> Exhaust a character you control with the ranged keyword to choose a player. Deal 1 damage to each enemy engaged with that player."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_0qb3d"]
+script = ExtResource("1_3s7ho")
+name = "Scarred"
+set_ = "Revised Core Set"
+id = 122
+type = "Treachery"
+encounter_set = "Journey Along the Anduin Campaign"
+sphere = ""
+cost = 0
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "Permanent. Limit 1 per hero."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_nvq0m"]
+script = ExtResource("1_3s7ho")
+name = "Secret Paths"
+set_ = "Revised Core Set"
+id = 66
+type = "Event"
+encounter_set = ""
+sphere = "Lore"
+cost = 1
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "<b>Quest Action:</b> Choose a location in the staging area. Until the end of the phase, that location does not contribute its [threat]"
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_eckv0"]
+script = ExtResource("1_3s7ho")
+name = "Self Preservation"
+set_ = "Revised Core Set"
+id = 72
+type = "Attachment"
+encounter_set = ""
+sphere = "Lore"
+cost = 3
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "Attach to a character.
+<b>Action:</b> Exhaust Self Preservation to heal 2 points of damage from attached character."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_jmlp1"]
+script = ExtResource("1_3s7ho")
+name = "Shadow Key"
+set_ = "Revised Core Set"
+id = 110
+type = "Objective"
+encounter_set = "Escape from Dol Guldur Campaign"
+sphere = ""
+cost = 0
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "Guarded. Restricted."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_r6cjn"]
+script = ExtResource("1_3s7ho")
+name = "Silverlode Archer"
+set_ = "Revised Core Set"
+id = 17
+type = "Ally"
+encounter_set = ""
+sphere = "Leadership"
+cost = 3
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 1
+attack = 2
+defense = 0
+health = 1
+text = "Ranged."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_no2vg"]
+script = ExtResource("1_3s7ho")
+name = "Sneak Attack"
+set_ = "Revised Core Set"
+id = 23
+type = "Event"
+encounter_set = ""
+sphere = "Leadership"
+cost = 1
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "<b>Action:</b> Put 1 ally card into play from your hand. At the end of the phase, if that ally is still in play, return it to your hand."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_1vl5f"]
+script = ExtResource("1_3s7ho")
+name = "Snowbourn Scout"
+set_ = "Revised Core Set"
+id = 16
+type = "Ally"
+encounter_set = ""
+sphere = "Leadership"
+cost = 1
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 1
+health = 1
+text = "<b>Response:</b> After Snowbourn Scout enters play, choose a location. Place 1 progress token on that location."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_bp8wh"]
+script = ExtResource("1_3s7ho")
+name = "Son of Arnor"
+set_ = "Revised Core Set"
+id = 15
+type = "Ally"
+encounter_set = ""
+sphere = "Leadership"
+cost = 3
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 2
+defense = 0
+health = 2
+text = "<b>Response:</b> After Son of Arnor enters play, choose an enemy card in the staging area or currently engaged with another player. Engage that enemy."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_q8b02"]
+script = ExtResource("1_3s7ho")
+name = "Stand Together"
+set_ = "Revised Core Set"
+id = 38
+type = "Event"
+encounter_set = ""
+sphere = "Tactics"
+cost = 0
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "<b>Action:</b> Choose a player. That player may declare any number of his eligible characters as defenders against each enemy attacking him this phase."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_tk51x"]
+script = ExtResource("1_3s7ho")
+name = "Stand and Fight"
+set_ = "Revised Core Set"
+id = 51
+type = "Event"
+encounter_set = ""
+sphere = "Spirit"
+cost = -1
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "<b>Action:</b> Choose an ally with a printed cost of X in any player's discard pile. Put that ally into play under your control. (The chosen ally can belong to any sphere of influence.)"
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_uhtmb"]
+script = ExtResource("1_3s7ho")
+name = "Steward of Gondor"
+set_ = "Revised Core Set"
+id = 26
+type = "Attachment"
+encounter_set = ""
+sphere = "Leadership"
+cost = 2
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "Attach to a hero.
+Attached hero gains the <b><i>Gondor</i></b> trait.
+<b>Action:</b> Exhaust Steward of Gondor to add 2 resources to attached hero's resource pool."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_u47r8"]
+script = ExtResource("1_3s7ho")
+name = "Strength of Will"
+set_ = "Revised Core Set"
+id = 47
+type = "Event"
+encounter_set = ""
+sphere = "Spirit"
+cost = 0
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "<b>Response:</b> After you travel to a location, exhaust a [spirit] character to place 2 progress tokens on that location."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_52jre"]
+script = ExtResource("1_3s7ho")
+name = "Swift Strike"
+set_ = "Revised Core Set"
+id = 37
+type = "Event"
+encounter_set = ""
+sphere = "Tactics"
+cost = 2
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "<b>Response:</b> After a character is declared as a defender, deal 2 damage to the attacking enemy."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_66602"]
+script = ExtResource("1_3s7ho")
+name = "Thalin"
+set_ = "Revised Core Set"
+id = 6
+type = "Hero"
+encounter_set = ""
+sphere = "Tactics"
+cost = 0
+threat = 9
+threat_cost = 0
+quest_points = 0
+willpower = 1
+attack = 2
+defense = 2
+health = 4
+text = "While Thalin is committed to a quest, deal 1 damage to each enemy as it is revealed by the encounter deck."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_tid3l"]
+script = ExtResource("1_3s7ho")
+name = "The Brown Lands"
+set_ = "Revised Core Set"
+id = 87
+type = "Location"
+encounter_set = "Wilderlands Campaign"
+sphere = ""
+cost = 0
+threat = 5
+threat_cost = 0
+quest_points = 1
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "Forced: After the players travel to The Brown Lands, place 1 progress token on it."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_tn8n8"]
+script = ExtResource("1_3s7ho")
+name = "The East Bight"
+set_ = "Revised Core Set"
+id = 88
+type = "Location"
+encounter_set = "Wilderlands Campaign"
+sphere = ""
+cost = 0
+threat = 1
+threat_cost = 0
+quest_points = 6
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "When faced with the option to travel, the players must travel to The East Bight if there is no active location."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_fhw2n"]
+script = ExtResource("1_3s7ho")
+name = "The Favor of the Lady"
+set_ = "Revised Core Set"
+id = 55
+type = "Attachment"
+encounter_set = ""
+sphere = "Spirit"
+cost = 2
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "Attach to a hero.
+Attached hero gains +1 [willpower]."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_mq67l"]
+script = ExtResource("1_3s7ho")
+name = "The Galadhrim's Greeting"
+set_ = "Revised Core Set"
+id = 46
+type = "Event"
+encounter_set = ""
+sphere = "Spirit"
+cost = 3
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "<b>Action:</b> Reduce one player's threat by 6, or reduce each player's threat by 2."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_5bku8"]
+script = ExtResource("1_3s7ho")
+name = "The Necromancer's Reach"
+set_ = "Revised Core Set"
+id = 93
+type = "Treachery"
+encounter_set = "Dol Guldur Orcs Campaign"
+sphere = ""
+cost = 0
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "When Revealed: Deal 1 damage to each exhausted character."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_sfnos"]
+script = ExtResource("1_3s7ho")
+name = "Thicket of Spears"
+set_ = "Revised Core Set"
+id = 36
+type = "Event"
+encounter_set = ""
+sphere = "Tactics"
+cost = 3
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "You must use resources from 3 different heroes' pools to pay for this card.
+<b>Action:</b> Choose a player. That player's engaged enemies cannot attack that player this phase."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_5keli"]
+script = ExtResource("1_3s7ho")
+name = "Théodred"
+set_ = "Revised Core Set"
+id = 2
+type = "Hero"
+encounter_set = ""
+sphere = "Leadership"
+cost = 0
+threat = 8
+threat_cost = 0
+quest_points = 0
+willpower = 1
+attack = 2
+defense = 1
+health = 4
+text = "<b>Response:</b> After Théodred commits to a quest, choose a hero committed to that quest. Add 1 resource to that hero's resource pool."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_nfcyy"]
+script = ExtResource("1_3s7ho")
+name = "Tower Gate"
+set_ = "Revised Core Set"
+id = 107
+type = "Location"
+encounter_set = "Escape from Dol Guldur Campaign"
+sphere = ""
+cost = 0
+threat = 2
+threat_cost = 0
+quest_points = 1
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "Forced: After travelling to Tower Gate each player places the top card of his deck, face down in front of him, as if it just engaged him from the staging area. These cards are called 'Orc Guard', and act as enemies with: 1 hit point, 1  and 1"
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_y2kh3"]
+script = ExtResource("1_3s7ho")
+name = "Treacherous Fog"
+set_ = "Revised Core Set"
+id = 118
+type = "Treachery"
+encounter_set = "Sauron's Reach Campaign"
+sphere = ""
+cost = 0
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "When Revealed: Each location in the staging area gets +1  until the end of the phase. Then, each player with a threat of 35 or higher chooses and discards 1 card from his hand."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_3ivhs"]
+script = ExtResource("1_3s7ho")
+name = "Under the Shadow"
+set_ = "Revised Core Set"
+id = 104
+type = "Treachery"
+encounter_set = "Escape from Dol Guldur Campaign"
+sphere = ""
+cost = 0
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "When Revealed: Until the end of the phase, raise the total  in the staging area by X, where X is the number of players in the game."
+shadow = "Shadow: Defending player raises his threat by the number of enemies with which he is engaged."
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_42bgc"]
+script = ExtResource("1_3s7ho")
+name = "Unexpected Courage"
+set_ = "Revised Core Set"
+id = 57
+type = "Attachment"
+encounter_set = ""
+sphere = "Spirit"
+cost = 2
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "Attach to a hero.
+<b>Action:</b> Exhaust Unexpected Courage to ready attached hero."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_ekqrt"]
+script = ExtResource("1_3s7ho")
+name = "Ungoliant's Spawn"
+set_ = "Revised Core Set"
+id = 76
+type = "Enemy"
+encounter_set = "Spiders of Mirkwood Campaign"
+sphere = ""
+cost = 0
+threat = 3
+threat_cost = 32
+quest_points = 0
+willpower = 0
+attack = 5
+defense = 2
+health = 0
+text = "When Revealed: Each character currently committed to a quest gets -1  until the end of the phase."
+shadow = "Shadow: Raise defending player's threat by 4. (Raise defending player's threat by 8 instead if this attack is undefended.)"
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_kfhvh"]
+script = ExtResource("1_3s7ho")
+name = "Ungoliant's Swarm"
+set_ = "Revised Core Set"
+id = 120
+type = "Enemy"
+encounter_set = "Passage Through Mirkwood Campaign"
+sphere = ""
+cost = 0
+threat = 3
+threat_cost = 33
+quest_points = 0
+willpower = 0
+attack = 2
+defense = 2
+health = 0
+text = "Forced: After Ungoliant's Swarm engages a player, that player must choose and exhaust 2 characters they control."
+shadow = "Shadow: Put Ungoliant's Swarm into play engaged with you."
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_543jh"]
+script = ExtResource("1_3s7ho")
+name = "Valiant Sacrifice"
+set_ = "Revised Core Set"
+id = 24
+type = "Event"
+encounter_set = ""
+sphere = "Leadership"
+cost = 1
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "<b>Response:</b> After an ally card leaves play, that card's controller draws 2 cards."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_5vq3y"]
+script = ExtResource("1_3s7ho")
+name = "Veteran Axehand"
+set_ = "Revised Core Set"
+id = 28
+type = "Ally"
+encounter_set = ""
+sphere = "Tactics"
+cost = 2
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 2
+defense = 1
+health = 2
+text = ""
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_iy2ue"]
+script = ExtResource("1_3s7ho")
+name = "Wandering Took"
+set_ = "Revised Core Set"
+id = 43
+type = "Ally"
+encounter_set = ""
+sphere = "Spirit"
+cost = 2
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 1
+attack = 1
+defense = 1
+health = 2
+text = "<b>Action:</b> Reduce your threat by 3 to give control of Wandering Took to another player. Raise that player's threat by 3. (Limit once per round.)"
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_fbsqw"]
+script = ExtResource("1_3s7ho")
+name = "Wargs"
+set_ = "Revised Core Set"
+id = 85
+type = "Enemy"
+encounter_set = "Wilderlands Campaign"
+sphere = ""
+cost = 0
+threat = 2
+threat_cost = 20
+quest_points = 0
+willpower = 0
+attack = 3
+defense = 1
+health = 0
+text = "Forced: If Wargs is dealt a shadow card with no effect, return Wargs to the staging area after it attacks."
+shadow = "Shadow: attacking enemy gets +1  (+2  instead if this attack is undefended.)"
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_nho74"]
+script = ExtResource("1_3s7ho")
+name = "Will of the West"
+set_ = "Revised Core Set"
+id = 49
+type = "Event"
+encounter_set = ""
+sphere = "Spirit"
+cost = 1
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "<b>Action:</b> Choose a player. Shuffle that player's discard pile back into his deck. Remove Will of the West from the game."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_bd464"]
+script = ExtResource("1_3s7ho")
+name = "Wolf Rider"
+set_ = "Revised Core Set"
+id = 81
+type = "Enemy"
+encounter_set = "Wilderlands Campaign"
+sphere = ""
+cost = 0
+threat = 1
+threat_cost = 10
+quest_points = 0
+willpower = 0
+attack = 2
+defense = 0
+health = 0
+text = "Surge."
+shadow = "Shadow: Wolf Rider attacks the defending player. That player may declare 1 character as a defender. Deal Wolf Rider its own Shadow card. After combat, return Wolf Rider to the top of the encounter deck."
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[sub_resource type="Resource" id="Resource_xah7f"]
+script = ExtResource("1_3s7ho")
+name = "Éowyn"
+set_ = "Revised Core Set"
+id = 7
+type = "Hero"
+encounter_set = ""
+sphere = "Spirit"
+cost = 0
+threat = 9
+threat_cost = 0
+quest_points = 0
+willpower = 4
+attack = 1
+defense = 1
+health = 3
+text = "<b>Action:</b> Discard 1 card from your hand to give Éowyn +1 [willpower] until the end of the phase. This effect may be triggered by each player once each round."
+shadow = ""
+abilities = Array[ExtResource("1_7h0g7")]([])
+
+[resource]
+script = ExtResource("2_vtvfn")
+cards = {
+"A Light in the Dark": SubResource("Resource_3yelx"),
+"A Test of Will": SubResource("Resource_vg5ro"),
+"Aragorn": SubResource("Resource_wk0pt"),
+"Banks of the Anduin": SubResource("Resource_lmrom"),
+"Beorn": SubResource("Resource_0icrw"),
+"Beorn's Hospitality": SubResource("Resource_qad7h"),
+"Beravor": SubResource("Resource_q7sfa"),
+"Black Forest Bats": SubResource("Resource_yqe00"),
+"Blade Mastery": SubResource("Resource_cklwb"),
+"Blade of Gondolin": SubResource("Resource_l5k6b"),
+"Brok Ironfist": SubResource("Resource_37ywy"),
+"Caught in a Web": SubResource("Resource_rxrvl"),
+"Cavern Guardian": SubResource("Resource_hcop5"),
+"Celebrían's Stone": SubResource("Resource_6b0ke"),
+"Chieftan Ufthak": SubResource("Resource_i0fjb"),
+"Citadel Plate": SubResource("Resource_qpok5"),
+"Common Cause": SubResource("Resource_2njtq"),
+"Dark Knowledge": SubResource("Resource_da7yt"),
+"Daughter of the Nimrodel": SubResource("Resource_jprvf"),
+"Denethor": SubResource("Resource_7x3nj"),
+"Despair": SubResource("Resource_wbprw"),
+"Dol Guldur Beastmaster": SubResource("Resource_ajb4d"),
+"Dol Guldur Orcs": SubResource("Resource_m5q41"),
+"Driven by Shadow": SubResource("Resource_5ie4r"),
+"Dungeon Jailor": SubResource("Resource_djenp"),
+"Dungeon Torch": SubResource("Resource_l72sj"),
+"Dwarven Axe": SubResource("Resource_ofbp3"),
+"Dwarven Tomb": SubResource("Resource_lkkvx"),
+"Dúnhere": SubResource("Resource_ihrcf"),
+"East Bight Patrol": SubResource("Resource_mqqv3"),
+"Eastern Crows": SubResource("Resource_dnu0m"),
+"Eleanor": SubResource("Resource_uirt8"),
+"Enchanted Stream": SubResource("Resource_ln2n3"),
+"Endless Caverns": SubResource("Resource_hsv2t"),
+"Erebor Hammersmith": SubResource("Resource_hs4lf"),
+"Ever Vigilant": SubResource("Resource_n7eco"),
+"Evil Storm": SubResource("Resource_ihsc5"),
+"Eyes of the Forest": SubResource("Resource_81gid"),
+"Faramir": SubResource("Resource_brp2q"),
+"Feint": SubResource("Resource_3k5jo"),
+"For Gondor!": SubResource("Resource_6nlje"),
+"Forest Gate": SubResource("Resource_qftbe"),
+"Forest Snare": SubResource("Resource_yocgs"),
+"Forest Spider": SubResource("Resource_eeh5q"),
+"Fortune or Fate": SubResource("Resource_fdm3h"),
+"Gandalf": SubResource("Resource_8mbfs"),
+"Gandalf's Map": SubResource("Resource_eg3fq"),
+"Gandalf's Search": SubResource("Resource_kchst"),
+"Gimli": SubResource("Resource_f1xxh"),
+"Gladden Fields": SubResource("Resource_5yfn4"),
+"Glorfindel": SubResource("Resource_6ydqk"),
+"Gléowine": SubResource("Resource_sgveb"),
+"Glóin": SubResource("Resource_d57st"),
+"Goblin Sniper": SubResource("Resource_q5rua"),
+"Gondorian Spearman": SubResource("Resource_lswfg"),
+"Great Forest Web": SubResource("Resource_0jr5o"),
+"Grim Resolve": SubResource("Resource_gx7l6"),
+"Guard of the Citadel": SubResource("Resource_5rlcv"),
+"Hasty Stroke": SubResource("Resource_xv3ks"),
+"Henamarth Riversong": SubResource("Resource_nh70l"),
+"Hill Troll": SubResource("Resource_xm85h"),
+"Horn of Gondor": SubResource("Resource_2ooof"),
+"Horseback Archer": SubResource("Resource_1iw6e"),
+"Hummerhorns": SubResource("Resource_ptfvm"),
+"Iron Shackles": SubResource("Resource_1w65o"),
+"King Spider": SubResource("Resource_71lp1"),
+"Legolas": SubResource("Resource_imd5q"),
+"Lingering Venom": SubResource("Resource_atpwa"),
+"Longbeard Orc Slayer": SubResource("Resource_uj3mt"),
+"Lore of Imladris": SubResource("Resource_5v2c2"),
+"Lórien Guide": SubResource("Resource_4qadd"),
+"Lórien's Wealth": SubResource("Resource_hlgik"),
+"Marsh Adder": SubResource("Resource_nrehi"),
+"Massing at Night": SubResource("Resource_v3ey3"),
+"Mendor": SubResource("Resource_idy2h"),
+"Miner of the Iron Hills": SubResource("Resource_o3e66"),
+"Misty Mountain Goblins": SubResource("Resource_51wou"),
+"Mountains of Mirkwood": SubResource("Resource_n5v1m"),
+"Nazgûl of Dol Guldur": SubResource("Resource_hq27q"),
+"Necromancer's Pass": SubResource("Resource_hwaju"),
+"Northern Tracker": SubResource("Resource_aaytb"),
+"Old Forest Road": SubResource("Resource_xdrfm"),
+"Power in the Earth": SubResource("Resource_xrwnn"),
+"Protector of Lórien": SubResource("Resource_4ar5p"),
+"Pursued by Shadow": SubResource("Resource_obk1q"),
+"Quick Strike": SubResource("Resource_8o3h7"),
+"Radagast's Cunning": SubResource("Resource_gumdb"),
+"Rain of Arrows": SubResource("Resource_xw2f0"),
+"Scarred": SubResource("Resource_0qb3d"),
+"Secret Paths": SubResource("Resource_nvq0m"),
+"Self Preservation": SubResource("Resource_eckv0"),
+"Shadow Key": SubResource("Resource_jmlp1"),
+"Silverlode Archer": SubResource("Resource_r6cjn"),
+"Sneak Attack": SubResource("Resource_no2vg"),
+"Snowbourn Scout": SubResource("Resource_1vl5f"),
+"Son of Arnor": SubResource("Resource_bp8wh"),
+"Stand Together": SubResource("Resource_q8b02"),
+"Stand and Fight": SubResource("Resource_tk51x"),
+"Steward of Gondor": SubResource("Resource_uhtmb"),
+"Strength of Will": SubResource("Resource_u47r8"),
+"Swift Strike": SubResource("Resource_52jre"),
+"Thalin": SubResource("Resource_66602"),
+"The Brown Lands": SubResource("Resource_tid3l"),
+"The East Bight": SubResource("Resource_tn8n8"),
+"The Favor of the Lady": SubResource("Resource_fhw2n"),
+"The Galadhrim's Greeting": SubResource("Resource_mq67l"),
+"The Necromancer's Reach": SubResource("Resource_5bku8"),
+"Thicket of Spears": SubResource("Resource_sfnos"),
+"Théodred": SubResource("Resource_5keli"),
+"Tower Gate": SubResource("Resource_nfcyy"),
+"Treacherous Fog": SubResource("Resource_y2kh3"),
+"Under the Shadow": SubResource("Resource_3ivhs"),
+"Unexpected Courage": SubResource("Resource_42bgc"),
+"Ungoliant's Spawn": SubResource("Resource_ekqrt"),
+"Ungoliant's Swarm": SubResource("Resource_kfhvh"),
+"Valiant Sacrifice": SubResource("Resource_543jh"),
+"Veteran Axehand": SubResource("Resource_5vq3y"),
+"Wandering Took": SubResource("Resource_iy2ue"),
+"Wargs": SubResource("Resource_fbsqw"),
+"Will of the West": SubResource("Resource_nho74"),
+"Wolf Rider": SubResource("Resource_bd464"),
+"Éowyn": SubResource("Resource_xah7f")
+}
+sets = {}

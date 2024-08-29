@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_5hc1x"]
+
+[resource]
+script = ExtResource("1_5hc1x")
+name = "Lórien Guide"
+set_ = "Revised Core Set"
+id = 44
+type = "Ally"
+encounter_set = ""
+sphere = "Spirit"
+cost = 3
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 1
+attack = 1
+defense = 0
+health = 2
+text = "<b>Response:</b> After Lórien Guide commits to a quest, place 1 progress token on the active location."
+shadow = ""

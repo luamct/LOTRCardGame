@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_qlcqe"]
+
+[resource]
+script = ExtResource("1_qlcqe")
+name = "Ungoliant's Spawn"
+set_ = "Revised Core Set"
+id = 76
+type = "Enemy"
+encounter_set = "Spiders of Mirkwood Campaign"
+sphere = ""
+cost = 0
+threat = 3
+threat_cost = 32
+quest_points = 0
+willpower = 0
+attack = 5
+defense = 2
+health = 0
+text = "When Revealed: Each character currently committed to a quest gets -1  until the end of the phase."
+shadow = "Shadow: Raise defending player's threat by 4. (Raise defending player's threat by 8 instead if this attack is undefended.)"

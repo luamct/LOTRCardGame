@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_u2qh2"]
+
+[resource]
+script = ExtResource("1_u2qh2")
+name = "Glóin"
+set_ = "Revised Core Set"
+id = 3
+type = "Hero"
+encounter_set = ""
+sphere = "Leadership"
+cost = 0
+threat = 9
+threat_cost = 0
+quest_points = 0
+willpower = 2
+attack = 2
+defense = 1
+health = 4
+text = "<b>Response:</b> After Glóin suffers damage, add 1 resource to his resource pool for each point of damage he just suffered."
+shadow = ""

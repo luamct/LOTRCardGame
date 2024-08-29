@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_gf6aa"]
+
+[resource]
+script = ExtResource("1_gf6aa")
+name = "Chieftan Ufthak"
+set_ = "Revised Core Set"
+id = 90
+type = "Enemy"
+encounter_set = "Dol Guldur Orcs Campaign"
+sphere = ""
+cost = 0
+threat = 2
+threat_cost = 35
+quest_points = 0
+willpower = 0
+attack = 3
+defense = 3
+health = 0
+text = "Chieftain Ufthak get +2  for each resource token on him."
+shadow = ""

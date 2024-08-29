@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="QuestCardData" load_steps=3 format=3 uid="uid://d4emycyu7kv6o"]
+
+[ext_resource type="Script" path="res://scripts/resources/quest_card_data.gd" id="1_4eqd6"]
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_oqvma"]
+
+[resource]
+script = ExtResource("1_4eqd6")
+stage = "2"
+name_a = "A Fork in the Road"
+quest_points_a = 0
+text_a = ""
+flavor_a = "As you move through Mirkwood, hounded by spiders, the forest path forks before you..."
+name_b = "A Fork in the Road"
+quest_points_b = 2
+text_b = "Forced: When you defeat this stage, proceed to one of the 2 \"A Chosen Path\" stages, at random."
+flavor_b = "Unsure of what lies ahead but spurred by the urgency of your message, you choose a path and proceed..."
+name = "A Fork in the Road"
+set_ = "Revised Core Set"
+id = 120
+type = ""
+encounter_set = ""
+sphere = ""
+cost = 0
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = ""
+shadow = ""
+abilities = Array[ExtResource("1_oqvma")]([])

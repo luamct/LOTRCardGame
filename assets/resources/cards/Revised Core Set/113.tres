@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_pgqhk"]
+
+[resource]
+script = ExtResource("1_pgqhk")
+name = "Banks of the Anduin"
+set_ = "Revised Core Set"
+id = 113
+type = "Location"
+encounter_set = "Journey Along the Anduin Campaign"
+sphere = ""
+cost = 0
+threat = 1
+threat_cost = 0
+quest_points = 3
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "Forced: If Banks of the Anduin leaves play, return it to the top of the encounter deck instead of placing it in the discard pile."
+shadow = ""

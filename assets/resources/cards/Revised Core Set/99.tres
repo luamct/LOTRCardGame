@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_xx71v"]
+
+[resource]
+script = ExtResource("1_xx71v")
+name = "Old Forest Road"
+set_ = "Revised Core Set"
+id = 99
+type = "Location"
+encounter_set = "Passage Through Mirkwood Campaign"
+sphere = ""
+cost = 0
+threat = 1
+threat_cost = 0
+quest_points = 3
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "Response: After you travel to Old Forest Road the first player may choose and ready 1 character he controls."
+shadow = ""

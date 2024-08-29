@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_du631"]
+
+[resource]
+script = ExtResource("1_du631")
+name = "For Gondor!"
+set_ = "Revised Core Set"
+id = 22
+type = "Event"
+encounter_set = ""
+sphere = "Leadership"
+cost = 2
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "<b>Action:</b> Until the end of the phase, all characters get +1 [attack]. All <b><i>Gondor</i></b> characters also get +1 [defense] until the end of the phase."
+shadow = ""

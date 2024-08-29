@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="QuestCardData" load_steps=3 format=3 uid="uid://csgrd6pnymuw5"]
+
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_nkqy1"]
+[ext_resource type="Script" path="res://scripts/resources/quest_card_data.gd" id="1_xgkyf"]
+
+[resource]
+script = ExtResource("1_xgkyf")
+stage = "1"
+name_a = "Flies and Spiders"
+quest_points_a = 0
+text_a = "Setup: Search the encounter deck for 1 copy of the Forest Spider and 1 copy of the Old Forest Road, and add them to the staging area. Then, shuffle the encounter deck."
+flavor_a = "You are traveling through Mirkwood forest, carrying an urgent message from King Thanduil to the Lady Galadriel of Lorien. As you move along the dark trail, the spiders gather around you..."
+name_b = "Flies and Spiders"
+quest_points_b = 8
+text_b = ""
+flavor_b = "The nastiest things they saw were the cobwebs; dark dense cobwebs, with threads extradionairly thick, often stretched from tree to tree, or tangled in the lower branches on either side of them. There were none stretched across the path, but whether because some magic kept it clear, or for what other reasons they could not guess. - The Hobbit"
+name = "Flies and Spiders"
+set_ = "Revised Core Set"
+id = 119
+type = ""
+encounter_set = ""
+sphere = ""
+cost = 0
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = ""
+shadow = ""
+abilities = Array[ExtResource("1_nkqy1")]([])

@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://d4eskw50x4sn2"]
+
+[ext_resource type="Script" path="res://scenes/hand/hand.gd" id="1_6hpq0"]
+[ext_resource type="Script" path="res://scenes/hand/reading_viewport.gd" id="2_exrse"]
+
+[sub_resource type="Curve" id="Curve_1wogk"]
+_data = [Vector2(0, 0), 0.0, 3.2483, 0, 0, Vector2(0.501873, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.21223, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_sqoxt"]
+min_value = -1.0
+_data = [Vector2(0, 1), 0.0, -2.0, 0, 1, Vector2(1, -1), -2.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_owbk1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t857m"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_adus2"]
+material = SubResource("StandardMaterial3D_t857m")
+
+[node name="Hand" type="Node3D"]
+script = ExtResource("1_6hpq0")
+max_card_height = 0.2
+cards_height_curve = SubResource("Curve_1wogk")
+cards_rotation_curve = SubResource("Curve_sqoxt")
+
+[node name="CardsContainer" type="Node3D" parent="."]
+
+[node name="DraggingSurface" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DraggingSurface"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_owbk1")
+
+[node name="DropToPlayMarker" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.808, 1)
+
+[node name="ReadingViewport" type="Marker3D" parent="." groups=["reading_viewport"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 5)
+script = ExtResource("2_exrse")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ReadingViewport"]
+transform = Transform3D(5, 0, 0, 0, 7, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("QuadMesh_adus2")

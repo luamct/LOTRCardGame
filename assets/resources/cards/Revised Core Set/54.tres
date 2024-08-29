@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_bxf64"]
+
+[resource]
+script = ExtResource("1_bxf64")
+name = "Fortune or Fate"
+set_ = "Revised Core Set"
+id = 54
+type = "Event"
+encounter_set = ""
+sphere = "Spirit"
+cost = 5
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "<b>Action:</b> Choose a hero in any player's discard pile. Put that card into play, under its owner's control."
+shadow = ""

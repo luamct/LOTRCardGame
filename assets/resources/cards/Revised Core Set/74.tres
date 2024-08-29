@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_4eejk"]
+
+[resource]
+script = ExtResource("1_4eejk")
+name = "King Spider"
+set_ = "Revised Core Set"
+id = 74
+type = "Enemy"
+encounter_set = "Spiders of Mirkwood Campaign"
+sphere = ""
+cost = 0
+threat = 2
+threat_cost = 20
+quest_points = 0
+willpower = 0
+attack = 3
+defense = 1
+health = 0
+text = "When Revealed: Each player must choose and exhaust 1 character he controls."
+shadow = "Shadow: Defending player must choose and exhaust 1 character he controls. (2 characters instead if this attack is undefended.)"

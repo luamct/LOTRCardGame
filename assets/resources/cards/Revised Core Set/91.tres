@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_j4g67"]
+
+[resource]
+script = ExtResource("1_j4g67")
+name = "Dol Guldur Beastmaster"
+set_ = "Revised Core Set"
+id = 91
+type = "Enemy"
+encounter_set = "Dol Guldur Orcs Campaign"
+sphere = ""
+cost = 0
+threat = 2
+threat_cost = 35
+quest_points = 0
+willpower = 0
+attack = 3
+defense = 1
+health = 0
+text = "Forced: When Dol Guldur Beastmaster attacks, deal it 1 additional shadow card."
+shadow = ""

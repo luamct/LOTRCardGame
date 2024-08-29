@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ScenarioData" load_steps=5 format=3 uid="uid://bicpc5c4myrfi"]
+
+[ext_resource type="Script" path="res://scripts/resources/quest_card_data.gd" id="1_or6xf"]
+[ext_resource type="Resource" uid="uid://d06aw2uwxta4v" path="res://assets/resources/backup_quest_cards/119.tres" id="2_j6fpr"]
+[ext_resource type="Script" path="res://scripts/resources/scenario_data.gd" id="2_vc8ku"]
+[ext_resource type="Resource" uid="uid://dq75jqsyummy5" path="res://assets/resources/backup_quest_cards/120.tres" id="3_sy2ik"]
+
+[resource]
+script = ExtResource("2_vc8ku")
+name = "Passage Through Mirkwood"
+set_ = "Revised Core Set"
+encounter_sets = Array[String]([": Passage Through Mirkwood", "Spiders of Mirkwood", "Dol Guldur Orcs"])
+quest_cards = Array[ExtResource("1_or6xf")]([ExtResource("2_j6fpr"), ExtResource("3_sy2ik")])

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bb2bl6n2mj2pv"]
+
+[ext_resource type="Script" path="res://scenes/global/debug.gd" id="1_50agw"]
+
+[node name="Debug" type="MeshInstance3D"]
+script = ExtResource("1_50agw")

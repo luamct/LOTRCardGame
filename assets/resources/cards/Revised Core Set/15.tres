@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_pabyo"]
+
+[resource]
+script = ExtResource("1_pabyo")
+name = "Son of Arnor"
+set_ = "Revised Core Set"
+id = 15
+type = "Ally"
+encounter_set = ""
+sphere = "Leadership"
+cost = 3
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 2
+defense = 0
+health = 2
+text = "<b>Response:</b> After Son of Arnor enters play, choose an enemy card in the staging area or currently engaged with another player. Engage that enemy."
+shadow = ""

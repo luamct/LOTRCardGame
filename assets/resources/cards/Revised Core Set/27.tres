@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_ahyg7"]
+
+[resource]
+script = ExtResource("1_ahyg7")
+name = "Celebrían's Stone"
+set_ = "Revised Core Set"
+id = 27
+type = "Attachment"
+encounter_set = ""
+sphere = "Leadership"
+cost = 2
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 0
+attack = 0
+defense = 0
+health = 0
+text = "Attach to a hero. Restricted.
+Attached hero gains +2 [willpower]
+If attached hero is Aragorn, he also gains a [spirit] resource icon."
+shadow = ""

@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="DeckList" load_steps=3 format=3 uid="uid://bwjnp8jncspet"]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_e20cd"]
+[ext_resource type="Script" path="res://scripts/resources/decklist.gd" id="2_m47xc"]
+
+[resource]
+script = ExtResource("2_m47xc")
+cards = Array[ExtResource("1_e20cd")]([])
+decklist = "Leadership
+
+Aragorn (Core Set)
+Théodred (Core Set)
+Glóin (Core Set)
+
+1x Guard of the Citadel (Core Set)
+1x  Faramir (Core Set)
+1x Son of Arnor (Core Set)
+1x  Snowbourn Scout (Core Set)
+1x Silverlode Archer (Core Set)
+1x Longbeard Orc Slayer (Core Set)
+1x Brok Ironfist (Core Set)
+1x Ever Vigilant (Core Set)
+1x Common Cause (Core Set)
+1x For Gondor! (Core Set)
+1x Sneak Attack (Core Set)
+1x Valiant Sacrifice (Core Set)
+1x Grim Resolve (Core Set)
+1x Steward of Gondor (Core Set)
+1x Celebrían's Stone (Core Set)
+1x  Gandalf (Core Set)"

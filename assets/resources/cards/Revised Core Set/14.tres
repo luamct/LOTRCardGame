@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=8 format=3 uid="uid://cpoj3nskxmt2f"]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_ib6wr"]
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_mw6ly"]
+[ext_resource type="Script" path="res://scripts/resources/ability_cost_data.gd" id="2_kkgu2"]
+[ext_resource type="Script" path="res://scripts/resources/ability_effect_data.gd" id="3_qwxu8"]
+
+[sub_resource type="Resource" id="Resource_60f26"]
+script = ExtResource("2_kkgu2")
+cost_type = 0
+amount = 0
+
+[sub_resource type="Resource" id="Resource_dcxwu"]
+script = ExtResource("3_qwxu8")
+effect_type = 1
+applies_to = Array[int]([1])
+duration = 0
+amount = 1
+
+[sub_resource type="Resource" id="Resource_sv1kt"]
+script = ExtResource("1_mw6ly")
+type = 0
+turn_phase = 0
+costs = Array[ExtResource("2_kkgu2")]([SubResource("Resource_60f26")])
+targets = Array[int]([0])
+effects = Array[ExtResource("3_qwxu8")]([SubResource("Resource_dcxwu")])
+
+[resource]
+script = ExtResource("1_ib6wr")
+name = "Faramir"
+set_ = "Revised Core Set"
+id = 14
+type = "Ally"
+encounter_set = ""
+sphere = "Leadership"
+cost = 4
+threat = 0
+threat_cost = 0
+quest_points = 0
+willpower = 2
+attack = 1
+defense = 2
+health = 3
+text = "<b>Action:</b> Exhaust Faramir to choose a player. Each character controlled by that player gets +1 [willpower] until the end of the phase."
+shadow = ""
+abilities = Array[ExtResource("1_mw6ly")]([SubResource("Resource_sv1kt")])
