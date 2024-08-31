@@ -84,5 +84,5 @@ func _on_pass_button_button_down():
 		Enums.TurnPhase.Refresh:
 			go_to_phase(Enums.TurnPhase.Resource)
 
-func resolve_ability(ability: AbilityData, card: Card, player: Player):
-	ability_controller.resolve_ability(ability, self, card, player)
+func resolve_ability(ability: AbilityData, card: Card, _player: Player):
+	ability_controller.resolve_ability(ability, self, card, _player)

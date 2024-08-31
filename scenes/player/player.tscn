@@ -1,9 +1,25 @@
-[gd_scene load_steps=7 format=3 uid="uid://dtvaxpirkdhud"]
+[gd_scene load_steps=12 format=3 uid="uid://dtvaxpirkdhud"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_6bwgh"]
-[ext_resource type="PackedScene" uid="uid://d4eskw50x4sn2" path="res://scenes/hand/hand.tscn" id="1_bldp4"]
 [ext_resource type="PackedScene" uid="uid://cmdoownwjkp03" path="res://scenes/deck/deck.tscn" id="2_hnw1f"]
 [ext_resource type="Resource" uid="uid://olro2fbnu8mk" path="res://assets/resources/decks/decklist_1.tres" id="2_k17n6"]
+[ext_resource type="Script" path="res://scenes/player/reading_viewport.gd" id="5_4yhna"]
+
+[sub_resource type="Curve" id="Curve_1wogk"]
+_data = [Vector2(0, 0), 0.0, 3.2483, 0, 0, Vector2(0.501873, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.21223, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_sqoxt"]
+min_value = -1.0
+_data = [Vector2(0, 1), 0.0, -2.0, 0, 1, Vector2(1, -1), -2.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_owbk1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t857m"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_eptri"]
+material = SubResource("StandardMaterial3D_t857m")
 
 [sub_resource type="LabelSettings" id="LabelSettings_yq7d1"]
 font_size = 32
@@ -15,14 +31,43 @@ font_size = 32
 script = ExtResource("1_6bwgh")
 starting_hand_size = 6
 decklist = ExtResource("2_k17n6")
+max_card_height = 0.2
+cards_height_curve = SubResource("Curve_1wogk")
+cards_rotation_curve = SubResource("Curve_sqoxt")
 
-[node name="Hand" parent="." instance=ExtResource("1_bldp4")]
+[node name="View" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 7.37947, 26.0485)
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="View"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 21.8456, 25.2652)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.91143, 12.1364)
 current = true
+
+[node name="CardsContainer" type="Node3D" parent="View"]
+unique_name_in_owner = true
+
+[node name="DraggingSurface" type="Area3D" parent="View"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="View/DraggingSurface"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_owbk1")
+
+[node name="DropToPlayMarker" type="Marker3D" parent="View"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.808, 1)
+
+[node name="ReadingViewport" type="Marker3D" parent="View" groups=["reading_viewport"]]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 5)
+script = ExtResource("5_4yhna")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="View/ReadingViewport"]
+transform = Transform3D(5, 0, 0, 0, 7, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("QuadMesh_eptri")
 
 [node name="Deck" parent="." instance=ExtResource("2_hnw1f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.6617, 0, 23.4294)

@@ -21,7 +21,6 @@ static var hero_card_scene_path: String = "res://scenes/card/hero_card.tscn"
 
 var data: CardData
 var player: Player
-var hand: Hand
 var camera: Camera3D
 var texture: CompressedTexture2D
 
@@ -74,15 +73,13 @@ static func create(
 	_zone: Zone,
 	_scenario: Scenario,
 	_player: Player, 
-	_hand: Hand, 
 	_camera: Camera3D
 ) -> Card:
 	var card: Card = get_scene(_data.type).instantiate() as Card
 	card.data = _data
 	card.player = _player
-	card.hand = _hand
 	card.camera = _camera
-	card.reading_surface = _hand.dragging_surface_collision
+	card.reading_surface = _player.dragging_surface_collision
 	card.zone = _zone
 	card.state = State.REST
 	card.exausted = false
@@ -155,13 +152,13 @@ func enter_dragging(mouse_position: Vector3):
 	position.z += 1
 	rotation_degrees.z = 0
 
-	hand.dragging(true)
+	player.dragging(true)
 	# collision_shape.disabled = true
 	# dragging_state_changed.emit(true, self)
 
 func leave_dragging():
 	transform = transform_at_hand
-	hand.dragging(false)
+	player.dragging(false)
 	# collision_shape.disabled = false
 	# dragging_state_changed.emit(false, self)
 
@@ -222,9 +219,9 @@ func _input(event: InputEvent):
 
 				if (not result.has("position")):
 					return
-				
+
 				global_position = result["position"]
-				inside_drop_area = (global_position.y > hand.drop_to_play_marker.global_position.y)
+				inside_drop_area = (global_position.y > player.drop_to_play_marker.global_position.y)
 
 func _notification(what):
 	match what:
