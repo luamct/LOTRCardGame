@@ -1,6 +1,5 @@
-[gd_scene load_steps=8 format=3 uid="uid://djl5p6eb3jgiu"]
+[gd_scene load_steps=7 format=3 uid="uid://djl5p6eb3jgiu"]
 
-[ext_resource type="Script" path="res://scenes/board/board.gd" id="1_pv6fs"]
 [ext_resource type="Texture2D" uid="uid://i3pk0rfrpo2m" path="res://assets/textures/Middle Earth Map.jpeg" id="2_ljjhv"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_te0cj"]
@@ -24,7 +23,6 @@ size = Vector3(100, 1, 100)
 
 [node name="Board" type="StaticBody3D"]
 collision_mask = 4
-script = ExtResource("1_pv6fs")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.473233, 0.76012, -0.445273, -0.160757, 0.422452, 0.892015, 0.866145, 0.493712, -0.0777237, 0, 17.766, 15.7404)

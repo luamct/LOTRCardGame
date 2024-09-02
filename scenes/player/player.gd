@@ -72,11 +72,17 @@ func adjust_cards_in_hand():
 		var card = _cards[i]
 		var index = i / (_cards.size() - 1.0)
 
-		card.position.x = card_width * card_spacing * i - offset
-		card.position.y = cards_height_curve.sample(index) * max_card_height * card_height
-		card.position.z = -i * 0.01
+		var tween_duration = 0.1
+		var tween: Tween = create_tween().set_parallel(true)
+		var new_position: Vector3 = Vector3(
+			card_width * card_spacing * i - offset,
+			cards_height_curve.sample(index) * max_card_height * card_height,
+			-i * 0.01
+		)
+		tween.tween_property(card, "position", new_position, tween_duration)
 
-		card.rotation_degrees.z = cards_rotation_curve.sample(index) * max_card_rotation
+		var new_rotation_z = cards_rotation_curve.sample(index) * max_card_rotation
+		tween.tween_property(card, "rotation_degrees:z", new_rotation_z, tween_duration)
 		#print("Card %s: %s" % [card.data.name, str(card.global_position)])
 
 func set_threat_level():
@@ -128,7 +134,10 @@ func try_to_play(card: Card):
 	if (resources.get(card.data.sphere, 0) >= card.data.cost):
 		remove_resources(card.data.sphere, card.data.cost)
 		card.reparent(allies_area, false)
+		
 		card.position = Vector3.ZERO
+		card.position.x = allies.size() * card.width * 1.2
+		
 		card.rotation = Vector3.ZERO
 		card.scale = Vector3.ONE
 		card.zone = Card.Zone.BATTLEFIELD
@@ -150,7 +159,6 @@ func get_affected_cards(applies_to: AbilityData.TargetType) -> Array[Card]:
 	return []
 
 func apply_stats_effect(effect: AbilityEffectData):
-	print("Resolving effect to player")
 	var affected_cards: Array[Card] = []
 	for applies_to in effect.applies_to: 
 		affected_cards.append_array(get_affected_cards(applies_to))

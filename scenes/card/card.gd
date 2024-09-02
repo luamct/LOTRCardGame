@@ -6,6 +6,8 @@ signal dragging_state_changed(on: bool, card: Card)
 static var basic_card_scene_path: String = "res://scenes/card/basic_card.tscn"
 static var hero_card_scene_path: String = "res://scenes/card/hero_card.tscn"
 
+const TWEEN_DURATION = 0.05
+
 @export var highlight_height_boost: float
 @export var highlight_scale_boost: float
 @export var default_card_z: float = 1
@@ -117,8 +119,8 @@ func enter_highlight():
 		reading_viewport.highlight_hand_card(self)
 		
 	elif zone == Zone.BATTLEFIELD:
-		var card_texture: CompressedTexture2D = mesh.get_active_material(0).albedo_texture
-		reading_viewport.show_card(card_texture)
+		
+		reading_viewport.show_card(self)
 
 		#var space = get_world_3d().direct_space_state
 		#var query = PhysicsRayQueryParameters3D.create(camera.global_position, global_position, dragging_surface_layer)
@@ -212,10 +214,9 @@ func _input(event: InputEvent):
 
 				var ray_from = camera.project_ray_origin(mouse_position)
 				var ray_direction = camera.project_ray_normal(mouse_position)
-				var space_state: PhysicsDirectSpaceState3D = get_world_3d().direct_space_state
 				var query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(ray_from, ray_from + 100 * ray_direction, dragging_surface_layer)
 				query.collide_with_areas = true
-				var result = space_state.intersect_ray(query)
+				var result = get_world_3d().direct_space_state.intersect_ray(query)
 
 				if (not result.has("position")):
 					return
@@ -244,11 +245,11 @@ func get_resources():
 
 func exaust():
 	exausted = true
-	rotation_degrees.z = -90
+	create_tween().tween_property(self, "rotation_degrees:z", -90, TWEEN_DURATION)
 	
 func ready():
 	exausted = false
-	rotation_degrees.z = 0
+	create_tween().tween_property(self, "rotation_degrees:z", 0, TWEEN_DURATION)
 	
 func apply_stats_effect(effect: AbilityEffectData):
 	match effect.effect_type:
@@ -286,3 +287,5 @@ func on_end_of_phase():
 			unapply_stats_effect(ongoing_effects[i])
 			ongoing_effects.remove_at(i)
 	
+func get_texture() -> CompressedTexture2D:
+	return mesh.get_active_material(0).albedo_texture
