@@ -36,10 +36,8 @@ font_size = 32
 script = ExtResource("1_6bwgh")
 starting_hand_size = 6
 decklist = ExtResource("2_k17n6")
-card_spacing = null
 max_card_height = 0.2
 cards_height_curve = SubResource("Curve_1wogk")
-max_card_rotation = null
 cards_rotation_curve = SubResource("Curve_sqoxt")
 
 [node name="View" type="Node3D" parent="."]

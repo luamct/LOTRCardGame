@@ -21,7 +21,7 @@ extends Node3D
 @export var max_card_height: float
 @export var cards_height_curve: Curve
 
-@export var max_card_rotation: float = 15
+@export var max_card_rotation: float = -4
 @export var cards_rotation_curve: Curve
 
 var hand_cards: Array[Card]
@@ -44,11 +44,7 @@ func setup():
 	for card: CardData in decklist.cards:
 		var cd = card as CardData
 
-	print("\nStarting hand:")
 	var starting_cards_data: Array[CardData] = draw(starting_hand_size)
-	for card in starting_cards_data:
-		print(card.name)
-
 	hand_cards.assign(starting_cards_data.map(
 		func(card_data): return Card.create(card_data, Card.Zone.HAND, scenario, self, camera)
 	))
@@ -68,9 +64,10 @@ func adjust_cards_in_hand():
 	var card_height = _cards[0].height
 
 	var offset = (_cards.size() - 1) * (card_width * card_spacing) * 0.5
-	for i in _cards.size():
+	var n_cards: int = _cards.size()
+	for i in n_cards:
 		var card = _cards[i]
-		var index = i / (_cards.size() - 1.0)
+		var index = i / (n_cards - 1.0)
 
 		var tween_duration = 0.1
 		var tween: Tween = create_tween().set_parallel(true)
@@ -81,7 +78,8 @@ func adjust_cards_in_hand():
 		)
 		tween.tween_property(card, "position", new_position, tween_duration)
 
-		var new_rotation_z = cards_rotation_curve.sample(index) * max_card_rotation
+		var middle = (n_cards - 1) * 0.5
+		var new_rotation_z =  (i - middle) * max_card_rotation
 		tween.tween_property(card, "rotation_degrees:z", new_rotation_z, tween_duration)
 		#print("Card %s: %s" % [card.data.name, str(card.global_position)])
 
@@ -164,3 +162,9 @@ func apply_stats_effect(effect: AbilityEffectData):
 		affected_cards.append_array(get_affected_cards(applies_to))
 
 	affected_cards.map(func(card: Card): card.apply_stats_effect(effect))
+
+func draw_cards(n: int):
+	pass
+	
+	
+	
