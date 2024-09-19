@@ -44,14 +44,16 @@ func setup():
 	for card: CardData in decklist.cards:
 		var cd = card as CardData
 
-	var starting_cards_data: Array[CardData] = draw(starting_hand_size)
-	hand_cards.assign(starting_cards_data.map(
-		func(card_data): return Card.create(card_data, Card.Zone.HAND, scenario, self, camera)
-	))
+	for card_data in draw(starting_hand_size):
+		var card_node: Card = Card.create(card_data, Card.Zone.HAND, scenario, self, camera)
+		hand_cards.append(card_node)
+	#hand_cards.assign(starting_cards_data.map(
+		#func(card_data): return 
+	#))
 	
 	for card in hand_cards:
 		cards_container.add_child(card)
-		
+
 	adjust_cards_in_hand()
 	dragging(false)
 	

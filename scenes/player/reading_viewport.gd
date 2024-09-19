@@ -5,8 +5,8 @@ const MAX_BATTLEFIELD_X = 30  # In both directions: -30, 30
 const MAX_VIEWING_X = 8  # In both directions: -30, 30
 @export var x_position_curve: Curve
 
-@onready var mesh: MeshInstance3D = $MeshInstance3D
-@onready var material: StandardMaterial3D = mesh.get_active_material(0)
+@onready var mesh: MeshInstance3D = $CardMesh/Mesh
+@onready var material: StandardMaterial3D = mesh.get_active_material(2)
 
 func _ready():
 	mesh.visible = false
@@ -22,14 +22,13 @@ func show_card(card: Card):
 	var mesh_x_position: float = sample_curve(x_position) * MAX_VIEWING_X
 	mesh.position = Vector3(mesh_x_position, 3, 0)
 	
-	var texture: CompressedTexture2D = card.get_texture()
-	material.albedo_texture = texture
+	material.albedo_texture = card.get_texture()
 
 func highlight_hand_card(card: Card):
 	mesh.visible = true
 	mesh.position = Vector3(card.position.x, 0, 0)
 
-	material.albedo_texture = card.texture
+	material.albedo_texture = card.get_texture()
 
 func hide_card():
 	mesh.visible = false

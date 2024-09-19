@@ -14,8 +14,8 @@ const TWEEN_DURATION = 0.05
 @export_flags_3d_physics var dragging_surface_layer
 
 @onready var mesh: MeshInstance3D = $Mesh
-@onready var width: float = mesh.scale.x
-@onready var height: float = mesh.scale.y
+@onready var width: float = 5
+@onready var height: float = 7
 
 @onready var collision_shape: CollisionShape3D = $Area3D/CollisionShape3D
 @onready var reading_viewport: ReadingViewport = get_tree().get_first_node_in_group("reading_viewport")
@@ -24,7 +24,7 @@ const TWEEN_DURATION = 0.05
 var data: CardData
 var player: Player
 var camera: Camera3D
-var texture: CompressedTexture2D
+var card_material: StandardMaterial3D
 
 # Stats
 var cost: int
@@ -92,13 +92,20 @@ static func create(
 	card.defense = _data.defense
 	card.health = _data.health
 
+	card.card_material = StandardMaterial3D.new()
+	card.card_material.albedo_texture = get_card_art_texture(_data.id)
+	card.get_node("CardMesh/Mesh").set_surface_override_material(2, card.card_material)
+	
 	_scenario.end_of_phase.connect(card.on_end_of_phase)
 	_scenario.end_of_round.connect(card.on_end_of_round)
 	
 	return card
 
+static func get_card_art_texture(card_id: int):
+	return load("res://assets/database/scans/final/Revised Core Set/%d.png" % card_id)
+	
 func _ready():
-	render(data)
+	pass
 
 func _on_area_3d_mouse_exited():
 	if state == State.HIGHLIGHT:
@@ -163,14 +170,6 @@ func leave_dragging():
 	player.dragging(false)
 	# collision_shape.disabled = false
 	# dragging_state_changed.emit(false, self)
-
-func get_card_art_texture(card_id: int):
-	return load("res://assets/database/scans/final/Revised Core Set/%d.png" % card_id)
-
-func render(card_data: CardData):
-	texture = get_card_art_texture(card_data.id)
-	var material: StandardMaterial3D = mesh.get_active_material(0)
-	material.albedo_texture = texture
 
 func _on_area_3d_input_event(_camera, event, world_position, _normal, _shape_idx):
 	match state:
@@ -288,4 +287,4 @@ func on_end_of_phase():
 			ongoing_effects.remove_at(i)
 	
 func get_texture() -> CompressedTexture2D:
-	return mesh.get_active_material(0).albedo_texture
+	return card_material.albedo_texture

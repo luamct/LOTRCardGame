@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://dtvaxpirkdhud"]
+[gd_scene load_steps=14 format=3 uid="uid://dtvaxpirkdhud"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_6bwgh"]
 [ext_resource type="PackedScene" uid="uid://cmdoownwjkp03" path="res://scenes/deck/deck.tscn" id="2_hnw1f"]
 [ext_resource type="Resource" uid="uid://olro2fbnu8mk" path="res://assets/resources/decks/decklist_1.tres" id="2_k17n6"]
+[ext_resource type="PackedScene" uid="uid://dj0pfdqf121ee" path="res://scenes/card/card_mesh.tscn" id="4_wbqve"]
 [ext_resource type="Script" path="res://scenes/player/reading_viewport.gd" id="5_4yhna"]
 
 [sub_resource type="Curve" id="Curve_1wogk"]
@@ -72,7 +73,10 @@ x_position_curve = SubResource("Curve_ekaqf")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="View/ReadingViewport"]
 transform = Transform3D(5, 0, 0, 0, 7, 0, 0, 0, 1, 0, 0, 0)
+visible = false
 mesh = SubResource("QuadMesh_eptri")
+
+[node name="CardMesh" parent="View/ReadingViewport" instance=ExtResource("4_wbqve")]
 
 [node name="Deck" parent="." instance=ExtResource("2_hnw1f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.9837, 0, 25.761)
