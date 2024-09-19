@@ -24,7 +24,8 @@ const TWEEN_DURATION = 0.05
 var data: CardData
 var player: Player
 var camera: Camera3D
-var card_material: StandardMaterial3D
+var front_material: StandardMaterial3D
+var back_material: StandardMaterial3D
 
 # Stats
 var cost: int
@@ -32,6 +33,8 @@ var willpower: int
 var attack: int
 var defense: int
 var health: int
+
+var active_side: String # Only for quest cards
 
 var ongoing_effects: Array[AbilityEffectData]
 
@@ -56,10 +59,10 @@ var state: State
 
 # Refers to game mechanics only
 enum Zone {
-	DECK,
-	HAND,
-	BATTLEFIELD,
-	DISCARD
+	DECK = 0,
+	HAND = 1,
+	BATTLEFIELD = 2,
+	DISCARD = 3
 }
 var zone: Zone
 
@@ -74,13 +77,12 @@ static func create(
 	_data: CardData, 
 	_zone: Zone,
 	_scenario: Scenario,
-	_player: Player, 
-	_camera: Camera3D
+	_player: Player
 ) -> Card:
 	var card: Card = get_scene(_data.type).instantiate() as Card
 	card.data = _data
 	card.player = _player
-	card.camera = _camera
+	card.camera = _player.camera
 	card.reading_surface = _player.dragging_surface_collision
 	card.zone = _zone
 	card.state = State.REST
@@ -91,18 +93,29 @@ static func create(
 	card.attack = _data.attack
 	card.defense = _data.defense
 	card.health = _data.health
+	card.active_side = "A"
 
-	card.card_material = StandardMaterial3D.new()
-	card.card_material.albedo_texture = get_card_art_texture(_data.id)
-	card.get_node("CardMesh/Mesh").set_surface_override_material(2, card.card_material)
+	var side = "A" if _data.type == "Quest" else ""
+	card.front_material = StandardMaterial3D.new()
+	card.front_material.albedo_texture = get_card_art_texture(_data, side)
+	card.get_node("CardMesh/Mesh").set_surface_override_material(2, card.front_material)
 	
+	# Set back art only if its a quest card
+	if  _data.type == "Quest":
+		side = "B"
+		card.back_material = StandardMaterial3D.new()
+		card.back_material.albedo_texture = get_card_art_texture(_data, side)
+		card.get_node("CardMesh/Mesh").set_surface_override_material(1, card.back_material)
+
+		card.rotation_degrees.z = -90
+
 	_scenario.end_of_phase.connect(card.on_end_of_phase)
 	_scenario.end_of_round.connect(card.on_end_of_round)
 	
 	return card
 
-static func get_card_art_texture(card_id: int):
-	return load("res://assets/database/scans/final/Revised Core Set/%d.png" % card_id)
+static func get_card_art_texture(card: CardData, side: String = ""):
+	return load("res://assets/database/scans/final/%s/%d%s.png" % [card.set_, card.id, side])
 	
 func _ready():
 	pass
@@ -287,4 +300,4 @@ func on_end_of_phase():
 			ongoing_effects.remove_at(i)
 	
 func get_texture() -> CompressedTexture2D:
-	return card_material.albedo_texture
+	return front_material.albedo_texture

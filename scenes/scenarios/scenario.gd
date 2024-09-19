@@ -22,7 +22,7 @@ func _ready():
 func setup():
 	player.setup()
 
-	var instance: QuestCard = QuestCard.create(scenario.quest_cards[0])
+	var instance: Card = Card.create(scenario.quest_cards[0], Card.Zone.BATTLEFIELD, self, player)
 	quests_area.add_child(instance)
 
 func go_to_phase(_phase: Enums.TurnPhase):

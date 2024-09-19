@@ -15,9 +15,6 @@ size = Vector3(5, 7, 0.1)
 
 [node name="Card" type="Node3D"]
 script = ExtResource("1_yegit")
-highlight_height_boost = 0.4
-highlight_scale_boost = 0.8
-dragging_surface_layer = 16
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 7, 0, 0, 0, 1, 0, 0, 0)

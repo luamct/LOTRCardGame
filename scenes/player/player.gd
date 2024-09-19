@@ -45,7 +45,7 @@ func setup():
 		var cd = card as CardData
 
 	for card_data in draw(starting_hand_size):
-		var card_node: Card = Card.create(card_data, Card.Zone.HAND, scenario, self, camera)
+		var card_node: Card = Card.create(card_data, Card.Zone.HAND, scenario, self)
 		hand_cards.append(card_node)
 	#hand_cards.assign(starting_cards_data.map(
 		#func(card_data): return 
@@ -99,7 +99,7 @@ func draw(n: int) -> Array[CardData]:
 
 func setup_heroes():
 	for i in decklist.heroes.size():
-		var card: Card = Card.create(decklist.heroes[i], Card.Zone.BATTLEFIELD, scenario, self, camera)
+		var card: Card = Card.create(decklist.heroes[i], Card.Zone.BATTLEFIELD, scenario, self)
 		heroes_area.add_child(card)
 		card.position.x += i * card.width * 1.2
 

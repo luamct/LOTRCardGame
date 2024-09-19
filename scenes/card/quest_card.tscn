@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dkclo8qfebovn"]
+[gd_scene load_steps=5 format=3 uid="uid://d0hadv81dmuuj"]
 
 [ext_resource type="PackedScene" uid="uid://cqn0ri5nv31g4" path="res://scenes/card/card.tscn" id="1_vjbb1"]
-[ext_resource type="Script" path="res://scenes/card/quest_card.gd" id="2_nepln"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xlqw7"]
 resource_local_to_scene = true
@@ -14,7 +13,6 @@ material = SubResource("StandardMaterial3D_xlqw7")
 size = Vector3(7, 5, 0.1)
 
 [node name="QuestCard" instance=ExtResource("1_vjbb1")]
-script = ExtResource("2_nepln")
 
 [node name="Mesh" parent="." index="0"]
 transform = Transform3D(7, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0)
