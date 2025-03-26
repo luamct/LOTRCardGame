@@ -38,7 +38,6 @@ func _ready():
 	assert(decklist)
 
 func setup():
-
 	decklist.load()
 	print("\nDeck: " + str(decklist.cards.size()))
 	for card: CardData in decklist.cards:
@@ -56,7 +55,7 @@ func setup():
 
 	adjust_cards_in_hand()
 	dragging(false)
-	
+
 	setup_heroes()
 	set_threat_level()
 
@@ -67,15 +66,18 @@ func adjust_cards_in_hand():
 
 	var offset = (_cards.size() - 1) * (card_width * card_spacing) * 0.5
 	var n_cards: int = _cards.size()
+	
+	# When there are more than 6 cards, we need to squeeze them more
+	var height_curve_step = min(0.1, 0.5/(n_cards - 1))
 	for i in n_cards:
 		var card = _cards[i]
-		var index = i / (n_cards - 1.0)
+		var x_index = 0.5 + (1 + 2*i - n_cards) * height_curve_step
 
 		var tween_duration = 0.1
 		var tween: Tween = create_tween().set_parallel(true)
 		var new_position: Vector3 = Vector3(
 			card_width * card_spacing * i - offset,
-			cards_height_curve.sample(index) * max_card_height * card_height,
+			cards_height_curve.sample(x_index) * max_card_height * card_height,
 			-i * 0.01
 		)
 		tween.tween_property(card, "position", new_position, tween_duration)

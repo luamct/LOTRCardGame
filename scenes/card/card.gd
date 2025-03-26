@@ -11,7 +11,7 @@ const TWEEN_DURATION = 0.05
 @export var highlight_height_boost: float
 @export var highlight_scale_boost: float
 @export var default_card_z: float = 1
-@export_flags_3d_physics var dragging_surface_layer
+@export_flags_3d_physics var dragging_surface_layer: int
 
 @onready var mesh: MeshInstance3D = $Mesh
 @onready var width: float = 5
@@ -139,7 +139,6 @@ func enter_highlight():
 		reading_viewport.highlight_hand_card(self)
 		
 	elif zone == Zone.BATTLEFIELD:
-		
 		reading_viewport.show_card(self)
 
 		#var space = get_world_3d().direct_space_state
@@ -207,11 +206,12 @@ func get_activated_ability(abilities: Array[AbilityData]):
 	return abilities \
 		.filter(func (a): return a.type == AbilityData.AbilityType.ACTIVATED) \
 		.pop_back()
-	
+
 func _input(event: InputEvent):
 	if not (event is InputEventMouseMotion or event is InputEventMouseButton):
 		return
 	
+	#print(data.name, "\t", state, "\t", event.get_class())
 	match state:
 		State.DRAGGING:
 			if event.is_action_released("left_click"):
@@ -219,14 +219,14 @@ func _input(event: InputEvent):
 
 				if inside_drop_area:
 					player.try_to_play(self)
-				
+
 				enter_hand()
 			else:
 				var mouse_position = event.position
 
 				var ray_from = camera.project_ray_origin(mouse_position)
 				var ray_direction = camera.project_ray_normal(mouse_position)
-				var query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(ray_from, ray_from + 100 * ray_direction, dragging_surface_layer)
+				var query = PhysicsRayQueryParameters3D.create(ray_from, ray_from + 100 * ray_direction, dragging_surface_layer)
 				query.collide_with_areas = true
 				var result = get_world_3d().direct_space_state.intersect_ray(query)
 
