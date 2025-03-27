@@ -226,11 +226,15 @@ func _input(event: InputEvent):
 
 				var ray_from = camera.project_ray_origin(mouse_position)
 				var ray_direction = camera.project_ray_normal(mouse_position)
-				var query = PhysicsRayQueryParameters3D.create(ray_from, ray_from + 100 * ray_direction, dragging_surface_layer)
+				var query = PhysicsRayQueryParameters3D.create(
+					ray_from, 
+					ray_from + 100 * ray_direction, 
+					dragging_surface_layer
+				)
 				query.collide_with_areas = true
 				var result = get_world_3d().direct_space_state.intersect_ray(query)
 
-				if (not result.has("position")):
+				if not result.has("position"):
 					return
 
 				global_position = result["position"]

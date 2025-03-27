@@ -9,6 +9,7 @@ extends Node3D
 @onready var ui_threat: Label = $UI.find_child("ThreatValue")
 @onready var scenario: Scenario = get_tree().get_first_node_in_group("scenario")
 @onready var camera: Camera3D = %Camera3D
+@onready var deck: Deck = $Deck
 
 @export_group("Hand")
 @onready var drop_to_play_marker = %DropToPlayMarker
@@ -61,12 +62,15 @@ func setup():
 
 func adjust_cards_in_hand():
 	var _cards = cards_container.get_children().map(func(card): return card as Card)
+	if _cards.size() == 0:
+		return
+
 	var card_width = _cards[0].width
 	var card_height = _cards[0].height
 
 	var offset = (_cards.size() - 1) * (card_width * card_spacing) * 0.5
 	var n_cards: int = _cards.size()
-	
+
 	# When there are more than 6 cards, we need to squeeze them more
 	var height_curve_step = min(0.1, 0.5/(n_cards - 1))
 	for i in n_cards:
@@ -169,6 +173,3 @@ func apply_stats_effect(effect: AbilityEffectData):
 
 func draw_cards(n: int):
 	pass
-	
-	
-	

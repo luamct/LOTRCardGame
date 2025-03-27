@@ -15,6 +15,7 @@ scenario = ExtResource("2_gnjxe")
 [node name="Board" parent="." instance=ExtResource("1_2d116")]
 
 [node name="Player" parent="." instance=ExtResource("2_lrnvk")]
+starting_hand_size = 1
 
 [node name="EncounterDeck" parent="." instance=ExtResource("5_bj5na")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 26.1426, 0, -12.7977)
