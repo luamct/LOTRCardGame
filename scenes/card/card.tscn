@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=4 uid="uid://cqn0ri5nv31g4"]
+[gd_scene load_steps=12 format=4 uid="uid://cqn0ri5nv31g4"]
 
 [ext_resource type="Script" path="res://scenes/card/card.gd" id="1_yegit"]
 [ext_resource type="Texture2D" uid="uid://bna2rlemru1vh" path="res://assets/models/LOTR Card_player_back.png" id="2_wwfvn"]
 [ext_resource type="Texture2D" uid="uid://bnrh2dyeb8vc3" path="res://assets/models/LOTR Card_73.png" id="3_37ech"]
+[ext_resource type="Script" path="res://scenes/card/resource_component.gd" id="4_gfngh"]
+[ext_resource type="PackedScene" uid="uid://dc4twny26a7sa" path="res://scenes/tokens/resource.tscn" id="5_afbnc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6gky3"]
 size = Vector3(5, 0.1, 7)
@@ -116,6 +118,10 @@ shape = SubResource("BoxShape3D_6gky3")
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 mesh = SubResource("ArrayMesh_53rm0")
 skeleton = NodePath("")
+
+[node name="ResourceComponent" type="Node3D" parent="."]
+script = ExtResource("4_gfngh")
+resource_token_scene = ExtResource("5_afbnc")
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_entered_drop_to_play"]
 [connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]

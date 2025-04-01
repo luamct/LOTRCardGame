@@ -3,8 +3,7 @@ extends Node3D
 
 signal dragging_state_changed(on: bool, card: Card)
 
-static var basic_card_scene_path: String = "res://scenes/card/basic_card.tscn"
-static var hero_card_scene_path: String = "res://scenes/card/hero_card.tscn"
+static var card_scene_path: String = "res://scenes/card/card.tscn"
 
 const TWEEN_DURATION = 0.05
 
@@ -42,6 +41,7 @@ var base_scale: Vector3
 var base_rotation: Vector3
 var base_position: Vector3
 var transform_at_hand: Transform3D
+var rotation_at_rest: int = 0
 
 var reading_surface: CollisionShape3D
 var dragging_offset: Vector3
@@ -68,18 +68,13 @@ var zone: Zone
 
 var exausted: bool
 
-static func get_scene(card_type: String) -> PackedScene:
-	match card_type:
-		"Hero": return load(hero_card_scene_path)
-		_: return load(basic_card_scene_path)
-
 static func create(
 	_data: CardData, 
 	_zone: Zone,
 	_scenario: Scenario,
 	_player: Player
 ) -> Card:
-	var card: Card = get_scene(_data.type).instantiate() as Card
+	var card: Card = load(card_scene_path).instantiate()
 	card.data = _data
 	card.player = _player
 	card.camera = _player.camera
@@ -98,17 +93,18 @@ static func create(
 	var side = "A" if _data.type == "Quest" else ""
 	card.front_material = StandardMaterial3D.new()
 	card.front_material.albedo_texture = get_card_art_texture(_data, side)
-	var mesh = card.get_node("Mesh")
-	mesh.set_surface_override_material(2, card.front_material)
+	var _mesh = card.get_node("Mesh")
+	_mesh.set_surface_override_material(2, card.front_material)
 	
 	# Set back art only if its a quest card
 	if  _data.type == "Quest":
 		side = "B"
 		card.back_material = StandardMaterial3D.new()
 		card.back_material.albedo_texture = get_card_art_texture(_data, side)
-		mesh.set_surface_override_material(1, card.back_material)
+		card.rotation_at_rest = -90
+		_mesh.set_surface_override_material(1, card.back_material)
 
-		card.rotation_degrees.z = -90
+		card.rotation_degrees.y = card.rotation_at_rest
 
 	_scenario.end_of_phase.connect(card.on_end_of_phase)
 	_scenario.end_of_round.connect(card.on_end_of_round)
@@ -169,20 +165,15 @@ func enter_dragging(mouse_position: Vector3):
 	dragging_offset = mouse_position - position
 	transform_at_hand = transform
 
-	# scale *= (1 + highlight_scale_boost)
 	position.z += height * highlight_height_boost
 	position.y += 1
 	rotation_degrees.y = 0
 
 	player.dragging(true)
-	# collision_shape.disabled = true
-	# dragging_state_changed.emit(true, self)
 
 func leave_dragging():
 	transform = transform_at_hand
 	player.dragging(false)
-	# collision_shape.disabled = false
-	# dragging_state_changed.emit(false, self)
 
 func _on_area_3d_input_event(_camera, event, world_position, _normal, _shape_idx):
 	match state:
@@ -248,15 +239,12 @@ func _notification(what):
 				enter_hand()
 
 func add_resources(amount: int):
-	assert($ResourceComponent)
 	$ResourceComponent.add_resources(amount)
 
 func remove_resources(amount: int):
-	assert($ResourceComponent)
 	$ResourceComponent.remove_resources(amount)
 
 func get_resources():
-	assert($ResourceComponent)
 	return $ResourceComponent.resources
 
 func exaust():
