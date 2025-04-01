@@ -98,14 +98,15 @@ static func create(
 	var side = "A" if _data.type == "Quest" else ""
 	card.front_material = StandardMaterial3D.new()
 	card.front_material.albedo_texture = get_card_art_texture(_data, side)
-	card.get_node("CardMesh/Mesh").set_surface_override_material(2, card.front_material)
+	var mesh = card.get_node("Mesh")
+	mesh.set_surface_override_material(2, card.front_material)
 	
 	# Set back art only if its a quest card
 	if  _data.type == "Quest":
 		side = "B"
 		card.back_material = StandardMaterial3D.new()
 		card.back_material.albedo_texture = get_card_art_texture(_data, side)
-		card.get_node("CardMesh/Mesh").set_surface_override_material(1, card.back_material)
+		mesh.set_surface_override_material(1, card.back_material)
 
 		card.rotation_degrees.z = -90
 
@@ -169,9 +170,9 @@ func enter_dragging(mouse_position: Vector3):
 	transform_at_hand = transform
 
 	# scale *= (1 + highlight_scale_boost)
-	position.y += height * highlight_height_boost
-	position.z += 1
-	rotation_degrees.z = 0
+	position.z += height * highlight_height_boost
+	position.y += 1
+	rotation_degrees.y = 0
 
 	player.dragging(true)
 	# collision_shape.disabled = true
@@ -200,7 +201,7 @@ func _on_area_3d_input_event(_camera, event, world_position, _normal, _shape_idx
 					
 					if activated_ability != null:
 						scenario.resolve_ability(activated_ability, self, player)
-						
+
 
 func get_activated_ability(abilities: Array[AbilityData]):
 	return abilities \
@@ -211,7 +212,6 @@ func _input(event: InputEvent):
 	if not (event is InputEventMouseMotion or event is InputEventMouseButton):
 		return
 	
-	#print(data.name, "\t", state, "\t", event.get_class())
 	match state:
 		State.DRAGGING:
 			if event.is_action_released("left_click"):
@@ -238,7 +238,7 @@ func _input(event: InputEvent):
 					return
 
 				global_position = result["position"]
-				inside_drop_area = (global_position.y > player.drop_to_play_marker.global_position.y)
+				inside_drop_area = (global_position.z < player.drop_to_play_marker.global_position.z)
 
 func _notification(what):
 	match what:
@@ -305,3 +305,7 @@ func on_end_of_phase():
 	
 func get_texture() -> CompressedTexture2D:
 	return front_material.albedo_texture
+
+var _global_position: Vector3
+func _process(delta):
+	_global_position = global_position

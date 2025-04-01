@@ -25,6 +25,7 @@ extends Node3D
 @export var max_card_rotation: float = -4
 @export var cards_rotation_curve: Curve
 
+var deck_cards: Array[Card]
 var hand_cards: Array[Card]
 
 # Battlefield state
@@ -40,25 +41,30 @@ func _ready():
 
 func setup():
 	decklist.load()
-	print("\nDeck: " + str(decklist.cards.size()))
-	for card: CardData in decklist.cards:
-		var cd = card as CardData
+	for card_data: CardData in decklist.cards:
+		var card_node: Card = Card.create(card_data, Card.Zone.DECK, scenario, self)
+		deck_cards.append(card_node)
+		deck.add_child(card_node)
+	deck_cards.shuffle()
 
-	for card_data in draw(starting_hand_size):
-		var card_node: Card = Card.create(card_data, Card.Zone.HAND, scenario, self)
-		hand_cards.append(card_node)
-	#hand_cards.assign(starting_cards_data.map(
-		#func(card_data): return 
-	#))
-	
-	for card in hand_cards:
-		cards_container.add_child(card)
+	draw_cards(starting_hand_size)
 
 	adjust_cards_in_hand()
 	dragging(false)
 
 	setup_heroes()
 	set_threat_level()
+	
+func draw_cards(n: int):
+	for i in n:
+		var card_node: Card = deck_cards.pop_front()
+		card_node.zone = Card.Zone.HAND
+
+		#card_node.global_transform = deck.global_transform
+		#card_node.position.y += 2
+		#card_node.rotation_degrees.x += 90
+		hand_cards.append(card_node)
+		card_node.reparent(cards_container, false)
 
 func adjust_cards_in_hand():
 	var _cards = cards_container.get_children().map(func(card): return card as Card)
@@ -81,15 +87,14 @@ func adjust_cards_in_hand():
 		var tween: Tween = create_tween().set_parallel(true)
 		var new_position: Vector3 = Vector3(
 			card_width * card_spacing * i - offset,
-			cards_height_curve.sample(x_index) * max_card_height * card_height,
-			-i * 0.01
+			i * 0.01,
+			- cards_height_curve.sample(x_index) * max_card_height * card_height
 		)
 		tween.tween_property(card, "position", new_position, tween_duration)
-
+ 
 		var middle = (n_cards - 1) * 0.5
-		var new_rotation_z =  (i - middle) * max_card_rotation
-		tween.tween_property(card, "rotation_degrees:z", new_rotation_z, tween_duration)
-		#print("Card %s: %s" % [card.data.name, str(card.global_position)])
+		var new_rotation_y =  (i - middle) * max_card_rotation
+		tween.tween_property(card, "rotation_degrees:y", new_rotation_y, tween_duration)
 
 func set_threat_level():
 	for hero_card in heroes:
@@ -99,9 +104,6 @@ func set_threat_level():
 
 func shuffle():
 	decklist.cards.shuffle()
-
-func draw(n: int) -> Array[CardData]:
-	return decklist.cards.slice(0, n, 1)
 
 func setup_heroes():
 	for i in decklist.heroes.size():
@@ -171,5 +173,7 @@ func apply_stats_effect(effect: AbilityEffectData):
 
 	affected_cards.map(func(card: Card): card.apply_stats_effect(effect))
 
-func draw_cards(n: int):
-	pass
+func _input(event: InputEvent):
+	if Input.is_key_pressed(KEY_D):
+		draw_cards(1)
+		#adjust_cards_in_hand()

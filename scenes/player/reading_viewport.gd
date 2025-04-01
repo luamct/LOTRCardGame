@@ -17,11 +17,11 @@ func sample_curve(x: float):
 		
 func show_card(card: Card):
 	mesh.visible = true
-	
+
 	var x_position: float = card.global_position.x / MAX_BATTLEFIELD_X
 	var mesh_x_position: float = sample_curve(x_position) * MAX_VIEWING_X
-	mesh.position = Vector3(mesh_x_position, 3, 0)
-	
+	mesh.position = Vector3(mesh_x_position, 0, -5)
+
 	material.albedo_texture = card.get_texture()
 
 func highlight_hand_card(card: Card):
