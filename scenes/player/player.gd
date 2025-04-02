@@ -43,6 +43,7 @@ func setup():
 	decklist.load()
 	for card_data: CardData in decklist.cards:
 		var card_node: Card = Card.create(card_data, Card.Zone.DECK, scenario, self)
+		card_node.rotation_degrees.z = 180  # Face down while in the deck
 		deck_cards.append(card_node)
 		deck.add_child(card_node)
 	deck_cards.shuffle()
@@ -54,34 +55,47 @@ func setup():
 
 	setup_heroes()
 	set_threat_level()
-	
+
 func draw_cards(n: int):
 	for i in n:
-		var card_node: Card = deck_cards.pop_front()
-		card_node.zone = Card.Zone.HAND
+		var card: Card = deck_cards.pop_front()
+		card.reparent(cards_container, true)
+		
+		card.zone = Card.Zone.HAND
+
+		var tween_duration = 0.5
+		var pos = Vector3(7.5, 0, -5)
+		var tween: Tween = get_tree().create_tween().set_parallel(true)
+		tween.tween_property(card, "position", pos, tween_duration)
+		tween.tween_property(card, "rotation_degrees:z", 0, tween_duration)
+		tween.tween_property(card, "rotation_degrees:x", 0, tween_duration)
+		tween.tween_callback(func():
+			hand_cards.append(card)
+			adjust_cards_in_hand()
+		).set_delay(tween_duration + 0.2)
+		await get_tree().create_timer(0.2).timeout
 
 		#card_node.global_transform = deck.global_transform
 		#card_node.position.y += 2
 		#card_node.rotation_degrees.x += 90
-		hand_cards.append(card_node)
-		card_node.reparent(cards_container, false)
+		#card.rotation_degrees.z = 0  # Turn face up
 
 func adjust_cards_in_hand():
-	var _cards = cards_container.get_children().map(func(card): return card as Card)
-	if _cards.size() == 0:
+	#var _cards = cards_container.get_children().map(func(card): return card as Card)
+	if hand_cards.size() == 0:
 		return
 
-	var card_width = _cards[0].width
-	var card_height = _cards[0].height
+	var card_width = hand_cards[0].width
+	var card_height = hand_cards[0].height
+	var n: int = hand_cards.size()
 
-	var offset = (_cards.size() - 1) * (card_width * card_spacing) * 0.5
-	var n_cards: int = _cards.size()
+	var offset = (n - 1) * (card_width * card_spacing) * 0.5
 
 	# When there are more than 6 cards, we need to squeeze them more
-	var height_curve_step = min(0.1, 0.5/(n_cards - 1))
-	for i in n_cards:
-		var card = _cards[i]
-		var x_index = 0.5 + (1 + 2*i - n_cards) * height_curve_step
+	var height_curve_step = min(0.1, 0.5/(n - 1))
+	for i in n:
+		var card = hand_cards[i]
+		var x_index = 0.5 + (1 + 2*i - n) * height_curve_step
 
 		var tween_duration = 0.1
 		var tween: Tween = create_tween().set_parallel(true)
@@ -92,7 +106,7 @@ func adjust_cards_in_hand():
 		)
 		tween.tween_property(card, "position", new_position, tween_duration)
  
-		var middle = (n_cards - 1) * 0.5
+		var middle = (n - 1) * 0.5
 		var new_rotation_y =  (i - middle) * max_card_rotation
 		tween.tween_property(card, "rotation_degrees:y", new_rotation_y, tween_duration)
 
