@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3]
 
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_3j5px"]
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_xka6m"]
 
 [resource]
@@ -8,7 +9,8 @@ name = "Despair"
 set_ = "Revised Core Set"
 id = 86
 type = "Treachery"
-encounter_set = "Wilderlands Campaign"
+quantity = 2
+encounter_set = "Wilderlands"
 sphere = ""
 cost = 0
 threat = 0
@@ -20,3 +22,4 @@ defense = 0
 health = 0
 text = "When Revealed: Remove 4 progress tokens from the current quest card. (If there are fewer than 4 progress tokens on the quest, remove all progress tokens from that quest.)"
 shadow = "Shadow: Defending character does not count its"
+abilities = Array[ExtResource("1_3j5px")]([])

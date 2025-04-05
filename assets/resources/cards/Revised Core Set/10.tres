@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3]
 
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_lsebi"]
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_nnsw0"]
 
 [resource]
@@ -8,6 +9,7 @@ name = "Denethor"
 set_ = "Revised Core Set"
 id = 10
 type = "Hero"
+quantity = 1
 encounter_set = ""
 sphere = "Lore"
 cost = 0
@@ -20,3 +22,4 @@ defense = 3
 health = 3
 text = "<b>Action:</b> Exhaust Denethor to look at the top card of the encounter deck. You may move that card to the bottom of the deck."
 shadow = ""
+abilities = Array[ExtResource("1_lsebi")]([])

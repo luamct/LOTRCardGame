@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://x1pdixwqs8ed"]
 
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_uhyud"]
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_xrpqs"]
 
 [resource]
 script = ExtResource("1_uhyud")
@@ -8,7 +9,8 @@ name = "Treacherous Fog"
 set_ = "Revised Core Set"
 id = 118
 type = "Treachery"
-encounter_set = "Sauron's Reach Campaign"
+quantity = 2
+encounter_set = "Sauron's Reach"
 sphere = ""
 cost = 0
 threat = 0
@@ -20,3 +22,4 @@ defense = 0
 health = 0
 text = "When Revealed: Each location in the staging area gets +1  until the end of the phase. Then, each player with a threat of 35 or higher chooses and discards 1 card from his hand."
 shadow = ""
+abilities = Array[ExtResource("1_xrpqs")]([])

@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://d23oajhb8qp27"]
 
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_kl1c0"]
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_mo03q"]
 
 [resource]
@@ -8,6 +9,7 @@ name = "Aragorn"
 set_ = "Revised Core Set"
 id = 1
 type = "Hero"
+quantity = 1
 encounter_set = ""
 sphere = "Leadership"
 cost = 0
@@ -21,3 +23,4 @@ health = 5
 text = "Sentinel.
 <b>Response:</b> After Aragorn commits to a quest, spend 1 resource from his resource pool to ready him."
 shadow = ""
+abilities = Array[ExtResource("1_kl1c0")]([])

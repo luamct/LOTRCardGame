@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_2rw2d"]
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_fd15u"]
 
 [resource]
 script = ExtResource("1_2rw2d")
@@ -8,6 +9,7 @@ name = "Dúnhere"
 set_ = "Revised Core Set"
 id = 9
 type = "Hero"
+quantity = 1
 encounter_set = ""
 sphere = "Spirit"
 cost = 0
@@ -20,3 +22,4 @@ defense = 1
 health = 4
 text = "Dúnhere can target enemies in the staging area when he attacks alone. When doing so, he gets +1 [attack]."
 shadow = ""
+abilities = Array[ExtResource("1_fd15u")]([])

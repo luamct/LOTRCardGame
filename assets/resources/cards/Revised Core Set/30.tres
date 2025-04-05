@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3]
 
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_a4pvu"]
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_jvinb"]
 
 [resource]
@@ -8,6 +9,7 @@ name = "Horseback Archer"
 set_ = "Revised Core Set"
 id = 30
 type = "Ally"
+quantity = 2
 encounter_set = ""
 sphere = "Tactics"
 cost = 3
@@ -20,3 +22,4 @@ defense = 1
 health = 2
 text = "Ranged."
 shadow = ""
+abilities = Array[ExtResource("1_a4pvu")]([])

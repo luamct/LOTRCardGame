@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://bm4lgc8qnv864"]
 
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_3ei27"]
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_h0od1"]
 
 [resource]
@@ -8,7 +9,8 @@ name = "Eyes of the Forest"
 set_ = "Revised Core Set"
 id = 79
 type = "Treachery"
-encounter_set = "Spiders of Mirkwood Campaign"
+quantity = 1
+encounter_set = "Spiders of Mirkwood"
 sphere = ""
 cost = 0
 threat = 0
@@ -20,3 +22,4 @@ defense = 0
 health = 0
 text = "When Revealed: Each player discards all event cards in his hand."
 shadow = ""
+abilities = Array[ExtResource("1_3ei27")]([])

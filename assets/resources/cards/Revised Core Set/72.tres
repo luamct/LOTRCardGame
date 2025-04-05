@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_3bjac"]
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_h0nfe"]
 
 [resource]
 script = ExtResource("1_3bjac")
@@ -8,6 +9,7 @@ name = "Self Preservation"
 set_ = "Revised Core Set"
 id = 72
 type = "Attachment"
+quantity = 2
 encounter_set = ""
 sphere = "Lore"
 cost = 3
@@ -21,3 +23,4 @@ health = 0
 text = "Attach to a character.
 <b>Action:</b> Exhaust Self Preservation to heal 2 points of damage from attached character."
 shadow = ""
+abilities = Array[ExtResource("1_h0nfe")]([])

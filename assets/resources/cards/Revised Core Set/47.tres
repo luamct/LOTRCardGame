@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_m0qr5"]
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_uq4k5"]
 
 [resource]
 script = ExtResource("1_m0qr5")
@@ -8,6 +9,7 @@ name = "Strength of Will"
 set_ = "Revised Core Set"
 id = 47
 type = "Event"
+quantity = 2
 encounter_set = ""
 sphere = "Spirit"
 cost = 0
@@ -20,3 +22,4 @@ defense = 0
 health = 0
 text = "<b>Response:</b> After you travel to a location, exhaust a [spirit] character to place 2 progress tokens on that location."
 shadow = ""
+abilities = Array[ExtResource("1_uq4k5")]([])

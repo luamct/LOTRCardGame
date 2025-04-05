@@ -7,17 +7,23 @@ func _ready():
 	var content = file.get_as_text()
 	var cards_json = JSON.parse_string(content)
 
-	var database: Database = Database.new()
+	#var database: Database = Database.new()
 
 	var MAX_CARDS = 200
 	for i  in cards_json.slice(0, MAX_CARDS).size():
 		var card_json: Dictionary = cards_json[i]
+	
+		# Skip cards that were manually editted already
+		var id = int(card_json["id"])
+		if id in [12, 14, 120, 119]:  
+			continue
 
 		var card: CardData = CardData.new()
 		card.name = card_json["name"]
 		card.set_ = card_json["set"]
 		card.type = card_json["type"]
 		card.id = card_json["id"]
+		card.quantity = card_json["quantity"]
 		card.encounter_set = card_json.get("encounter_set", "")
 		card.sphere = card_json.get("sphere_name", "")
 		card.cost = parse_cost(card_json.get("cost", "0"))
@@ -30,11 +36,11 @@ func _ready():
 		card.health = card_json.get("health", 0)
 		card.text = card_json.get("text", "")
 		card.shadow = card_json.get("shadow", "")
-		
-		ResourceSaver.save(card, "res://assets/resources/cards/%s/%s.tres" % [card.set_, card.id])
-		database.cards[card.name] = card
 
-	ResourceSaver.save(database, "res://assets/resources/database.tres")
+		ResourceSaver.save(card, "res://assets/resources/cards/%s/%s.tres" % [card.set_, card.id])
+		#database.cards[card.name] = card
+
+	#ResourceSaver.save(database, "res://assets/resources/database.tres")
 
 	get_tree().quit()
 

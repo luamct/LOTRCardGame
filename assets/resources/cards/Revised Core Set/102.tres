@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3]
 
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_7p63s"]
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_u3r2v"]
 
 [resource]
@@ -8,7 +9,8 @@ name = "Nazgûl of Dol Guldur"
 set_ = "Revised Core Set"
 id = 102
 type = "Enemy"
-encounter_set = "Escape from Dol Guldur Campaign"
+quantity = 1
+encounter_set = "Escape from Dol Guldur"
 sphere = ""
 cost = 0
 threat = 5
@@ -20,3 +22,4 @@ defense = 3
 health = 0
 text = "No attachments can be played on Nazgûl of Dol Guldur."
 shadow = ""
+abilities = Array[ExtResource("1_7p63s")]([])

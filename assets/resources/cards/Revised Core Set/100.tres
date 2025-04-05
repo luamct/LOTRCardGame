@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_s043s"]
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_x472e"]
 
 [resource]
 script = ExtResource("1_s043s")
@@ -8,7 +9,8 @@ name = "Forest Gate"
 set_ = "Revised Core Set"
 id = 100
 type = "Location"
-encounter_set = "Passage Through Mirkwood Campaign"
+quantity = 2
+encounter_set = "Passage Through Mirkwood"
 sphere = ""
 cost = 0
 threat = 2
@@ -20,3 +22,4 @@ defense = 0
 health = 0
 text = "Response: After you travel to Forest Gate the first player may draw 2 cards."
 shadow = ""
+abilities = Array[ExtResource("1_x472e")]([])

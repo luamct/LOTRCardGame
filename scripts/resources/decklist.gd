@@ -30,10 +30,9 @@ func parse_decklist():
 	name = lines[0]
 
 	# print("Parsing hero line: %s" % lines[2])
-	heroes.append(CardDatabase.cards[parse_hero(lines[2])])
-	heroes.append(CardDatabase.cards[parse_hero(lines[3])])
-	heroes.append(CardDatabase.cards[parse_hero(lines[4])])
+	for line in lines.slice(2, 5):
+		heroes.append(CardDatabase.card_by_name(parse_hero(line)))
 
 	for line in lines.slice(6, -1):
-		var card: CardData = CardDatabase.cards[parse_card(line)]
+		var card: CardData = CardDatabase.card_by_name(parse_card(line))
 		cards.append(card)

@@ -43,7 +43,6 @@ var base_position: Vector3
 var transform_at_hand: Transform3D
 var rotation_at_rest: int = 0
 
-var reading_surface: CollisionShape3D
 var dragging_offset: Vector3
 var inside_drop_area: bool = false
 
@@ -72,13 +71,12 @@ static func create(
 	_data: CardData, 
 	_zone: Zone,
 	_scenario: Scenario,
-	_player: Player
+	_player: Player = null
 ) -> Card:
 	var card: Card = load(card_scene_path).instantiate()
 	card.data = _data
 	card.player = _player
-	card.camera = _player.camera
-	card.reading_surface = _player.dragging_surface_collision
+	#card.camera = _player.camera
 	card.zone = _zone
 	card.state = State.REST
 	card.exausted = false
@@ -160,7 +158,8 @@ func leave_highlight():
 func enter_hand():
 	state = State.REST
 
-func enter_dragging(mouse_position: Vector3):
+func enter_dragging(mouse_position: Vector3, _camera: Camera3D):
+	camera = _camera
 	state = State.DRAGGING
 	dragging_offset = mouse_position - position
 	transform_at_hand = transform
@@ -186,7 +185,7 @@ func _on_area_3d_input_event(_camera, event, world_position, _normal, _shape_idx
 			if event.is_action_pressed("left_click"):
 				if zone == Zone.HAND:
 					leave_highlight()
-					enter_dragging(world_position)
+					enter_dragging(world_position, _camera)
 				elif zone == Zone.BATTLEFIELD:
 					var activated_ability = get_activated_ability(data.abilities)
 					
@@ -250,11 +249,11 @@ func get_resources():
 func exaust():
 	exausted = true
 	create_tween().tween_property(self, "rotation_degrees:z", -90, TWEEN_DURATION)
-	
+
 func ready():
 	exausted = false
 	create_tween().tween_property(self, "rotation_degrees:z", 0, TWEEN_DURATION)
-	
+
 func apply_stats_effect(effect: AbilityEffectData):
 	match effect.effect_type:
 		AbilityEffectData.EffectType.COST_STAT: pass

@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://dro5i3wxjmrw0"]
 
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_3roqt"]
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_dbnnr"]
 
 [resource]
@@ -8,7 +9,8 @@ name = "Hummerhorns"
 set_ = "Revised Core Set"
 id = 75
 type = "Enemy"
-encounter_set = "Spiders of Mirkwood Campaign"
+quantity = 1
+encounter_set = "Spiders of Mirkwood"
 sphere = ""
 cost = 0
 threat = 1
@@ -20,3 +22,4 @@ defense = 0
 health = 0
 text = "Forced: After Hummerhorns engages you, deal 5 damage to a single hero you control."
 shadow = "Shadow: Deal 1 damage to each character the defending player controls. (2 damage instead if this attack is undefended.)"
+abilities = Array[ExtResource("1_3roqt")]([])

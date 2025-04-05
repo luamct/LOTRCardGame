@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_hdyku"]
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_k5w6l"]
 
 [resource]
 script = ExtResource("1_hdyku")
@@ -8,7 +9,8 @@ name = "Great Forest Web"
 set_ = "Revised Core Set"
 id = 77
 type = "Location"
-encounter_set = "Spiders of Mirkwood Campaign"
+quantity = 2
+encounter_set = "Spiders of Mirkwood"
 sphere = ""
 cost = 0
 threat = 2
@@ -20,3 +22,4 @@ defense = 0
 health = 0
 text = "Travel: Each player must exhaust 1 hero he controls to travel here."
 shadow = ""
+abilities = Array[ExtResource("1_k5w6l")]([])

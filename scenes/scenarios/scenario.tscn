@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://budk3y16g43xm"]
+[gd_scene load_steps=9 format=3 uid="uid://budk3y16g43xm"]
 
 [ext_resource type="PackedScene" uid="uid://djl5p6eb3jgiu" path="res://scenes/board/board.tscn" id="1_2d116"]
 [ext_resource type="Script" path="res://scenes/scenarios/scenario.gd" id="1_27os8"]
@@ -7,10 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://bjd1x7ff1jj6n" path="res://scenes/deck/encounter_deck.tscn" id="5_bj5na"]
 [ext_resource type="Script" path="res://scenes/scenarios/ui.gd" id="6_ij16v"]
 [ext_resource type="Script" path="res://scenes/abilities/ability_controller.gd" id="7_ryi1g"]
+[ext_resource type="Script" path="res://scenes/enemies/staging_area.gd" id="8_m2y77"]
 
 [node name="Scenario" type="Node3D" groups=["scenario"]]
 script = ExtResource("1_27os8")
-scenario = ExtResource("2_gnjxe")
+scenario_data = ExtResource("2_gnjxe")
 
 [node name="Board" parent="." instance=ExtResource("1_2d116")]
 
@@ -18,10 +19,13 @@ scenario = ExtResource("2_gnjxe")
 starting_hand_size = 7
 
 [node name="EncounterDeck" parent="." instance=ExtResource("5_bj5na")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 26.1426, 0, -12.7977)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.1426, 0, -10.9968)
 
 [node name="QuestsArea" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.408, 0, -10)
+
+[node name="StagingArea" type="Node3D" parent="."]
+script = ExtResource("8_m2y77")
 
 [node name="UI" type="CanvasLayer" parent="."]
 

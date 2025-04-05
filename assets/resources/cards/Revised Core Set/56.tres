@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_08mrh"]
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_17guc"]
 
 [resource]
 script = ExtResource("1_08mrh")
@@ -8,6 +9,7 @@ name = "Power in the Earth"
 set_ = "Revised Core Set"
 id = 56
 type = "Attachment"
+quantity = 2
 encounter_set = ""
 sphere = "Spirit"
 cost = 1
@@ -21,3 +23,4 @@ health = 0
 text = "Attach to a location.
 Attached location gets -1 [threat]."
 shadow = ""
+abilities = Array[ExtResource("1_17guc")]([])

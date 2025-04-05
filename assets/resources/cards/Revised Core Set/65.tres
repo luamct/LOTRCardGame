@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_h07bi"]
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_kk2k2"]
 
 [resource]
 script = ExtResource("1_h07bi")
@@ -8,6 +9,7 @@ name = "Radagast's Cunning"
 set_ = "Revised Core Set"
 id = 65
 type = "Event"
+quantity = 2
 encounter_set = ""
 sphere = "Lore"
 cost = 1
@@ -20,3 +22,4 @@ defense = 0
 health = 0
 text = "<b>Quest Action:</b> Choose an enemy in the staging area. Until the end of the phase, that enemy does not contribute its [threat]"
 shadow = ""
+abilities = Array[ExtResource("1_kk2k2")]([])

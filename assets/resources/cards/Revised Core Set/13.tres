@@ -9,6 +9,7 @@ name = "Guard of the Citadel"
 set_ = "Revised Core Set"
 id = 13
 type = "Ally"
+quantity = 3
 encounter_set = ""
 sphere = "Leadership"
 cost = 2

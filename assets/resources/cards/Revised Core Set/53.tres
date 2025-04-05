@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_bsktj"]
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_ns4ts"]
 
 [resource]
 script = ExtResource("1_bsktj")
@@ -8,6 +9,7 @@ name = "Dwarven Tomb"
 set_ = "Revised Core Set"
 id = 53
 type = "Event"
+quantity = 1
 encounter_set = ""
 sphere = "Spirit"
 cost = 1
@@ -20,3 +22,4 @@ defense = 0
 health = 0
 text = "<b>Action:</b> Return 1 [spirit] card from your discard pile to your hand."
 shadow = ""
+abilities = Array[ExtResource("1_ns4ts")]([])

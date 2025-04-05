@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_20drr"]
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_o63tj"]
 
 [resource]
 script = ExtResource("1_20drr")
@@ -8,6 +9,7 @@ name = "Protector of Lórien"
 set_ = "Revised Core Set"
 id = 70
 type = "Attachment"
+quantity = 2
 encounter_set = ""
 sphere = "Lore"
 cost = 1
@@ -21,3 +23,4 @@ health = 0
 text = "Attach to a hero.
 <b>Action:</b> Discard a card from your hand to give attached hero +1 [defense] or +1 [willpower] until the end of the phase. Limit 3 times per phase."
 shadow = ""
+abilities = Array[ExtResource("1_o63tj")]([])

@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://urmyirrt4k3a"]
 
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_1w6st"]
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_ryu2n"]
 
 [resource]
 script = ExtResource("1_1w6st")
@@ -8,6 +9,7 @@ name = "Legolas"
 set_ = "Revised Core Set"
 id = 5
 type = "Hero"
+quantity = 1
 encounter_set = ""
 sphere = "Tactics"
 cost = 0
@@ -21,3 +23,4 @@ health = 4
 text = "Ranged.
 <b>Response:</b> After Legolas participates in an attack that destroys an enemy, place 2 progress tokens on the current quest."
 shadow = ""
+abilities = Array[ExtResource("1_ryu2n")]([])

@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://bwyh8tyjfixr0"]
 
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_allmu"]
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_j75k6"]
 
 [resource]
 script = ExtResource("1_allmu")
@@ -8,7 +9,8 @@ name = "Goblin Sniper"
 set_ = "Revised Core Set"
 id = 83
 type = "Enemy"
-encounter_set = "Wilderlands Campaign"
+quantity = 2
+encounter_set = "Wilderlands"
 sphere = ""
 cost = 0
 threat = 2
@@ -20,3 +22,4 @@ defense = 0
 health = 0
 text = "During the encounter phase, players cannot optionally engage Goblin Sniper if there are other enemies in the staging area."
 shadow = ""
+abilities = Array[ExtResource("1_j75k6")]([])

@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3]
 
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_af5rr"]
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_dom0e"]
 
 [resource]
@@ -8,6 +9,7 @@ name = "Will of the West"
 set_ = "Revised Core Set"
 id = 49
 type = "Event"
+quantity = 2
 encounter_set = ""
 sphere = "Spirit"
 cost = 1
@@ -20,3 +22,4 @@ defense = 0
 health = 0
 text = "<b>Action:</b> Choose a player. Shuffle that player's discard pile back into his deck. Remove Will of the West from the game."
 shadow = ""
+abilities = Array[ExtResource("1_af5rr")]([])

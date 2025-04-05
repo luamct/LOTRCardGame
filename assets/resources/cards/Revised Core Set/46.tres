@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_30h04"]
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_anhmp"]
 
 [resource]
 script = ExtResource("1_30h04")
@@ -8,6 +9,7 @@ name = "The Galadhrim's Greeting"
 set_ = "Revised Core Set"
 id = 46
 type = "Event"
+quantity = 2
 encounter_set = ""
 sphere = "Spirit"
 cost = 3
@@ -20,3 +22,4 @@ defense = 0
 health = 0
 text = "<b>Action:</b> Reduce one player's threat by 6, or reduce each player's threat by 2."
 shadow = ""
+abilities = Array[ExtResource("1_anhmp")]([])

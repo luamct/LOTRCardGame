@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_8q2m7"]
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_vi7dq"]
 
 [resource]
 script = ExtResource("1_8q2m7")
@@ -8,6 +9,7 @@ name = "Common Cause"
 set_ = "Revised Core Set"
 id = 21
 type = "Event"
+quantity = 2
 encounter_set = ""
 sphere = "Leadership"
 cost = 0
@@ -20,3 +22,4 @@ defense = 0
 health = 0
 text = "<b>Action:</b> Exhaust 1 hero you control to choose and ready a different hero."
 shadow = ""
+abilities = Array[ExtResource("1_vi7dq")]([])

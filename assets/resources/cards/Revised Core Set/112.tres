@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://bo5giovvuaklx"]
 
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_4tpmh"]
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_5i8up"]
 
 [resource]
@@ -8,7 +9,8 @@ name = "Massing at Night"
 set_ = "Revised Core Set"
 id = 112
 type = "Treachery"
-encounter_set = "Journey Along the Anduin Campaign"
+quantity = 1
+encounter_set = "Journey Along the Anduin"
 sphere = ""
 cost = 0
 threat = 0
@@ -20,3 +22,4 @@ defense = 0
 health = 0
 text = "When Revealed: Reveal X additional cards from the encounter deck. X is the number of players in the game."
 shadow = "Shadow: Deal X shadow cards to this attacker. X is the number of players in the game."
+abilities = Array[ExtResource("1_4tpmh")]([])

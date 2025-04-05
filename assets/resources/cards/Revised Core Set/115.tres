@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://deugax6qn0q10"]
 
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_e7khu"]
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_j0uni"]
 
 [resource]
@@ -8,7 +9,8 @@ name = "Eastern Crows"
 set_ = "Revised Core Set"
 id = 115
 type = "Enemy"
-encounter_set = "Sauron's Reach Campaign"
+quantity = 3
+encounter_set = "Sauron's Reach"
 sphere = ""
 cost = 0
 threat = 1
@@ -20,3 +22,4 @@ defense = 0
 health = 0
 text = "Surge."
 shadow = "Shadow: attacking enemy gets +1  (+2  instead if defending player's threat is 35 or higher.)"
+abilities = Array[ExtResource("1_e7khu")]([])

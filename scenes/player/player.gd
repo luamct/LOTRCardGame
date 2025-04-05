@@ -64,7 +64,7 @@ func draw_cards(n: int):
 		card.zone = Card.Zone.HAND
 
 		var tween_duration = 0.5
-		var pos = Vector3(7.5, 0, -5)
+		var pos = Vector3(7.5, 0, -8)
 		var tween: Tween = get_tree().create_tween().set_parallel(true)
 		tween.tween_property(card, "position", pos, tween_duration)
 		tween.tween_property(card, "rotation_degrees:z", 0, tween_duration)
@@ -81,7 +81,6 @@ func draw_cards(n: int):
 		#card.rotation_degrees.z = 0  # Turn face up
 
 func adjust_cards_in_hand():
-	#var _cards = cards_container.get_children().map(func(card): return card as Card)
 	if hand_cards.size() == 0:
 		return
 

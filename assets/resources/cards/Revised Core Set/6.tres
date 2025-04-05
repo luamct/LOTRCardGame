@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_ct6j1"]
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_ldyer"]
 
 [resource]
 script = ExtResource("1_ct6j1")
@@ -8,6 +9,7 @@ name = "Thalin"
 set_ = "Revised Core Set"
 id = 6
 type = "Hero"
+quantity = 1
 encounter_set = ""
 sphere = "Tactics"
 cost = 0
@@ -20,3 +22,4 @@ defense = 2
 health = 4
 text = "While Thalin is committed to a quest, deal 1 damage to each enemy as it is revealed by the encounter deck."
 shadow = ""
+abilities = Array[ExtResource("1_ldyer")]([])

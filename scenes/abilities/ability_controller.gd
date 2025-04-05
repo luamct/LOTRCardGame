@@ -10,7 +10,8 @@ func resolve_ability(ability: AbilityData, scenario: Scenario, card: Card, playe
 		print("Cannot activate ability:")
 		for message in unmet_costs_messages:
 			print("\t", message)
-			
+	
+	
 	pay_costs(ability.costs, card)
 	
 	resolve_effects(ability, card, player)

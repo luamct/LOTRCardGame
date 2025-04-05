@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_ahyg7"]
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_e2y1h"]
 
 [resource]
 script = ExtResource("1_ahyg7")
@@ -8,6 +9,7 @@ name = "Celebrían's Stone"
 set_ = "Revised Core Set"
 id = 27
 type = "Attachment"
+quantity = 1
 encounter_set = ""
 sphere = "Leadership"
 cost = 2
@@ -22,3 +24,4 @@ text = "Attach to a hero. Restricted.
 Attached hero gains +2 [willpower]
 If attached hero is Aragorn, he also gains a [spirit] resource icon."
 shadow = ""
+abilities = Array[ExtResource("1_e2y1h")]([])

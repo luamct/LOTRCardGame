@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3]
 
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_k80pw"]
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_sbi4g"]
 
 [resource]
@@ -8,6 +9,7 @@ name = "Steward of Gondor"
 set_ = "Revised Core Set"
 id = 26
 type = "Attachment"
+quantity = 2
 encounter_set = ""
 sphere = "Leadership"
 cost = 2
@@ -22,3 +24,4 @@ text = "Attach to a hero.
 Attached hero gains the <b><i>Gondor</i></b> trait.
 <b>Action:</b> Exhaust Steward of Gondor to add 2 resources to attached hero's resource pool."
 shadow = ""
+abilities = Array[ExtResource("1_k80pw")]([])

@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_5hc1x"]
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_8wa4j"]
 
 [resource]
 script = ExtResource("1_5hc1x")
@@ -8,6 +9,7 @@ name = "Lórien Guide"
 set_ = "Revised Core Set"
 id = 44
 type = "Ally"
+quantity = 3
 encounter_set = ""
 sphere = "Spirit"
 cost = 3
@@ -20,3 +22,4 @@ defense = 0
 health = 2
 text = "<b>Response:</b> After Lórien Guide commits to a quest, place 1 progress token on the active location."
 shadow = ""
+abilities = Array[ExtResource("1_8wa4j")]([])

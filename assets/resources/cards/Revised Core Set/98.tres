@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_xyt3r"]
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_y1e3w"]
 
 [resource]
 script = ExtResource("1_xyt3r")
@@ -8,7 +9,8 @@ name = "Black Forest Bats"
 set_ = "Revised Core Set"
 id = 98
 type = "Enemy"
-encounter_set = "Passage Through Mirkwood Campaign"
+quantity = 1
+encounter_set = "Passage Through Mirkwood"
 sphere = ""
 cost = 0
 threat = 1
@@ -20,3 +22,4 @@ defense = 0
 health = 0
 text = "When Revealed: Each player must choose 1 character currently committed to a quest, and remove that character from the quest. (The chosen character does not ready.)"
 shadow = ""
+abilities = Array[ExtResource("1_y1e3w")]([])

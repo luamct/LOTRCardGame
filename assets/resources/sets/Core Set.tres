@@ -1,8 +1,45 @@
-[gd_resource type="Resource" script_class="CardSetData" load_steps=2 format=3 uid="uid://2t8mqx7w41cv"]
+[gd_resource type="Resource" script_class="CardSetData" load_steps=8 format=3 uid="uid://2t8mqx7w41cv"]
 
 [ext_resource type="Script" path="res://scripts/resources/card_set_data.gd" id="1_7go1a"]
+[ext_resource type="Script" path="res://scripts/resources/card_entry_data.gd" id="1_s6obq"]
+
+[sub_resource type="Resource" id="Resource_mxp20"]
+script = ExtResource("1_s6obq")
+id = 96
+name = "Forest Spider"
+encounter_set = "Passage Through Mirkwood"
+amount = 4
+
+[sub_resource type="Resource" id="Resource_v6ecm"]
+script = ExtResource("1_s6obq")
+id = 97
+name = "East Bight Patrol"
+encounter_set = "Passage Through Mirkwood"
+amount = 1
+
+[sub_resource type="Resource" id="Resource_v6ecg"]
+script = ExtResource("1_s6obq")
+id = 98
+name = "Black Forest Bats"
+encounter_set = "Passage Through Mirkwood"
+amount = 1
+
+[sub_resource type="Resource" id="Resource_f14mw"]
+script = ExtResource("1_s6obq")
+id = 99
+name = "Old Forest Road"
+encounter_set = "Passage Through Mirkwood"
+amount = 2
+
+[sub_resource type="Resource" id="Resource_xyi0y"]
+script = ExtResource("1_s6obq")
+id = 100
+name = "Forest Gate"
+encounter_set = "Passage Through Mirkwood"
+amount = 2
 
 [resource]
 script = ExtResource("1_7go1a")
 name = "Core Set"
 code = "core"
+cards = Array[ExtResource("1_s6obq")]([SubResource("Resource_mxp20"), SubResource("Resource_v6ecm"), SubResource("Resource_v6ecg"), SubResource("Resource_f14mw"), SubResource("Resource_xyi0y")])

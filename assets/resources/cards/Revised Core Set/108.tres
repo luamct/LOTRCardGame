@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_aiq0k"]
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_gfbqk"]
 
 [resource]
 script = ExtResource("1_aiq0k")
@@ -8,7 +9,8 @@ name = "Gandalf's Map"
 set_ = "Revised Core Set"
 id = 108
 type = "Objective"
-encounter_set = "Escape from Dol Guldur Campaign"
+quantity = 1
+encounter_set = "Escape from Dol Guldur"
 sphere = ""
 cost = 0
 threat = 0
@@ -20,3 +22,4 @@ defense = 0
 health = 0
 text = "Guarded. Restricted."
 shadow = ""
+abilities = Array[ExtResource("1_gfbqk")]([])

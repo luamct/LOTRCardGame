@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_sl84o"]
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_yf0t8"]
 
 [resource]
 script = ExtResource("1_sl84o")
@@ -8,6 +9,7 @@ name = "Thicket of Spears"
 set_ = "Revised Core Set"
 id = 36
 type = "Event"
+quantity = 2
 encounter_set = ""
 sphere = "Tactics"
 cost = 3
@@ -21,3 +23,4 @@ health = 0
 text = "You must use resources from 3 different heroes' pools to pay for this card.
 <b>Action:</b> Choose a player. That player's engaged enemies cannot attack that player this phase."
 shadow = ""
+abilities = Array[ExtResource("1_yf0t8")]([])

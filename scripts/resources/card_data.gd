@@ -5,6 +5,7 @@ extends Resource
 @export var set_: String
 @export var id: int
 @export var type: String
+@export var quantity: int
 @export var encounter_set: String
 @export var sphere: String
 @export var cost: int

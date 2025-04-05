@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://6h7avowt6wqk"]
 
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_5e8q8"]
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_ue3qg"]
 
 [resource]
@@ -8,6 +9,7 @@ name = "Gimli"
 set_ = "Revised Core Set"
 id = 4
 type = "Hero"
+quantity = 1
 encounter_set = ""
 sphere = "Tactics"
 cost = 0
@@ -20,3 +22,4 @@ defense = 2
 health = 5
 text = "Gimli gets +1 [attack] for each damage token on him."
 shadow = ""
+abilities = Array[ExtResource("1_5e8q8")]([])

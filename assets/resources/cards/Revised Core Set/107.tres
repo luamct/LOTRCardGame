@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_3r7d5"]
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_pnqht"]
 
 [resource]
 script = ExtResource("1_3r7d5")
@@ -8,7 +9,8 @@ name = "Tower Gate"
 set_ = "Revised Core Set"
 id = 107
 type = "Location"
-encounter_set = "Escape from Dol Guldur Campaign"
+quantity = 2
+encounter_set = "Escape from Dol Guldur"
 sphere = ""
 cost = 0
 threat = 2
@@ -20,3 +22,4 @@ defense = 0
 health = 0
 text = "Forced: After travelling to Tower Gate each player places the top card of his deck, face down in front of him, as if it just engaged him from the staging area. These cards are called 'Orc Guard', and act as enemies with: 1 hit point, 1  and 1"
 shadow = ""
+abilities = Array[ExtResource("1_pnqht")]([])

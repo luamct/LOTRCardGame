@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3]
 
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_0k4i5"]
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_r6xbv"]
 
 [resource]
@@ -8,6 +9,7 @@ name = "Eleanor"
 set_ = "Revised Core Set"
 id = 8
 type = "Hero"
+quantity = 1
 encounter_set = ""
 sphere = "Spirit"
 cost = 0
@@ -20,3 +22,4 @@ defense = 2
 health = 3
 text = "<b>Response:</b> Exhaust Eleanor to cancel the \"when revealed\" effects of a treachery card just revealed by the encounter deck. Then, discard that card, and replace it with the next card from the encounter deck."
 shadow = ""
+abilities = Array[ExtResource("1_0k4i5")]([])

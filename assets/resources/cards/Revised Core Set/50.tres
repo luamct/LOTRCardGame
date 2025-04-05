@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3]
 
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_6br6b"]
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_kqpp8"]
 
 [resource]
@@ -8,6 +9,7 @@ name = "A Test of Will"
 set_ = "Revised Core Set"
 id = 50
 type = "Event"
+quantity = 2
 encounter_set = ""
 sphere = "Spirit"
 cost = 1
@@ -20,3 +22,4 @@ defense = 0
 health = 0
 text = "<b>Response:</b> Cancel the \"when revealed\" effects of a card that was just revealed from the encounter deck."
 shadow = ""
+abilities = Array[ExtResource("1_6br6b")]([])

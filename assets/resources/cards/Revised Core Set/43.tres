@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3]
 
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_d5nxu"]
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_n34bp"]
 
 [resource]
@@ -8,6 +9,7 @@ name = "Wandering Took"
 set_ = "Revised Core Set"
 id = 43
 type = "Ally"
+quantity = 2
 encounter_set = ""
 sphere = "Spirit"
 cost = 2
@@ -20,3 +22,4 @@ defense = 1
 health = 2
 text = "<b>Action:</b> Reduce your threat by 3 to give control of Wandering Took to another player. Raise that player's threat by 3. (Limit once per round.)"
 shadow = ""
+abilities = Array[ExtResource("1_d5nxu")]([])

@@ -4,26 +4,59 @@ extends Node3D
 signal end_of_phase
 signal end_of_round
 
-@export var scenario: ScenarioData
+@export var scenario_data: ScenarioData
 
 @onready var player: Player = $Player
 @onready var encounter_deck: Deck = $EncounterDeck
 @onready var quests_area: Marker3D = $QuestsArea
 @onready var ui: ScenarioUI = $UI/TurnPhases
 @onready var ability_controller: AbilityController = $AbilityController
+@onready var staging_area: StagingArea = $StagingArea
 
+var current_quest_index: int = 0
+var current_quest: Card
 var phase: Enums.TurnPhase = Enums.TurnPhase.None
 
 func _ready():
 	setup()
 	phase = Enums.TurnPhase.Resource
 	ui.set_turn_phase(phase)
+	
 
 func setup():
 	player.setup()
+	encounter_deck.setup(self, get_scenario_encounter_decklist())
+	
+	open_next_quest_card()
 
-	var instance: Card = Card.create(scenario.quest_cards[0], Card.Zone.BATTLEFIELD, self, player)
-	quests_area.add_child(instance)
+func open_next_quest_card():
+	var quest_card: Card = Card.create(
+		scenario_data.quest_cards[current_quest_index], 
+		Card.Zone.BATTLEFIELD, 
+		self)
+	
+	for effect in quest_card.data.effects_a:
+		await resolve_effect(effect)
+	
+	current_quest = quest_card
+	quests_area.add_child(quest_card)
+
+func move_into_staging(card):
+	var secs = 0.5
+	var tween: Tween = get_tree().create_tween().set_parallel(true)
+	tween.tween_property(card, "global_position", staging_area.global_position, secs)
+	tween.tween_property(card, "rotation_degrees:z", 0, secs)
+	tween.tween_callback(func():
+		card.reparent(staging_area, true)
+	).set_delay(secs)
+	return await tween.finished
+
+func resolve_effect(effect: QuestEffectData):
+	match effect.effect_type:
+		QuestEffectData.EffectType.SEARCH_AND_ADD_TO_STAGING:
+			var card: Card = encounter_deck.find_by_name(effect.card_name)
+			await move_into_staging(card)
+			print(card.data.name)
 
 func go_to_phase(_phase: Enums.TurnPhase):
 	end_of_phase.emit()
@@ -86,3 +119,12 @@ func _on_pass_button_button_down():
 
 func resolve_ability(ability: AbilityData, card: Card, _player: Player):
 	ability_controller.resolve_ability(ability, self, card, _player)
+
+func get_scenario_encounter_decklist() -> Array[CardData]:
+	var encounter_decklist: Array[CardData]
+	for card in CardDatabase.cards:
+		if card.encounter_set in scenario_data.encounter_sets:
+			for i in card.quantity:
+				encounter_decklist.append(card)
+	
+	return encounter_decklist

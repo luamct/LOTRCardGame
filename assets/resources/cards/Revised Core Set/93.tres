@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://dob4wn14ipcr"]
 
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_8fg15"]
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_jhir8"]
 
 [resource]
 script = ExtResource("1_8fg15")
@@ -8,7 +9,8 @@ name = "The Necromancer's Reach"
 set_ = "Revised Core Set"
 id = 93
 type = "Treachery"
-encounter_set = "Dol Guldur Orcs Campaign"
+quantity = 3
+encounter_set = "Dol Guldur Orcs"
 sphere = ""
 cost = 0
 threat = 0
@@ -20,3 +22,4 @@ defense = 0
 health = 0
 text = "When Revealed: Deal 1 damage to each exhausted character."
 shadow = ""
+abilities = Array[ExtResource("1_jhir8")]([])

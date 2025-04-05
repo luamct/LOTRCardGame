@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3]
 
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_cvmvx"]
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_ohyw2"]
 
 [resource]
@@ -8,6 +9,7 @@ name = "Lore of Imladris"
 set_ = "Revised Core Set"
 id = 63
 type = "Event"
+quantity = 3
 encounter_set = ""
 sphere = "Lore"
 cost = 2
@@ -20,3 +22,4 @@ defense = 0
 health = 0
 text = "<b>Action:</b> Choose a character. Heal all damage from that character."
 shadow = ""
+abilities = Array[ExtResource("1_cvmvx")]([])

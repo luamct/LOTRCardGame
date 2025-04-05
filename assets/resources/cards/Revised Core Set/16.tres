@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3]
 
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_i2ya6"]
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_nv2de"]
 
 [resource]
@@ -8,6 +9,7 @@ name = "Snowbourn Scout"
 set_ = "Revised Core Set"
 id = 16
 type = "Ally"
+quantity = 3
 encounter_set = ""
 sphere = "Leadership"
 cost = 1
@@ -20,3 +22,4 @@ defense = 1
 health = 1
 text = "<b>Response:</b> After Snowbourn Scout enters play, choose a location. Place 1 progress token on that location."
 shadow = ""
+abilities = Array[ExtResource("1_i2ya6")]([])

@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3]
 
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_w0m11"]
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_yqkfc"]
 
 [resource]
@@ -8,6 +9,7 @@ name = "Blade of Gondolin"
 set_ = "Revised Core Set"
 id = 39
 type = "Attachment"
+quantity = 2
 encounter_set = ""
 sphere = "Tactics"
 cost = 1
@@ -22,3 +24,4 @@ text = "Attach to a hero. Restricted.
 Attached hero gets +1 [attack] when attacking an Orc.
 <b>Response:</b> After attached hero attacks and destroys an enemy, place 1 progress token on the current quest."
 shadow = ""
+abilities = Array[ExtResource("1_w0m11")]([])

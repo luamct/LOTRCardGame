@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3]
 
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_kg7or"]
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_t7wt6"]
 
 [resource]
@@ -8,6 +9,7 @@ name = "Brok Ironfist"
 set_ = "Revised Core Set"
 id = 19
 type = "Ally"
+quantity = 1
 encounter_set = ""
 sphere = "Leadership"
 cost = 6
@@ -20,3 +22,4 @@ defense = 1
 health = 4
 text = "<b>Response:</b> After a <b><i>Dwarf</i></b> hero you control leaves play, put Brok Ironfist into play from your hand."
 shadow = ""
+abilities = Array[ExtResource("1_kg7or")]([])

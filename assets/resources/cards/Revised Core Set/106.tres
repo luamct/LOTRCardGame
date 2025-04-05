@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3]
 
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_kjxn5"]
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_qmu3k"]
 
 [resource]
@@ -8,7 +9,8 @@ name = "Endless Caverns"
 set_ = "Revised Core Set"
 id = 106
 type = "Location"
-encounter_set = "Escape from Dol Guldur Campaign"
+quantity = 2
+encounter_set = "Escape from Dol Guldur"
 sphere = ""
 cost = 0
 threat = 1
@@ -20,3 +22,4 @@ defense = 0
 health = 0
 text = "Doomed 1. Surge."
 shadow = ""
+abilities = Array[ExtResource("1_kjxn5")]([])

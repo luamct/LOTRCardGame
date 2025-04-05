@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_7mgtr"]
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_ian06"]
 
 [resource]
 script = ExtResource("1_7mgtr")
@@ -8,6 +9,7 @@ name = "A Light in the Dark"
 set_ = "Revised Core Set"
 id = 52
 type = "Event"
+quantity = 2
 encounter_set = ""
 sphere = "Spirit"
 cost = 2
@@ -20,3 +22,4 @@ defense = 0
 health = 0
 text = "<b>Action:</b> Choose an enemy engaged with a player. Return that enemy to the staging area."
 shadow = ""
+abilities = Array[ExtResource("1_ian06")]([])

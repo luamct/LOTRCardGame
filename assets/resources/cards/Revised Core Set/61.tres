@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3]
 
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_cuye7"]
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_qq3ho"]
 
 [resource]
@@ -8,6 +9,7 @@ name = "Miner of the Iron Hills"
 set_ = "Revised Core Set"
 id = 61
 type = "Ally"
+quantity = 2
 encounter_set = ""
 sphere = "Lore"
 cost = 2
@@ -20,3 +22,4 @@ defense = 1
 health = 2
 text = "<b>Response:</b> After Miner of the Iron Hills enters play, choose and discard 1 Condition attachment from play."
 shadow = ""
+abilities = Array[ExtResource("1_cuye7")]([])

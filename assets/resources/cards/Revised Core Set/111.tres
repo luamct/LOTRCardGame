@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3]
 
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_lqfhw"]
 [ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_ua4uc"]
 
 [resource]
@@ -8,7 +9,8 @@ name = "Misty Mountain Goblins"
 set_ = "Revised Core Set"
 id = 111
 type = "Enemy"
-encounter_set = "Journey Along the Anduin Campaign"
+quantity = 3
+encounter_set = "Journey Along the Anduin"
 sphere = ""
 cost = 0
 threat = 2
@@ -20,3 +22,4 @@ defense = 1
 health = 0
 text = "Forced: After Misty Mountain Goblins attacks, remove 1 progress token from the current quest."
 shadow = "Shadow: Remove 1 progress token from the current quest. (3 progress tokens instead if this attack is undefended.)"
+abilities = Array[ExtResource("1_lqfhw")]([])
