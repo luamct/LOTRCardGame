@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://dtvaxpirkdhud"]
+[gd_scene load_steps=17 format=3 uid="uid://dtvaxpirkdhud"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_6bwgh"]
 [ext_resource type="PackedScene" uid="uid://cmdoownwjkp03" path="res://scenes/deck/deck.tscn" id="2_hnw1f"]
 [ext_resource type="Resource" uid="uid://olro2fbnu8mk" path="res://assets/resources/decks/decklist_1.tres" id="2_k17n6"]
 [ext_resource type="PackedScene" uid="uid://dj0pfdqf121ee" path="res://scenes/card/card_mesh.tscn" id="4_wbqve"]
 [ext_resource type="Script" path="res://scenes/player/reading_viewport.gd" id="5_4yhna"]
+[ext_resource type="PackedScene" uid="uid://bwde682jx4cod" path="res://scenes/scenarios/play_area.tscn" id="6_hwhe8"]
 
 [sub_resource type="Curve" id="Curve_1wogk"]
 _data = [Vector2(0, 0), 0.0, 3.2483, 0, 0, Vector2(0.513227, 0.663158), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.21223, 0.0, 0, 0]
@@ -21,6 +22,20 @@ point_count = 2
 min_value = -1.0
 _data = [Vector2(0, -0.557895), 0.0, 1.36842, 0, 1, Vector2(1, 0.810526), 1.36842, 0.0, 1, 0]
 point_count = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_layl5"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.2, 1, 0.6, 0.3)
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_d6n3e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8fm5b"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.2, 1, 0.6, 0.3)
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_dbadl"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yq7d1"]
 font_size = 32
@@ -70,11 +85,16 @@ x_position_curve = SubResource("Curve_ekaqf")
 [node name="Deck" parent="." instance=ExtResource("2_hnw1f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.7019, 0, 25.761)
 
-[node name="HeroesArea" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.6757, 0, 14.7637)
+[node name="HeroesArea" parent="." instance=ExtResource("6_hwhe8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.0712, 0, 9.70411)
+material_override = SubResource("StandardMaterial3D_layl5")
+mesh = SubResource("ImmediateMesh_d6n3e")
 
-[node name="AlliesArea" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.289, 0, 14.764)
+[node name="AlliesArea" parent="." instance=ExtResource("6_hwhe8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.44117, 0, 9.85398)
+material_override = SubResource("StandardMaterial3D_8fm5b")
+mesh = SubResource("ImmediateMesh_dbadl")
+size = Vector2(30, 10)
 
 [node name="UI" type="CanvasLayer" parent="."]
 

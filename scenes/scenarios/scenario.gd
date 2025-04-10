@@ -11,7 +11,7 @@ signal end_of_round
 @onready var quests_area: Marker3D = $QuestsArea
 @onready var ui: ScenarioUI = $UI/TurnPhases
 @onready var ability_controller: AbilityController = $AbilityController
-@onready var staging_area: StagingArea = $StagingArea
+@onready var staging_area: PlayArea = $StagingArea
 
 var current_quest_index: int = 0
 var current_quest: Card
@@ -21,7 +21,6 @@ func _ready():
 	setup()
 	phase = Enums.TurnPhase.Resource
 	ui.set_turn_phase(phase)
-	
 
 func setup():
 	player.setup()
@@ -41,22 +40,11 @@ func open_next_quest_card():
 	current_quest = quest_card
 	quests_area.add_child(quest_card)
 
-func move_into_staging(card):
-	var secs = 0.5
-	var tween: Tween = get_tree().create_tween().set_parallel(true)
-	tween.tween_property(card, "global_position", staging_area.global_position, secs)
-	tween.tween_property(card, "rotation_degrees:z", 0, secs)
-	tween.tween_callback(func():
-		card.reparent(staging_area, true)
-	).set_delay(secs)
-	return await tween.finished
-
 func resolve_effect(effect: QuestEffectData):
 	match effect.effect_type:
 		QuestEffectData.EffectType.SEARCH_AND_ADD_TO_STAGING:
 			var card: Card = encounter_deck.find_by_name(effect.card_name)
-			await move_into_staging(card)
-			print(card.data.name)
+			staging_area.add_card(card)
 
 func go_to_phase(_phase: Enums.TurnPhase):
 	end_of_phase.emit()

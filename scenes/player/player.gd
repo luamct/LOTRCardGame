@@ -4,8 +4,8 @@ extends Node3D
 @export var starting_hand_size: int
 @export var decklist: DeckList
 
-@onready var heroes_area: Node3D = $HeroesArea
-@onready var allies_area: Node3D = $AlliesArea
+@onready var heroes_area: PlayArea = $HeroesArea
+@onready var allies_area: PlayArea = $AlliesArea
 @onready var ui_threat: Label = $UI.find_child("ThreatValue")
 @onready var scenario: Scenario = get_tree().get_first_node_in_group("scenario")
 @onready var camera: Camera3D = %Camera3D
@@ -30,7 +30,6 @@ var hand_cards: Array[Card]
 
 # Battlefield state
 var threat_level = 0
-var heroes: Array[Card]
 var allies: Array[Card]
 
 # sphere -> amount, accounts for all heroes, always updated
@@ -75,11 +74,6 @@ func draw_cards(n: int):
 		).set_delay(tween_duration + 0.2)
 		await get_tree().create_timer(0.2).timeout
 
-		#card_node.global_transform = deck.global_transform
-		#card_node.position.y += 2
-		#card_node.rotation_degrees.x += 90
-		#card.rotation_degrees.z = 0  # Turn face up
-
 func adjust_cards_in_hand():
 	if hand_cards.size() == 0:
 		return
@@ -110,7 +104,7 @@ func adjust_cards_in_hand():
 		tween.tween_property(card, "rotation_degrees:y", new_rotation_y, tween_duration)
 
 func set_threat_level():
-	for hero_card in heroes:
+	for hero_card in heroes_area.cards:
 		threat_level += hero_card.data.threat
 
 	ui_threat.text = str(threat_level)
@@ -121,10 +115,7 @@ func shuffle():
 func setup_heroes():
 	for i in decklist.heroes.size():
 		var card: Card = Card.create(decklist.heroes[i], Card.Zone.BATTLEFIELD, scenario, self)
-		heroes_area.add_child(card)
-		card.position.x += i * card.width * 1.2
-
-		heroes.append(card)
+		heroes_area.add_card(card)
 
 func add_resources(sphere: String, amount: int):
 	if sphere not in resources:
@@ -132,13 +123,13 @@ func add_resources(sphere: String, amount: int):
 	resources[sphere] += amount
 
 func resource_phase():
-	for hero in heroes:
+	for hero in heroes_area.cards:
 		hero.add_resources(5)
 		add_resources(hero.data.sphere, 5)
 
 func remove_resources(sphere: String, cost: int):
 	var paid = 0
-	for hero in heroes:
+	for hero in heroes_area.cards:
 		if hero.data.sphere == sphere:
 			var to_pay = min(hero.get_resources(), cost)
 			hero.remove_resources(to_pay)
@@ -175,7 +166,7 @@ func get_affected_cards(applies_to: AbilityData.TargetType) -> Array[Card]:
 			return allies
 
 		AbilityData.TargetType.CHARACTER:
-			return heroes + allies
+			return heroes_area.cards + allies
 
 	return []
 
@@ -189,4 +180,3 @@ func apply_stats_effect(effect: AbilityEffectData):
 func _input(event: InputEvent):
 	if Input.is_key_pressed(KEY_D):
 		draw_cards(1)
-		#adjust_cards_in_hand()

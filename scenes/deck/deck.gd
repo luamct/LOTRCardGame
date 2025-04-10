@@ -20,5 +20,5 @@ func shuffle():
 func draw(n: int) -> Array[CardData]:
 	return cards.slice(0, n, 1)
 
-func find_by_name(name: String) -> Card:
-	return cards.filter(func(card: Card): return card.data.name == name)[0]
+func find_by_name(_name: String) -> Card:
+	return cards.filter(func(card: Card): return card.data.name == _name)[0]

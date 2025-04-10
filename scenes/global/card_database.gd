@@ -14,5 +14,5 @@ func _ready():
 			cards.append(card)
 			cards_by_name[card.name] = card
 
-func card_by_name(name: String) -> CardData:
-	return cards_by_name[name]
+func card_by_name(_name: String) -> CardData:
+	return cards_by_name[_name]
