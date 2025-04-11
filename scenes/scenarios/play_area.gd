@@ -49,7 +49,10 @@ func add_card(card: Card):
 		card.reparent(self, true)
 	else:
 		add_child(card)
-		
+	
+	card.zone = Card.Zone.BATTLEFIELD
+	card.state = Card.State.REST
+	
 	cards.append(card)
 	reposition_cards()
 
@@ -62,10 +65,12 @@ func reposition_cards():
 	var card_spacing: float = card_width/4
 	for i in cards.size():
 		var card: Card = cards[i]
-		var x = card_width/2 + i * (card_width + card_spacing)
 
-		var secs = 0.5
+		var secs = 0.3
 		var tween: Tween = get_tree().create_tween().set_parallel(true)
-		tween.tween_property(card, "position:x", x, secs)
-		tween.tween_property(card, "position:z", card_height/2, secs)
-		tween.tween_property(card, "rotation_degrees:z", 0, secs)
+		var pos: Vector3 = Vector3(
+			card_width/2 + i * (card_width + card_spacing),
+			0,
+			card_height/2)
+		tween.tween_property(card, "position", pos, secs)
+		tween.tween_property(card, "rotation_degrees", Vector3.ZERO, secs)

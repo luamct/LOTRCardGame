@@ -30,7 +30,7 @@ var hand_cards: Array[Card]
 
 # Battlefield state
 var threat_level = 0
-var allies: Array[Card]
+#var allies: Array[Card]
 
 # sphere -> amount, accounts for all heroes, always updated
 var resources: Dictionary
@@ -143,18 +143,10 @@ func dragging(enabled: bool):
 	dragging_surface_collision.disabled = !enabled
 
 func try_to_play(card: Card):
-	if (resources.get(card.data.sphere, 0) >= card.data.cost):
+	if resources.get(card.data.sphere, 0) >= card.data.cost:
 		remove_resources(card.data.sphere, card.data.cost)
-		card.reparent(allies_area, false)
 		
-		card.position = Vector3.ZERO
-		card.position.x = allies.size() * card.width * 1.2
-		
-		card.rotation = Vector3.ZERO
-		card.scale = Vector3.ONE
-		card.zone = Card.Zone.BATTLEFIELD
-		card.state = Card.State.REST
-		allies.append(card)
+		allies_area.add_card(card)
 		hand_cards.erase(card)
 		adjust_cards_in_hand()
 	else:
@@ -163,10 +155,10 @@ func try_to_play(card: Card):
 func get_affected_cards(applies_to: AbilityData.TargetType) -> Array[Card]:
 	match applies_to:
 		AbilityData.TargetType.ALLY:
-			return allies
+			return allies_area.cards
 
 		AbilityData.TargetType.CHARACTER:
-			return heroes_area.cards + allies
+			return heroes_area.cards + allies_area.cards
 
 	return []
 

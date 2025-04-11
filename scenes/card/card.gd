@@ -128,25 +128,11 @@ func enter_highlight():
 	base_rotation = mesh.rotation_degrees
 
 	if zone == Zone.HAND:
-		#mesh.scale *= (1 + highlight_scale_boost)
-		#mesh.position.y += height * highlight_height_boost
-		#mesh.position.z += 1
 		reading_viewport.highlight_hand_card(self)
 		
 	elif zone == Zone.BATTLEFIELD:
 		reading_viewport.show_card(self)
 
-		#var space = get_world_3d().direct_space_state
-		#var query = PhysicsRayQueryParameters3D.create(camera.global_position, global_position, dragging_surface_layer)
-		#query.collide_with_areas = true
-		#var hit = space.intersect_ray(query)
-		#print(hit)
-
-		#print("Ray from: ", camera.global_position)
-		#print("Ray to: ", global_position)
-		#Debug.draw_line(camera.global_position, global_position)
-	# print("Highlight: card_y = %f, mesh_y = %f" % [position.y, mesh.position.y])
-	# mesh.global_rotation_degrees.z = 0
 
 func leave_highlight():
 	mesh.scale = base_scale
@@ -191,7 +177,6 @@ func _on_area_3d_input_event(_camera, event, world_position, _normal, _shape_idx
 					
 					if activated_ability != null:
 						scenario.resolve_ability(activated_ability, self, player)
-
 
 func get_activated_ability(abilities: Array[AbilityData]):
 	return abilities \

@@ -9,12 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://bwde682jx4cod" path="res://scenes/scenarios/play_area.tscn" id="6_l4mla"]
 [ext_resource type="Script" path="res://scenes/abilities/ability_controller.gd" id="7_ryi1g"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s2tau"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ev7tr"]
 transparency = 1
 shading_mode = 0
 albedo_color = Color(0.2, 1, 0.6, 0.3)
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_2r4ph"]
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_ni6cd"]
 
 [node name="Scenario" type="Node3D" groups=["scenario"]]
 script = ExtResource("1_27os8")
@@ -33,8 +33,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.408, 0, -10)
 
 [node name="StagingArea" parent="." instance=ExtResource("6_l4mla")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.27584)
-material_override = SubResource("StandardMaterial3D_s2tau")
-mesh = SubResource("ImmediateMesh_2r4ph")
+material_override = SubResource("StandardMaterial3D_ev7tr")
+mesh = SubResource("ImmediateMesh_ni6cd")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
