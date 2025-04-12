@@ -1,5 +1,5 @@
 class_name ScenarioUI
-extends Panel
+extends CanvasLayer
 
 @onready var turn_highlight = $TurnHighlight
 

@@ -186,7 +186,7 @@ func get_activated_ability(abilities: Array[AbilityData]):
 func _input(event: InputEvent):
 	if not (event is InputEventMouseMotion or event is InputEventMouseButton):
 		return
-	
+
 	match state:
 		State.DRAGGING:
 			if event.is_action_released("left_click"):
@@ -233,11 +233,11 @@ func get_resources():
 
 func exaust():
 	exausted = true
-	create_tween().tween_property(self, "rotation_degrees:z", -90, TWEEN_DURATION)
+	create_tween().tween_property(self, "rotation_degrees:y", -90, TWEEN_DURATION)
 
 func ready():
 	exausted = false
-	create_tween().tween_property(self, "rotation_degrees:z", 0, TWEEN_DURATION)
+	create_tween().tween_property(self, "rotation_degrees:y", 0, TWEEN_DURATION)
 
 func apply_stats_effect(effect: AbilityEffectData):
 	match effect.effect_type:

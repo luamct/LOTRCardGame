@@ -9,7 +9,7 @@ signal end_of_round
 @onready var player: Player = $Player
 @onready var encounter_deck: Deck = $EncounterDeck
 @onready var quests_area: Marker3D = $QuestsArea
-@onready var ui: ScenarioUI = $UI/TurnPhases
+@onready var ui: ScenarioUI = $UI
 @onready var ability_controller: AbilityController = $AbilityController
 @onready var staging_area: PlayArea = $StagingArea
 
@@ -33,7 +33,7 @@ func open_next_quest_card():
 		scenario_data.quest_cards[current_quest_index], 
 		Card.Zone.BATTLEFIELD, 
 		self)
-	
+
 	for effect in quest_card.data.effects_a:
 		await resolve_effect(effect)
 	
