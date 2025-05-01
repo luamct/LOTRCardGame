@@ -12,6 +12,7 @@ signal end_of_round
 @onready var ui: ScenarioUI = $UI
 @onready var ability_controller: AbilityController = $AbilityController
 @onready var staging_area: PlayArea = $StagingArea
+@onready var instructions_label: Label = %InstructionsLabel
 
 var current_quest_index: int = 0
 var current_quest: Card
@@ -19,8 +20,7 @@ var phase: Enums.TurnPhase = Enums.TurnPhase.None
 
 func _ready():
 	setup()
-	phase = Enums.TurnPhase.Resource
-	ui.set_turn_phase(phase)
+	enter_phase(Enums.TurnPhase.Resource)
 
 func setup():
 	player.setup()
@@ -46,16 +46,18 @@ func resolve_effect(effect: QuestEffectData):
 			var card: Card = encounter_deck.find_by_name(effect.card_name)
 			staging_area.add_card(card)
 
-func go_to_phase(_phase: Enums.TurnPhase):
-	end_of_phase.emit()
+func enter_phase(_phase: Enums.TurnPhase):
+	if phase != Enums.TurnPhase.None:
+		end_of_phase.emit()
+
 	phase = _phase
 	ui.set_turn_phase(phase)
 
-func _process(delta):
 	match phase:
 		Enums.TurnPhase.Resource:
 			resource_phase()
-			go_to_phase(Enums.TurnPhase.Planning)
+			await get_tree().create_timer(0.5).timeout
+			enter_phase(Enums.TurnPhase.Planning)
 
 		Enums.TurnPhase.Planning:
 			pass
@@ -88,22 +90,22 @@ func _input(_event):
 func _on_pass_button_button_down():
 	match phase:
 		Enums.TurnPhase.Planning:
-			go_to_phase(Enums.TurnPhase.Quest)
+			enter_phase(Enums.TurnPhase.Quest)
 		
 		Enums.TurnPhase.Quest:
-			go_to_phase(Enums.TurnPhase.Travel)
+			enter_phase(Enums.TurnPhase.Travel)
 
 		Enums.TurnPhase.Travel:
-			go_to_phase(Enums.TurnPhase.Encounter)
+			enter_phase(Enums.TurnPhase.Encounter)
 			
 		Enums.TurnPhase.Encounter:
-			go_to_phase(Enums.TurnPhase.Combat)
+			enter_phase(Enums.TurnPhase.Combat)
 
 		Enums.TurnPhase.Combat:
-			go_to_phase(Enums.TurnPhase.Refresh)
+			enter_phase(Enums.TurnPhase.Refresh)
 		
 		Enums.TurnPhase.Refresh:
-			go_to_phase(Enums.TurnPhase.Resource)
+			enter_phase(Enums.TurnPhase.Resource)
 
 func resolve_ability(ability: AbilityData, card: Card, _player: Player):
 	ability_controller.resolve_ability(ability, self, card, _player)
