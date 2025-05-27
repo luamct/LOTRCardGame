@@ -13,12 +13,15 @@ signal end_of_round
 @onready var ability_controller: AbilityController = $AbilityController
 @onready var staging_area: PlayArea = $StagingArea
 @onready var instructions_label: Label = %InstructionsLabel
+@onready var pass_button: Button = %PassButton
 
 var current_quest_index: int = 0
 var current_quest: Card
 var phase: Enums.TurnPhase = Enums.TurnPhase.None
 
 func _ready():
+	pass_button.button_down.connect(on_pass_button_down)
+	
 	setup()
 	enter_phase(Enums.TurnPhase.Resource)
 
@@ -63,7 +66,7 @@ func enter_phase(_phase: Enums.TurnPhase):
 			pass
 
 		Enums.TurnPhase.Quest:
-			pass
+			player.enter_quest_selection()
 
 		Enums.TurnPhase.Travel:
 			pass
@@ -87,13 +90,17 @@ func _input(_event):
 	if Input.is_key_pressed(KEY_ESCAPE):
 		get_tree().quit()
 
-func _on_pass_button_button_down():
+func on_pass_button_down():
 	match phase:
 		Enums.TurnPhase.Planning:
 			enter_phase(Enums.TurnPhase.Quest)
 		
 		Enums.TurnPhase.Quest:
-			enter_phase(Enums.TurnPhase.Travel)
+			if player.in_quest_selection:
+				print("Resolve questing")
+				player.leave_quest_selection()
+			else:
+				enter_phase(Enums.TurnPhase.Travel)
 
 		Enums.TurnPhase.Travel:
 			enter_phase(Enums.TurnPhase.Encounter)

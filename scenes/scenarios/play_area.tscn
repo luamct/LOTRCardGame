@@ -2,17 +2,17 @@
 
 [ext_resource type="Script" path="res://scenes/scenarios/play_area.gd" id="1_4dubb"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yy3h5"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1xpp8"]
 transparency = 1
 shading_mode = 0
 albedo_color = Color(0.2, 1, 0.6, 0.3)
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_qm6hu"]
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_tkrks"]
 
 [node name="PlayArea" type="MeshInstance3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.24677)
-material_override = SubResource("StandardMaterial3D_yy3h5")
-mesh = SubResource("ImmediateMesh_qm6hu")
+material_override = SubResource("StandardMaterial3D_1xpp8")
+mesh = SubResource("ImmediateMesh_tkrks")
 script = ExtResource("1_4dubb")
 show_in_game = true
 size = Vector2(20, 10)

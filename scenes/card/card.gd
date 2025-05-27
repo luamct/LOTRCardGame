@@ -16,6 +16,7 @@ const TWEEN_DURATION = 0.05
 @onready var width: float = 5
 @onready var height: float = 7
 
+@onready var highlight_mesh: MeshInstance3D = $HighlightMesh
 @onready var collision_shape: CollisionShape3D = $Area3D/CollisionShape3D
 @onready var reading_viewport: ReadingViewport = get_tree().get_first_node_in_group("reading_viewport")
 @onready var scenario: Scenario = get_tree().get_first_node_in_group("scenario")
@@ -45,6 +46,8 @@ var rotation_at_rest: int = 0
 
 var dragging_offset: Vector3
 var inside_drop_area: bool = false
+var selected_for_questing: bool = false
+var is_mouse_hovering: bool = false
 
 # Refers to any effects applicable to the card
 enum State {
@@ -113,9 +116,13 @@ static func get_card_art_texture(card: CardData, side: String = ""):
 	return load("res://assets/database/scans/final/%s/%d%s.png" % [card.set_, card.id, side])
 	
 func _ready():
-	pass
+	camera = get_viewport().get_camera_3d()
+
+func _on_area_3d_mouse_entered():
+	is_mouse_hovering = true
 
 func _on_area_3d_mouse_exited():
+	is_mouse_hovering = false
 	if state == State.HIGHLIGHT:
 		leave_highlight()
 		enter_hand()
@@ -166,25 +173,46 @@ func _on_area_3d_input_event(_camera, event, world_position, _normal, _shape_idx
 		State.REST:
 			enter_highlight()
 
-		# Left click while highlighted, so we start dragging the card
-		State.HIGHLIGHT:
-			if event.is_action_pressed("left_click"):
-				if zone == Zone.HAND:
-					leave_highlight()
-					enter_dragging(world_position, _camera)
-				elif zone == Zone.BATTLEFIELD:
-					var activated_ability = get_activated_ability(data.abilities)
-					
-					if activated_ability != null:
-						scenario.resolve_ability(activated_ability, self, player)
+func handle_quest_selection(event: InputEvent):
+	if not event.is_action_pressed("left_click"):
+		return
+
+	# Only heroes and allies can go questing
+	if is_character():
+		if not selected_for_questing:
+			selected_for_questing = true
+			player.add_to_questing(self)
+			highlight_mesh.visible = true
+		else:
+			selected_for_questing = false
+			player.remove_from_questing(self)
+			highlight_mesh.visible = false
 
 func get_activated_ability(abilities: Array[AbilityData]):
 	return abilities \
 		.filter(func (a): return a.type == AbilityData.AbilityType.ACTIVATED) \
 		.pop_back()
 
+func get_3d_mouse_position(screen_position: Vector2) -> Vector3:
+	var mouse_position = screen_position
+
+	var ray_from = camera.project_ray_origin(mouse_position)
+	var ray_direction = camera.project_ray_normal(mouse_position)
+	var query = PhysicsRayQueryParameters3D.create(
+		ray_from, 
+		ray_from + 100 * ray_direction, 
+		dragging_surface_layer
+	)
+	query.collide_with_areas = true
+	var result = get_world_3d().direct_space_state.intersect_ray(query)
+	return result.get("position", Vector3.ZERO)
+
 func _input(event: InputEvent):
-	if not (event is InputEventMouseMotion or event is InputEventMouseButton):
+	if not is_mouse_hovering or not (event is InputEventMouseMotion or event is InputEventMouseButton):
+		return
+
+	if player and player.in_quest_selection:
+		handle_quest_selection(event)
 		return
 
 	match state:
@@ -197,23 +225,26 @@ func _input(event: InputEvent):
 
 				enter_hand()
 			else:
-				var mouse_position = event.position
-
-				var ray_from = camera.project_ray_origin(mouse_position)
-				var ray_direction = camera.project_ray_normal(mouse_position)
-				var query = PhysicsRayQueryParameters3D.create(
-					ray_from, 
-					ray_from + 100 * ray_direction, 
-					dragging_surface_layer
-				)
-				query.collide_with_areas = true
-				var result = get_world_3d().direct_space_state.intersect_ray(query)
-
-				if not result.has("position"):
+				var mouse_position = get_3d_mouse_position(event.position)
+				if mouse_position == null:
 					return
 
-				global_position = result["position"]
+				global_position = mouse_position
 				inside_drop_area = (global_position.z < player.drop_to_play_marker.global_position.z)
+
+		# Left click while highlighted, so we start dragging the card
+		State.HIGHLIGHT:
+			if event.is_action_pressed("left_click"):
+				if zone == Zone.HAND:
+					leave_highlight()
+					var mouse_position = get_3d_mouse_position(event.position)
+					enter_dragging(mouse_position, camera)
+					
+				elif zone == Zone.BATTLEFIELD:
+					var activated_ability = get_activated_ability(data.abilities)
+					
+					if activated_ability != null:
+						scenario.resolve_ability(activated_ability, self, player)
 
 func _notification(what):
 	match what:
@@ -274,10 +305,14 @@ func on_end_of_phase():
 		if ongoing_effects[i].duration == AbilityEffectData.EffectDuration.END_OF_PHASE:
 			unapply_stats_effect(ongoing_effects[i])
 			ongoing_effects.remove_at(i)
-	
+
 func get_texture() -> CompressedTexture2D:
 	return front_material.albedo_texture
 
+# Just for debugging
 var _global_position: Vector3
 func _process(delta):
 	_global_position = global_position
+
+func is_character():
+	return data.type == "Hero" or data.type == "Ally"

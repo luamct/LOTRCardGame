@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://budk3y16g43xm"]
+[gd_scene load_steps=13 format=3 uid="uid://budk3y16g43xm"]
 
 [ext_resource type="PackedScene" uid="uid://djl5p6eb3jgiu" path="res://scenes/board/board.tscn" id="1_2d116"]
 [ext_resource type="Script" path="res://scenes/scenarios/scenario.gd" id="1_27os8"]
@@ -10,12 +10,16 @@
 [ext_resource type="Script" path="res://scenes/abilities/ability_controller.gd" id="7_ryi1g"]
 [ext_resource type="Theme" uid="uid://dhe7d0b4cm5u7" path="res://assets/themes/phases_theme.tres" id="8_etgy3"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kyxay"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hywwj"]
 transparency = 1
 shading_mode = 0
 albedo_color = Color(0.2, 1, 0.6, 0.3)
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_uxxxw"]
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_d6fbm"]
+
+[sub_resource type="Environment" id="Environment_w32re"]
+glow_intensity = 1.5
+glow_strength = 2.0
 
 [node name="Scenario" type="Node3D" groups=["scenario"]]
 script = ExtResource("1_27os8")
@@ -25,6 +29,8 @@ scenario_data = ExtResource("2_gnjxe")
 
 [node name="Player" parent="." instance=ExtResource("2_lrnvk")]
 starting_hand_size = 7
+card_spacing = 0.5
+max_card_rotation = -4.0
 
 [node name="EncounterDeck" parent="." instance=ExtResource("5_bj5na")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.1426, 0, -10.9968)
@@ -34,8 +40,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.408, 0, -10)
 
 [node name="StagingArea" parent="." instance=ExtResource("6_l4mla")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.27584)
-material_override = SubResource("StandardMaterial3D_kyxay")
-mesh = SubResource("ImmediateMesh_uxxxw")
+material_override = SubResource("StandardMaterial3D_hywwj")
+mesh = SubResource("ImmediateMesh_d6fbm")
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("6_ij16v")
@@ -136,10 +142,12 @@ layout_mode = 2
 text = "Refresh"
 
 [node name="PassButton" type="Button" parent="UI/PhasesPanelContainer/VBoxContainer/TurnPhases/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "PASS"
 
 [node name="AbilityController" type="Node" parent="." groups=["ability_controller"]]
 script = ExtResource("7_ryi1g")
 
-[connection signal="button_down" from="UI/PhasesPanelContainer/VBoxContainer/TurnPhases/VBoxContainer/PassButton" to="." method="_on_pass_button_button_down"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_w32re")

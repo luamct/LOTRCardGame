@@ -30,7 +30,10 @@ var hand_cards: Array[Card]
 
 # Battlefield state
 var threat_level = 0
-#var allies: Array[Card]
+
+# Questing
+var in_quest_selection: bool = false
+var selected_for_questing: Array[Card]
 
 # sphere -> amount, accounts for all heroes, always updated
 var resources: Dictionary
@@ -172,3 +175,15 @@ func apply_stats_effect(effect: AbilityEffectData):
 func _input(event: InputEvent):
 	if Input.is_key_pressed(KEY_D):
 		draw_cards(1)
+
+func enter_quest_selection():
+	in_quest_selection = true
+	
+func leave_quest_selection():
+	in_quest_selection = false
+	
+func add_to_questing(card: Card):
+	selected_for_questing.append(card)
+	
+func remove_from_questing(card: Card):
+	selected_for_questing.erase(card)
