@@ -23,19 +23,19 @@ min_value = -1.0
 _data = [Vector2(0, -0.557895), 0.0, 1.36842, 0, 1, Vector2(1, 0.810526), 1.36842, 0.0, 1, 0]
 point_count = 2
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1m4vm"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oaacc"]
 transparency = 1
 shading_mode = 0
 albedo_color = Color(0.2, 1, 0.6, 0.3)
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_w6bik"]
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_gipxu"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5sj4q"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7j3d8"]
 transparency = 1
 shading_mode = 0
 albedo_color = Color(0.2, 1, 0.6, 0.3)
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_ae3dx"]
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_vqayc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yq7d1"]
 font_size = 32
@@ -87,13 +87,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.7019, 0, 25.761)
 
 [node name="HeroesArea" parent="." instance=ExtResource("6_hwhe8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.0712, 0, 9.70411)
-material_override = SubResource("StandardMaterial3D_1m4vm")
-mesh = SubResource("ImmediateMesh_w6bik")
+material_override = SubResource("StandardMaterial3D_oaacc")
+mesh = SubResource("ImmediateMesh_gipxu")
 
 [node name="AlliesArea" parent="." instance=ExtResource("6_hwhe8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.44117, 0, 9.85398)
-material_override = SubResource("StandardMaterial3D_5sj4q")
-mesh = SubResource("ImmediateMesh_ae3dx")
+material_override = SubResource("StandardMaterial3D_7j3d8")
+mesh = SubResource("ImmediateMesh_vqayc")
 size = Vector2(30, 10)
 
 [node name="UI" type="CanvasLayer" parent="."]

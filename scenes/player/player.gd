@@ -1,6 +1,9 @@
 class_name Player
 extends Node3D
 
+signal added_to_questing(Card)
+signal removed_from_questing(Card)
+
 @export var starting_hand_size: int
 @export var decklist: DeckList
 
@@ -112,6 +115,11 @@ func set_threat_level():
 
 	ui_threat.text = str(threat_level)
 
+# Can be negative for reducing threat
+func add_to_threat_level(amount: int):
+	threat_level += amount
+	ui_threat.text = str(threat_level)
+
 func shuffle():
 	decklist.cards.shuffle()
 
@@ -178,12 +186,19 @@ func _input(event: InputEvent):
 
 func enter_quest_selection():
 	in_quest_selection = true
-	
+
 func leave_quest_selection():
 	in_quest_selection = false
+	for card in selected_for_questing:
+		card.selected_for_questing = false
+		card.highlight_mesh.visible = false
 	
+	selected_for_questing.clear()
+
 func add_to_questing(card: Card):
 	selected_for_questing.append(card)
-	
+	added_to_questing.emit(card)
+
 func remove_from_questing(card: Card):
 	selected_for_questing.erase(card)
+	removed_from_questing.emit(card)

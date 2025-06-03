@@ -13,14 +13,19 @@ signal end_of_round
 @onready var ability_controller: AbilityController = $AbilityController
 @onready var staging_area: PlayArea = $StagingArea
 @onready var instructions_label: Label = %InstructionsLabel
-@onready var pass_button: Button = %PassButton
+@onready var interaction_button: Button = %PassButton
 
+var n_players: int = 1
 var current_quest_index: int = 0
 var current_quest: Card
+var current_willpower: int = 0
 var phase: Enums.TurnPhase = Enums.TurnPhase.None
 
 func _ready():
-	pass_button.button_down.connect(on_pass_button_down)
+	interaction_button.button_down.connect(on_interaction_button_down)
+	
+	player.added_to_questing.connect(on_added_to_questing)
+	player.removed_from_questing.connect(on_removed_from_questing)
 	
 	setup()
 	enter_phase(Enums.TurnPhase.Resource)
@@ -66,9 +71,17 @@ func enter_phase(_phase: Enums.TurnPhase):
 			pass
 
 		Enums.TurnPhase.Quest:
+			ui.show_questing_panel()
+			ui.set_willpower(0)
+			ui.set_questing_threat(staging_area.current_threat_value())
+			interaction_button.text = "CONFIRM"
+			
 			player.enter_quest_selection()
 
 		Enums.TurnPhase.Travel:
+			interaction_button.text = "PASS"
+			
+			ui.hide_questing_panel()
 			pass
 
 		Enums.TurnPhase.Encounter:
@@ -90,17 +103,13 @@ func _input(_event):
 	if Input.is_key_pressed(KEY_ESCAPE):
 		get_tree().quit()
 
-func on_pass_button_down():
+func on_interaction_button_down():
 	match phase:
 		Enums.TurnPhase.Planning:
 			enter_phase(Enums.TurnPhase.Quest)
-		
+
 		Enums.TurnPhase.Quest:
-			if player.in_quest_selection:
-				print("Resolve questing")
-				player.leave_quest_selection()
-			else:
-				enter_phase(Enums.TurnPhase.Travel)
+			resolve_questing()
 
 		Enums.TurnPhase.Travel:
 			enter_phase(Enums.TurnPhase.Encounter)
@@ -114,6 +123,24 @@ func on_pass_button_down():
 		Enums.TurnPhase.Refresh:
 			enter_phase(Enums.TurnPhase.Resource)
 
+func resolve_questing():
+	var encounter_cards: Array[Card] = encounter_deck.draw(n_players)
+	for encounter_card in encounter_cards:
+		staging_area.add_card(encounter_card)
+
+	var questing_progress = current_willpower - staging_area.current_threat_value()
+	# Increase threat
+	if questing_progress > 0:
+		pass
+	# Make progress on current quest
+	elif questing_progress < 0:
+		player.add_to_threat_level(-questing_progress)
+		pass
+	
+	current_willpower = 0
+	player.leave_quest_selection()
+	enter_phase(Enums.TurnPhase.Travel)
+
 func resolve_ability(ability: AbilityData, card: Card, _player: Player):
 	ability_controller.resolve_ability(ability, self, card, _player)
 
@@ -125,3 +152,13 @@ func get_scenario_encounter_decklist() -> Array[CardData]:
 				encounter_decklist.append(card)
 	
 	return encounter_decklist
+
+func on_added_to_questing(card: Card):
+	change_willpower(card.data.willpower)
+	
+func on_removed_from_questing(card: Card):
+	change_willpower(-card.data.willpower)
+	
+func change_willpower(delta: int):
+	current_willpower += delta
+	ui.set_willpower(current_willpower)

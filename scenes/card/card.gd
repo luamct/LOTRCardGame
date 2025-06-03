@@ -180,13 +180,19 @@ func handle_quest_selection(event: InputEvent):
 	# Only heroes and allies can go questing
 	if is_character():
 		if not selected_for_questing:
-			selected_for_questing = true
-			player.add_to_questing(self)
-			highlight_mesh.visible = true
+			select_for_questing()
 		else:
-			selected_for_questing = false
-			player.remove_from_questing(self)
-			highlight_mesh.visible = false
+			unselect_for_questing()
+
+func select_for_questing():
+	selected_for_questing = true
+	player.add_to_questing(self)
+	highlight_mesh.visible = true
+
+func unselect_for_questing():
+	selected_for_questing = false
+	player.remove_from_questing(self)
+	highlight_mesh.visible = false
 
 func get_activated_ability(abilities: Array[AbilityData]):
 	return abilities \
@@ -211,7 +217,7 @@ func _input(event: InputEvent):
 	if not is_mouse_hovering or not (event is InputEventMouseMotion or event is InputEventMouseButton):
 		return
 
-	if player and player.in_quest_selection:
+	if player and player.in_quest_selection and zone == Zone.BATTLEFIELD:
 		handle_quest_selection(event)
 		return
 
@@ -309,10 +315,10 @@ func on_end_of_phase():
 func get_texture() -> CompressedTexture2D:
 	return front_material.albedo_texture
 
+func is_character():
+	return data.type == "Hero" or data.type == "Ally"
+
 # Just for debugging
 var _global_position: Vector3
 func _process(delta):
 	_global_position = global_position
-
-func is_character():
-	return data.type == "Hero" or data.type == "Ally"

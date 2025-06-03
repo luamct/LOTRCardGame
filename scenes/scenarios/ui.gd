@@ -3,6 +3,10 @@ extends CanvasLayer
 
 @onready var turn_highlight = $TurnHighlight
 @onready var instructions_label: Label = %InstructionsLabel
+@onready var questing_panel: PanelContainer = $QuestingPanel
+
+@onready var threat_value: Label = %ThreatValue
+@onready var quest_power_value: Label = %QuestPowerValue
 
 const quest_instructions := "Choose characters to go Questing"
 
@@ -24,3 +28,15 @@ func set_turn_phase(phase: Enums.TurnPhase) :
 	match phase:
 		Enums.TurnPhase.Quest:
 			instructions_label.text = quest_instructions
+
+func set_willpower(power: int):
+	quest_power_value.text = str(power)
+	
+func set_questing_threat(threat: int):
+	threat_value.text = str(threat)
+	
+func show_questing_panel():
+	questing_panel.visible = true
+
+func hide_questing_panel():
+	questing_panel.visible = false

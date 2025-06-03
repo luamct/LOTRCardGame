@@ -17,8 +17,13 @@ func setup(scenario: Scenario, _decklist: Array[CardData]):
 func shuffle():
 	cards.shuffle()
 
-func draw(n: int) -> Array[CardData]:
+func draw(n: int) -> Array[Card]:
 	return cards.slice(0, n, 1)
 
 func find_by_name(_name: String) -> Card:
 	return cards.filter(func(card: Card): return card.data.name == _name)[0]
+
+#func reveal(n: int):
+	
+	
+	

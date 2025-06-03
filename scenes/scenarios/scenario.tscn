@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://budk3y16g43xm"]
+[gd_scene load_steps=14 format=3 uid="uid://budk3y16g43xm"]
 
 [ext_resource type="PackedScene" uid="uid://djl5p6eb3jgiu" path="res://scenes/board/board.tscn" id="1_2d116"]
 [ext_resource type="Script" path="res://scenes/scenarios/scenario.gd" id="1_27os8"]
@@ -9,13 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://bwde682jx4cod" path="res://scenes/scenarios/play_area.tscn" id="6_l4mla"]
 [ext_resource type="Script" path="res://scenes/abilities/ability_controller.gd" id="7_ryi1g"]
 [ext_resource type="Theme" uid="uid://dhe7d0b4cm5u7" path="res://assets/themes/phases_theme.tres" id="8_etgy3"]
+[ext_resource type="Theme" uid="uid://dshg5w2rtpcby" path="res://assets/themes/questing_theme.tres" id="8_wxcur"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hywwj"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4825y"]
 transparency = 1
 shading_mode = 0
 albedo_color = Color(0.2, 1, 0.6, 0.3)
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_d6fbm"]
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_4432c"]
 
 [sub_resource type="Environment" id="Environment_w32re"]
 glow_intensity = 1.5
@@ -29,8 +30,6 @@ scenario_data = ExtResource("2_gnjxe")
 
 [node name="Player" parent="." instance=ExtResource("2_lrnvk")]
 starting_hand_size = 7
-card_spacing = 0.5
-max_card_rotation = -4.0
 
 [node name="EncounterDeck" parent="." instance=ExtResource("5_bj5na")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.1426, 0, -10.9968)
@@ -40,33 +39,34 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.408, 0, -10)
 
 [node name="StagingArea" parent="." instance=ExtResource("6_l4mla")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.27584)
-material_override = SubResource("StandardMaterial3D_hywwj")
-mesh = SubResource("ImmediateMesh_d6fbm")
+material_override = SubResource("StandardMaterial3D_4825y")
+mesh = SubResource("ImmediateMesh_4432c")
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("6_ij16v")
 
-[node name="InstructionsPanelContainer" type="PanelContainer" parent="UI"]
+[node name="InstructionsPanel" type="PanelContainer" parent="UI"]
+visible = false
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -233.0
-offset_top = -189.0
+offset_top = 170.0
 offset_right = -33.0
-offset_bottom = -129.0
+offset_bottom = 230.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="InstructionsMarginContainer" type="MarginContainer" parent="UI/InstructionsPanelContainer"]
+[node name="InstructionsMarginContainer" type="MarginContainer" parent="UI/InstructionsPanel"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="InstructionsLabel" type="Label" parent="UI/InstructionsPanelContainer/InstructionsMarginContainer"]
+[node name="InstructionsLabel" type="Label" parent="UI/InstructionsPanel/InstructionsMarginContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 30)
 layout_mode = 2
@@ -90,9 +90,9 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -233.0
-offset_top = -117.0
+offset_top = -190.0
 offset_right = -33.0
-offset_bottom = 197.0
+offset_bottom = 124.0
 grow_horizontal = 0
 grow_vertical = 2
 theme = ExtResource("8_etgy3")
@@ -145,6 +145,64 @@ text = "Refresh"
 unique_name_in_owner = true
 layout_mode = 2
 text = "PASS"
+
+[node name="QuestingPanel" type="PanelContainer" parent="UI"]
+visible = false
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -233.0
+offset_top = 151.0
+offset_right = -33.0
+offset_bottom = 243.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("8_wxcur")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/QuestingPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/QuestingPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="InstructionsLabel" type="Label" parent="UI/QuestingPanel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 40)
+layout_mode = 2
+text = "Choose characters to 
+send Questing"
+autowrap_mode = 2
+
+[node name="ThreatContainer" type="HBoxContainer" parent="UI/QuestingPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ThreatLabel" type="Label" parent="UI/QuestingPanel/MarginContainer/VBoxContainer/ThreatContainer"]
+layout_mode = 2
+text = "Enemy threat:"
+
+[node name="ThreatValue" type="Label" parent="UI/QuestingPanel/MarginContainer/VBoxContainer/ThreatContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+
+[node name="QuestPowerContainer" type="HBoxContainer" parent="UI/QuestingPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="QuestPowerLabel" type="Label" parent="UI/QuestingPanel/MarginContainer/VBoxContainer/QuestPowerContainer"]
+layout_mode = 2
+text = "Quest Power:"
+
+[node name="QuestPowerValue" type="Label" parent="UI/QuestingPanel/MarginContainer/VBoxContainer/QuestPowerContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
 
 [node name="AbilityController" type="Node" parent="." groups=["ability_controller"]]
 script = ExtResource("7_ryi1g")

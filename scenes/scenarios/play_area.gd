@@ -74,3 +74,10 @@ func reposition_cards():
 			card_height/2)
 		tween.tween_property(card, "position", pos, secs)
 		tween.tween_property(card, "rotation_degrees", Vector3.ZERO, secs)
+
+func current_threat_value() -> int:
+	var value: int = 0
+	for card in cards:
+		value += card.data.threat
+	
+	return value
