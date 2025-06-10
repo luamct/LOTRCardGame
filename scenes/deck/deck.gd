@@ -18,12 +18,10 @@ func shuffle():
 	cards.shuffle()
 
 func draw(n: int) -> Array[Card]:
-	return cards.slice(0, n, 1)
+	var drawn: Array[Card]
+	for i in range(n):
+		drawn.append(cards.pop_front())
+	return drawn
 
 func find_by_name(_name: String) -> Card:
 	return cards.filter(func(card: Card): return card.data.name == _name)[0]
-
-#func reveal(n: int):
-	
-	
-	

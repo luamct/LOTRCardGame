@@ -2,6 +2,8 @@
 class_name PlayArea
 extends MeshInstance3D
 
+const spacing: float = 0.50 # Percentage of card width
+
 @export var show_in_game: bool
 @export var size: Vector2 = Vector2(20, 20)
 @export var color: Color
@@ -62,7 +64,7 @@ func reposition_cards():
 
 	var card_width: float = cards[0].width
 	var card_height: float = cards[0].height
-	var card_spacing: float = card_width/4
+	var card_spacing: float = card_width * spacing
 	for i in cards.size():
 		var card: Card = cards[i]
 
@@ -81,3 +83,7 @@ func current_threat_value() -> int:
 		value += card.data.threat
 	
 	return value
+
+func ready_all():
+	for card in cards:
+		card.ready()

@@ -202,3 +202,12 @@ func add_to_questing(card: Card):
 func remove_from_questing(card: Card):
 	selected_for_questing.erase(card)
 	removed_from_questing.emit(card)
+
+func resolve_questing():
+	for card in selected_for_questing:
+		card.exaust()
+	leave_quest_selection()
+	
+func ready_all():
+	allies_area.ready_all()
+	heroes_area.ready_all()

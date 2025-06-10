@@ -75,7 +75,7 @@ func enter_phase(_phase: Enums.TurnPhase):
 			ui.set_willpower(0)
 			ui.set_questing_threat(staging_area.current_threat_value())
 			interaction_button.text = "CONFIRM"
-			
+
 			player.enter_quest_selection()
 
 		Enums.TurnPhase.Travel:
@@ -91,7 +91,7 @@ func enter_phase(_phase: Enums.TurnPhase):
 			pass
 
 		Enums.TurnPhase.Refresh:
-			pass
+			player.ready_all()
 
 		_:
 			print("Unhandled phase: " + str(phase))
@@ -138,7 +138,7 @@ func resolve_questing():
 		pass
 	
 	current_willpower = 0
-	player.leave_quest_selection()
+	player.resolve_questing()
 	enter_phase(Enums.TurnPhase.Travel)
 
 func resolve_ability(ability: AbilityData, card: Card, _player: Player):

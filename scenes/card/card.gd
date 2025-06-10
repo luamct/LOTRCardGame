@@ -5,7 +5,7 @@ signal dragging_state_changed(on: bool, card: Card)
 
 static var card_scene_path: String = "res://scenes/card/card.tscn"
 
-const TWEEN_DURATION = 0.05
+const TWEEN_DURATION = 0.1
 
 @export var highlight_height_boost: float
 @export var highlight_scale_boost: float
