@@ -11,12 +11,12 @@
 [ext_resource type="Theme" uid="uid://dhe7d0b4cm5u7" path="res://assets/themes/phases_theme.tres" id="8_etgy3"]
 [ext_resource type="Theme" uid="uid://dshg5w2rtpcby" path="res://assets/themes/questing_theme.tres" id="8_wxcur"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wen7q"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w6imr"]
 transparency = 1
 shading_mode = 0
 albedo_color = Color(0.2, 1, 0.6, 0.3)
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_opycl"]
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_wqst1"]
 
 [sub_resource type="Environment" id="Environment_w32re"]
 glow_intensity = 1.5
@@ -39,8 +39,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.408, 0, -10)
 
 [node name="StagingArea" parent="." instance=ExtResource("6_l4mla")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.27584)
-material_override = SubResource("StandardMaterial3D_wen7q")
-mesh = SubResource("ImmediateMesh_opycl")
+material_override = SubResource("StandardMaterial3D_w6imr")
+mesh = SubResource("ImmediateMesh_wqst1")
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("6_ij16v")

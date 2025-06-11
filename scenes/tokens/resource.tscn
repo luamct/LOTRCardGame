@@ -1,4 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dc4twny26a7sa"]
+[gd_scene load_steps=5 format=3 uid="uid://dc4twny26a7sa"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ei6dy"]
+friction = 0.0
+rough = true
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_hyr7x"]
 height = 0.1
@@ -16,7 +20,12 @@ height = 0.1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 collision_layer = 4
 collision_mask = 5
-gravity_scale = 2.0
+mass = 0.1
+physics_material_override = SubResource("PhysicsMaterial_ei6dy")
+linear_damp_mode = 1
+linear_damp = 5.0
+angular_damp_mode = 1
+angular_damp = 5.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CylinderShape3D_hyr7x")
